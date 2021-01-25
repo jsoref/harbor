@@ -44,7 +44,7 @@ func (f *FakeOrmer) Insert(interface{}) (int64, error) {
 }
 
 // InsertOrUpdate ...
-func (f *FakeOrmer) InsertOrUpdate(md interface{}, colConflitAndArgs ...string) (int64, error) {
+func (f *FakeOrmer) InsertOrUpdate(md interface{}, colConflictAndArgs ...string) (int64, error) {
 	return 0, nil
 }
 
