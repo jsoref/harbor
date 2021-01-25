@@ -116,7 +116,7 @@ export class SessionService {
 
     /**
      *
-     * Update accpunt settings
+     * Update account settings
      *
      *  ** deprecated param {SessionUser} account
      * returns {Observable<any>}
@@ -138,7 +138,7 @@ export class SessionService {
 
     /**
      *
-     * Update accpunt settings
+     * Update account settings
      *
      *  ** deprecated param {SessionUser} account
      * returns {Observable<any>}
