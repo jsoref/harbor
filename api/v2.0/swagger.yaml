@@ -3067,16 +3067,16 @@ definitions:
     properties:
       architecture:
         type: string
-        description: The architecture that the artifact applys to
+        description: The architecture that the artifact applies to
       os:
         type: string
-        description: The OS that the artifact applys to
+        description: The OS that the artifact applies to
       '''os.version''':
         type: string
-        description: The version of the OS that the artifact applys to
+        description: The version of the OS that the artifact applies to
       '''os.features''':
         type: array
-        description: The features of the OS that the artifact applys to
+        description: The features of the OS that the artifact applies to
         items:
           type: string
       variant:
