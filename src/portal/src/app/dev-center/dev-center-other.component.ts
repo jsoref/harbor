@@ -38,8 +38,8 @@ export class DevCenterOtherComponent extends DevCenterBase implements AfterViewI
       .pipe(catchError(error => observableThrowError(error)))
       .subscribe(json => {
         json['host'] = window.location.host;
-        const protocal = window.location.protocol;
-        json['schemes'] = [protocal.replace(":", "")];
+        const protocol = window.location.protocol;
+        json['schemes'] = [protocol.replace(":", "")];
         this.ui = SwaggerUI({
           spec: json,
           domNode: this.el.nativeElement.querySelector('.swagger-container'),

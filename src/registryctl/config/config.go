@@ -103,9 +103,9 @@ func GetUIAuthSecret() string {
 
 // loadEnvs Load env variables
 func (c *Configuration) loadEnvs() {
-	prot := os.Getenv("REGISTRYCTL_PROTOCOL")
-	if len(prot) != 0 {
-		c.Protocol = prot
+	protocol := os.Getenv("REGISTRYCTL_PROTOCOL")
+	if len(protocol) != 0 {
+		c.Protocol = protocol
 	}
 
 	p := os.Getenv("PORT")
