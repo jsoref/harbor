@@ -117,7 +117,7 @@ export class GroupComponent implements OnInit, OnDestroy {
         ConfirmationTargets.PROJECT_MEMBER,
         ConfirmationButtons.DELETE_CANCEL
       );
-      this.operateDialogService.openComfirmDialog(deletionMessage);
+      this.operateDialogService.openConfirmDialog(deletionMessage);
     }
   }
 

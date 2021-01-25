@@ -16,7 +16,7 @@ export class ConfirmMessageHandler {
             changes,
             ConfirmationTargets.CONFIG
         );
-        this.confirmService.openComfirmDialog(msg);
+        this.confirmService.openConfirmDialog(msg);
      }
 }
 
