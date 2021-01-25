@@ -24,12 +24,12 @@ import (
 )
 
 type entry struct {
-	data        []byte
-	expiratedAt int64
+	data      []byte
+	expiredAt int64
 }
 
-func (e *entry) isExpirated() bool {
-	return e.expiratedAt < time.Now().UnixNano()
+func (e *entry) isExpired() bool {
+	return e.expiredAt < time.Now().UnixNano()
 }
 
 var _ cache.Cache = (*Cache)(nil)
@@ -47,7 +47,7 @@ func (c *Cache) Contains(key string) bool {
 		return false
 	}
 
-	if e.(*entry).isExpirated() {
+	if e.(*entry).isExpired() {
 		c.Delete(c.opts.Key(key))
 		return false
 	}
@@ -69,7 +69,7 @@ func (c *Cache) Fetch(key string, value interface{}) error {
 	}
 
 	e := v.(*entry)
-	if e.isExpirated() {
+	if e.isExpired() {
 		c.Delete(c.opts.Key(key))
 		return cache.ErrNotFound
 	}
@@ -93,18 +93,18 @@ func (c *Cache) Save(key string, value interface{}, expiration ...time.Duration)
 		return fmt.Errorf("failed to encode value, key %s, error: %v", key, err)
 	}
 
-	var expiratedAt int64
+	var expiredAt int64
 	if len(expiration) > 0 {
-		expiratedAt = time.Now().Add(expiration[0]).UnixNano()
+		expiredAt = time.Now().Add(expiration[0]).UnixNano()
 	} else if c.opts.Expiration > 0 {
-		expiratedAt = time.Now().Add(c.opts.Expiration).UnixNano()
+		expiredAt = time.Now().Add(c.opts.Expiration).UnixNano()
 	} else {
-		expiratedAt = math.MaxInt64
+		expiredAt = math.MaxInt64
 	}
 
 	c.storage.Store(c.opts.Key(key), &entry{
-		data:        data,
-		expiratedAt: expiratedAt,
+		data:      data,
+		expiredAt: expiredAt,
 	})
 
 	return nil
