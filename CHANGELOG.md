@@ -84,7 +84,7 @@ API explorer integration. End users can now explore and trigger Harbor’s API v
 
 ## v0.5.0 (2016-12-6)
 
-- Refactory for a new build process
+- Refactor for a new build process
 - Easier configuration for HTTPS in prepare script
 - Script to collect logs of a Harbor deployment
 - User can view the storage usage (default location) of Harbor.
@@ -100,7 +100,7 @@ For Harbor virtual appliance:
 ## v0.4.5 (2016-10-31)
 
 - Virtual appliance of Harbor for vSphere.
-- Refactory for new build process.
+- Refactor for new build process.
 - Easier configuration for HTTPS in prepare step.
 - Updated documents.
 - Various bug fixes.
