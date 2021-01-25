@@ -1684,7 +1684,7 @@ paths:
         '200':
           description: The label is successfully marked to the chart version.
         '400':
-          $ref: '#/definitions/BadRequestFormatedError'
+          $ref: '#/definitions/BadRequestFormattedError'
         '401':
           $ref: '#/definitions/UnauthorizedChartAPIError'
         '403':
@@ -1692,7 +1692,7 @@ paths:
         '404':
           $ref: '#/definitions/NotFoundChartAPIError'
         '409':
-          $ref: '#/definitions/ConflictFormatedError'
+          $ref: '#/definitions/ConflictFormattedError'
         '500':
           $ref: '#/definitions/InternalChartAPIError'
   /chartrepo/{repo}/charts/{name}/{version}/labels/{id}:
@@ -1728,7 +1728,7 @@ paths:
         '200':
           description: The label is successfully unmarked from the chart version.
         '400':
-          $ref: '#/definitions/BadRequestFormatedError'
+          $ref: '#/definitions/BadRequestFormattedError'
         '401':
           $ref: '#/definitions/UnauthorizedChartAPIError'
         '403':
@@ -3631,12 +3631,12 @@ definitions:
     type: object
     allOf:
       - $ref: '#/definitions/ChartAPIError'
-  BadRequestFormatedError:
+  BadRequestFormattedError:
     description: Bad request
     type: object
     allOf:
       - $ref: '#/definitions/ChartAPIError'
-  ConflictFormatedError:
+  ConflictFormattedError:
     description: Conflicts
     type: object
     allOf:

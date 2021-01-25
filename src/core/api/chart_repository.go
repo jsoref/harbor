@@ -567,13 +567,13 @@ func (cra *ChartRepositoryAPI) rewriteFileContent(files []formFile, request *htt
 
 		// Handle error case by case
 		if err != nil {
-			formatedErr := fmt.Errorf("Get file content with multipart header from key '%s' failed with error: %s", f.formField, err.Error())
+			formattedErr := fmt.Errorf("Get file content with multipart header from key '%s' failed with error: %s", f.formField, err.Error())
 			if f.mustHave || err != http.ErrMissingFile {
-				return formatedErr
+				return formattedErr
 			}
 
 			// Error can be ignored, just log it
-			hlog.Warning(formatedErr.Error())
+			hlog.Warning(formattedErr.Error())
 			continue
 		}
 
