@@ -75,7 +75,7 @@ export class ConfirmationDialogComponent implements OnDestroy {
 
     cancel(): void {
         if (!this.message) {
-            // Inproper condition
+            // Improper condition
             this.close();
             return;
         }
@@ -93,7 +93,7 @@ export class ConfirmationDialogComponent implements OnDestroy {
 
     confirm(): void {
         if (!this.message) {
-            // Inproper condition
+            // Improper condition
             this.close();
             return;
         }
