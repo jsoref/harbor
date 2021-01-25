@@ -6,13 +6,13 @@ import (
 	helm_chart "helm.sh/helm/v3/pkg/chart"
 )
 
-// FakeOpertaor ...
-type FakeOpertaor struct {
+// FakeOperator ...
+type FakeOperator struct {
 	mock.Mock
 }
 
 // GetDetails ...
-func (f *FakeOpertaor) GetDetails(content []byte) (*chartserver.VersionDetails, error) {
+func (f *FakeOperator) GetDetails(content []byte) (*chartserver.VersionDetails, error) {
 	args := f.Called()
 	var chartDetails *chartserver.VersionDetails
 	if args.Get(0) != nil {
@@ -22,7 +22,7 @@ func (f *FakeOpertaor) GetDetails(content []byte) (*chartserver.VersionDetails, 
 }
 
 // GetData ...
-func (f *FakeOpertaor) GetData(content []byte) (*helm_chart.Chart, error) {
+func (f *FakeOperator) GetData(content []byte) (*helm_chart.Chart, error) {
 	args := f.Called()
 	var chartData *helm_chart.Chart
 	if args.Get(0) != nil {

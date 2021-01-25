@@ -62,12 +62,12 @@ type processorTestSuite struct {
 	suite.Suite
 	processor *processor
 	regCli    *registry.FakeClient
-	chartOptr *chart.FakeOpertaor
+	chartOptr *chart.FakeOperator
 }
 
 func (p *processorTestSuite) SetupTest() {
 	p.regCli = &registry.FakeClient{}
-	p.chartOptr = &chart.FakeOpertaor{}
+	p.chartOptr = &chart.FakeOperator{}
 	p.processor = &processor{
 		chartOperator: p.chartOptr,
 	}
