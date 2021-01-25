@@ -131,11 +131,11 @@ Repo Not Exist
     Retry Wait Until Page Not Contains Element  //clr-dg-row[contains(.,'${pro_name}/${repo_name}')]
 
 Filter Repo
-    [Arguments]  ${pro_name}  ${repo_name}  ${exsit}=${true}
+    [Arguments]  ${pro_name}  ${repo_name}  ${exist}=${true}
     Retry Double Keywords When Error  Retry Element Click  ${filter_dist_btn}  Wait Until Element Is Visible And Enabled  ${filter_dist_input}
     Retry Clear Element Text  ${filter_dist_input}
     Retry Text Input  ${filter_dist_input}  ${pro_name}/${repo_name}
-    Run Keyword If  ${exsit}==${true}    Repo Exist  ${pro_name}  ${repo_name}
+    Run Keyword If  ${exist}==${true}    Repo Exist  ${pro_name}  ${repo_name}
     ...  ELSE  Repo Not Exist  ${pro_name}  ${repo_name}
 
 Delete Repo
@@ -146,7 +146,7 @@ Delete Repo
     Retry Double Keywords When Error  Retry Element Click  ${repo_delete_btn}  Wait Until Element Is Visible And Enabled  ${delete_confirm_btn}
     Retry Double Keywords When Error  Retry Element Click  ${delete_confirm_btn}  Retry Wait Until Page Not Contains Element  ${delete_confirm_btn}
     Retry Wait Until Page Not Contains Element  ${element_repo_checkbox}
-    Filter Repo  ${pro_name}  ${repo_name}  exsit=${false}
+    Filter Repo  ${pro_name}  ${repo_name}  exist=${false}
 
 Delete Repo on CardView
     [Arguments]  ${reponame}

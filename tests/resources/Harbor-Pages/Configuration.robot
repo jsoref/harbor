@@ -374,10 +374,10 @@ Distribution Not Exist
     Retry Wait Until Page Not Contains Element  //clr-dg-row[contains(.,'${name}') and contains(.,'${endpoint}')]
 
 Filter Distribution List
-    [Arguments]  ${name}  ${endpoint}  ${exsit}=${true}
+    [Arguments]  ${name}  ${endpoint}  ${exist}=${true}
     Retry Double Keywords When Error  Retry Element Click  ${filter_dist_btn}  Wait Until Element Is Visible And Enabled  ${filter_dist_input}
     Retry Text Input  ${filter_dist_input}  ${name}
-    Run Keyword If  ${exsit}==${true}    Distribution Exist  ${name}  ${endpoint}
+    Run Keyword If  ${exist}==${true}    Distribution Exist  ${name}  ${endpoint}
     ...  ELSE  Distribution Not Exist  ${name}  ${endpoint}
 
 Select Provider
@@ -397,7 +397,7 @@ Create An New Distribution
 
 Delete A Distribution
     [Arguments]    ${name}  ${endpoint}  ${deletable}=${true}
-    ${is_exsit}    evaluate    not ${deletable}
+    ${is_exist}    evaluate    not ${deletable}
     Switch To Distribution
     Filter Distribution List  ${name}  ${endpoint}
     Retry Double Keywords When Error  Select Distribution   ${name}  Wait Until Element Is Visible  //clr-datagrid//clr-dg-footer//clr-checkbox-wrapper/label
@@ -405,7 +405,7 @@ Delete A Distribution
     Retry Double Keywords When Error  Retry Element Click  ${distribution_del_btn_id}  Wait Until Element Is Visible And Enabled  ${delete_confirm_btn}
     Retry Double Keywords When Error  Retry Element Click  ${delete_confirm_btn}  Retry Wait Until Page Not Contains Element  ${delete_confirm_btn}
     Sleep  10
-    Filter Distribution List  ${name}  ${endpoint}  exsit=${is_exsit}
+    Filter Distribution List  ${name}  ${endpoint}  exist=${is_exist}
 
 Edit A Distribution
     [Arguments]    ${name}  ${endpoint}  ${new_endpoint}=${null}

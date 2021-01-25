@@ -28,7 +28,7 @@ class TestTagImmutability(unittest.TestCase):
         self.project_id, self.project_name, self.user_id, self.user_name = [None] * 4
         self.user_id, self.user_name = self.user.create_user(user_password = self.user_password, **ADMIN_CLIENT)
         self.USER_CLIENT = dict(with_signature = True, with_immutable_status = True, endpoint = self.url, username = self.user_name, password = self.user_password)
-        self.exsiting_rule = dict(selector_repository="rel*", selector_tag="v2.*")
+        self.existing_rule = dict(selector_repository="rel*", selector_tag="v2.*")
         self.project_id, self.project_name = self.project.create_project(metadata = {"public": "false"}, **self.USER_CLIENT)
 
     @unittest.skipIf(TEARDOWN == False, "Test data won't be erased.")
@@ -279,7 +279,7 @@ class TestTagImmutability(unittest.TestCase):
         self.tag_immutability.update_tag_immutability_policy_rule(self.project_id, rule_id_1, disabled = True, **self.USER_CLIENT)
         self.tag_immutability.update_tag_immutability_policy_rule(self.project_id, rule_id_2, disabled = True, **self.USER_CLIENT)
 
-    def test_add_exsiting_rule(self):
+    def test_add_existing_rule(self):
         """
         Test case:
             Test Priority Of Rules(excluding rule will not affect matching rule)
@@ -288,8 +288,8 @@ class TestTagImmutability(unittest.TestCase):
             2. Create a immutability policy rule A;
             3. Fail to create rule B which has the same config as rule A;
         """
-        self.tag_immutability.create_tag_immutability_policy_rule(self.project_id, **self.exsiting_rule, **self.USER_CLIENT)
-        self.tag_immutability.create_tag_immutability_policy_rule(self.project_id, **self.exsiting_rule, expect_status_code = 409, **self.USER_CLIENT)
+        self.tag_immutability.create_tag_immutability_policy_rule(self.project_id, **self.existing_rule, **self.USER_CLIENT)
+        self.tag_immutability.create_tag_immutability_policy_rule(self.project_id, **self.existing_rule, expect_status_code = 409, **self.USER_CLIENT)
 
 if __name__ == '__main__':
     suite = unittest.TestSuite(unittest.makeSuite(TestTagImmutability))
