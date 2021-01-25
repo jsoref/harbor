@@ -103,7 +103,7 @@ describe('SummaryComponent', () => {
     "manage-compute-resources-container/) to allocate for container   | undefined |\n| `jobservice.nodeSelector` " +
     "| Node labels for pod assignment | `{}` |\n| `jobservice.tolerations` | Tolerations for pod assignment |" +
     " `[]` |\n| `jobservice.affinity` | Node/Pod affinities | `{}` |\n| **UI** |\n| `ui.image.repository` | " +
-    "epository for ui image | `vmware/harbor-ui` |\n| `ui.image.tag` | Tag for ui image | `v1.4.0` |\n| `ui." +
+    "repository for ui image | `vmware/harbor-ui` |\n| `ui.image.tag` | Tag for ui image | `v1.4.0` |\n| `ui." +
     "image.pullPolicy` | Pull Policy for ui image | `IfNotPresent` |\n| `ui.key` | ui key | `not-a-secure-key" +
     "` |\n| `ui.secret` | ui secret | `not-a-secure-secret` |\n| `ui.privateKeyPem` | ui private key | see " +
     "values.yaml |\n| `ui.resources` | [resources](https://kubernetes.io/docs/concepts/configuration/manage-" +

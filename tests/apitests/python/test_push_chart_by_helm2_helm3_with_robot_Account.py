@@ -44,7 +44,7 @@ class TestProjects(unittest.TestCase):
             2. Create private project(PA) with user(UA);
             3. Create a new robot account(RA) with full privileges in project(PA) with user(UA);
             4. Push chart to project(PA) by Helm2 CLI with robot account(RA);
-            5. Get chart repositry from project(PA) successfully;
+            5. Get chart repository from project(PA) successfully;
         Tear down:
             1. Delete user(UA).
         """
@@ -64,7 +64,7 @@ class TestProjects(unittest.TestCase):
         library.helm.helm2_add_repo(self.chart_repo_name, "https://"+harbor_server, TestProjects.project_name, robot_account.name, robot_account.secret)
         library.helm.helm2_push(self.chart_repo_name, self.chart_file, TestProjects.project_name, robot_account.name, robot_account.secret)
 
-        #5. Get chart repositry from project(PA) successfully;
+        #5. Get chart repository from project(PA) successfully;
         self.chart.chart_should_exist(TestProjects.project_name, self.CHART_NAME, **TestProjects.API_CHART_CLIENT)
 
         #6. Push chart to project(PA) by Helm3 CLI with robot account(RA);

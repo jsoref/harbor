@@ -172,19 +172,19 @@ func (l *launcher) Launch(ctx context.Context, ply *policy.Metadata, executionID
 		}
 
 		for _, repositoryCandidate := range repositoryCandidates {
-			reposit := selector.Repository{
+			repository := selector.Repository{
 				NamespaceID: repositoryCandidate.NamespaceID,
 				Namespace:   repositoryCandidate.Namespace,
 				Name:        repositoryCandidate.Repository,
 				Kind:        repositoryCandidate.Kind,
 			}
-			if repositoryRules[reposit] == nil {
-				repositoryRules[reposit] = &lwp.Metadata{
+			if repositoryRules[repository] == nil {
+				repositoryRules[repository] = &lwp.Metadata{
 					Algorithm: ply.Algorithm,
 				}
 			}
 			r := rule
-			repositoryRules[reposit].Rules = append(repositoryRules[reposit].Rules, &r)
+			repositoryRules[repository].Rules = append(repositoryRules[repository].Rules, &r)
 		}
 	}
 
