@@ -50,7 +50,7 @@ type Exporter struct {
 	collectors map[string]prometheus.Collector
 }
 
-// RegisterCollector register a collector to expoter
+// RegisterCollector register a collector to exporter
 func (e *Exporter) RegisterCollector(name string, c prometheus.Collector) error {
 	if _, ok := e.collectors[name]; ok {
 		return errors.New("Collector name is already registered")
