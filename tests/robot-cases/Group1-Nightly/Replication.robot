@@ -45,7 +45,7 @@ Test Case - Pro Replication Rules Add
     Close Browser
 
 Test Case - Harbor Endpoint Verification
-    #This case need vailid info and selfsign cert
+    #This case need valid info and selfsign cert
     Init Chrome Driver
     ${d}=    Get Current Date    result_format=%m%s
     Sign In Harbor    ${HARBOR_URL}    ${HARBOR_ADMIN}    ${HARBOR_PASSWORD}
@@ -57,7 +57,7 @@ Test Case - Harbor Endpoint Verification
     Close Browser
 
 ##Test Case - DockerHub Endpoint Add
-    #This case need vailid info and selfsign cert
+    #This case need valid info and selfsign cert
     ##Init Chrome Driver
     ##${d}=    Get Current Date    result_format=%m%s
     ##Sign In Harbor    ${HARBOR_URL}    ${HARBOR_ADMIN}    ${HARBOR_PASSWORD}
@@ -66,7 +66,7 @@ Test Case - Harbor Endpoint Verification
     ##Close Browser
 
 Test Case - Harbor Endpoint Add
-    #This case need vailid info and selfsign cert
+    #This case need valid info and selfsign cert
     Init Chrome Driver
     ${d}=    Get Current Date    result_format=%m%s
     Sign In Harbor    ${HARBOR_URL}    ${HARBOR_ADMIN}    ${HARBOR_PASSWORD}

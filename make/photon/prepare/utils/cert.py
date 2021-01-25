@@ -125,7 +125,7 @@ def prepare_trust_ca(config_dict):
         (internal_ca_src, internal_ca_filename),
         (ca_bundle_src, storage_ca_bundle_filename)):
         logging.info('copy {} to shared trust ca dir as name {} ...'.format(src_path, dst_filename))
-        # check if source file valied
+        # check if source file valid
         if not src_path:
             continue
         real_src_path = get_realpath(str(src_path))
