@@ -454,7 +454,7 @@ Test Case - Project Level Image Severity Policy
     Scan Repo  latest  Succeed
     Navigate To Projects
     Go Into Project  library
-    Set Vulnerabilty Severity  0
+    Set Vulnerability Severity  0
     Cannot pull image  ${ip}  ${HARBOR_ADMIN}  ${HARBOR_PASSWORD}  library  haproxy
     Close Browser
 
