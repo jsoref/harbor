@@ -18,7 +18,7 @@ const ADAPTERS_MAP = {
   "azure-acr": "Azure ACR",
   "docker-hub": "Docker Hub",
   "docker-registry": "Docker Registry",
-  "gitlab": "Gitlab",
+  "gitlab": "GitLab",
   "google-gcr": "Google GCR",
   "harbor": "Harbor",
   "helm-hub": "Helm Hub",

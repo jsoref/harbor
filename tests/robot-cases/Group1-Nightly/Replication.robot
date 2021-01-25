@@ -279,9 +279,9 @@ Test Case - Replication Of Push Images to DockerHub Triggered By Event
 Test Case - Replication Of Push Images to AWS-ECR Triggered By Event
     Body Of Replication Of Push Images to Registry Triggered By Event  aws-ecr  us-east-2  ${ecr_ac_id}  ${ecr_ac_key}  harbor-nightly-replication
 
-Test Case - Replication Of Pull Images from Gitlab To Self
+Test Case - Replication Of Pull Images from GitLab To Self
     @{target_images}=  Create List  photon  alpine
     Body Of Replication Of Pull Images from Registry To Self   gitlab   https://registry.gitlab.com    ${gitlab_id}    ${gitlab_key}    dannylunsa/test_replication/{photon,alpine}  ${null}  @{target_images}
 
-Test Case - Replication Of Push Images to Gitlab Triggered By Event
+Test Case - Replication Of Push Images to GitLab Triggered By Event
     Body Of Replication Of Push Images to Registry Triggered By Event    gitlab   https://registry.gitlab.com    ${gitlab_id}    ${gitlab_key}    dannylunsa/test_replication
