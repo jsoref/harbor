@@ -408,7 +408,7 @@ func (t *RegistryAPI) Delete() {
 		return
 	}
 	if count > 0 {
-		t.SendPreconditionFailedError(fmt.Errorf("Can't delete registry %d,  %d proxy cache projects referennce it", id, count))
+		t.SendPreconditionFailedError(fmt.Errorf("Can't delete registry %d,  %d proxy cache projects reference it", id, count))
 		return
 	}
 
