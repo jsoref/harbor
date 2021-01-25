@@ -2357,7 +2357,7 @@ paths:
               description: Link to previous page and next page
               type: string
         '400':
-          description: Bad query paramters
+          description: Bad query parameters
         '401':
           description: Unauthorized request
         '403':
