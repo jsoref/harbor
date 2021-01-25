@@ -45,7 +45,7 @@ const expireDays = 10;
 export class SignInComponent implements AfterViewChecked, OnInit {
     redirectUrl: string = "";
     appConfig: AppConfig = new AppConfig();
-    // Remeber me indicator
+    // Remember me indicator
     rememberMe: boolean = false;
     rememberedName: string = "";
 
@@ -155,7 +155,7 @@ export class SignInComponent implements AfterViewChecked, OnInit {
         }
     }
 
-    remeberMe(): void {
+    setRememberCookie(): void {
         if (this.rememberMe) {
             if (this.rememberedName !== this.signInCredential.principal) {
                 // Set expire time
@@ -244,8 +244,8 @@ export class SignInComponent implements AfterViewChecked, OnInit {
                 // Keep it ongoing to keep the button 'disabled'
                 // this.signInStatus = signInStatusNormal;
 
-                // Remeber me
-                this.remeberMe();
+                // Remember me
+                this.setRememberCookie();
 
                 // Redirect to the right route
                 if (this.redirectUrl === "") {
