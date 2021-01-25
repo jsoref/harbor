@@ -96,7 +96,7 @@ export enum QuotaUnit {
   TB = "TB", GB = "GB", MB = "MB", KB = "KB", BIT = "Byte"
 }
 export enum QuotaProgress {
-  COUNT_USED = "COUNT_USED", COUNT_HARD = "COUNT_HARD", STROAGE_USED = "STORAGE_USED", STORAGE_HARD = "STORAGE_HARD"
+  COUNT_USED = "COUNT_USED", COUNT_HARD = "COUNT_HARD", STORAGE_USED = "STORAGE_USED", STORAGE_HARD = "STORAGE_HARD"
 }
 
 export const LabelColor = [
