@@ -35,7 +35,7 @@ func TestMain(m *testing.M) {
 		common.OIDCEndpoint:     "https://accounts.google.com",
 		common.OIDCVerifyCert:   "true",
 		common.OIDCScope:        "openid, profile, offline_access",
-		common.OIDCCLientID:     "client",
+		common.OIDCClientID:     "client",
 		common.OIDCClientSecret: "secret",
 		common.ExtEndpoint:      "https://harbor.test",
 	}
@@ -78,7 +78,7 @@ func TestHelperGet(t *testing.T) {
 		common.OIDCEndpoint:     "https://accounts.google.com",
 		common.OIDCVerifyCert:   "true",
 		common.OIDCScope:        "openid, profile, offline_access",
-		common.OIDCCLientID:     "client",
+		common.OIDCClientID:     "client",
 		common.OIDCClientSecret: "new-secret",
 		common.ExtEndpoint:      "https://harbor.test",
 	}
@@ -95,7 +95,7 @@ func TestAuthCodeURL(t *testing.T) {
 		common.OIDCEndpoint:           "https://accounts.google.com",
 		common.OIDCVerifyCert:         "true",
 		common.OIDCScope:              "openid, profile, offline_access",
-		common.OIDCCLientID:           "client",
+		common.OIDCClientID:           "client",
 		common.OIDCClientSecret:       "secret",
 		common.ExtEndpoint:            "https://harbor.test",
 		common.OIDCExtraRedirectParms: `{"test_key":"test_value"}`,

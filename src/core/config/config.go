@@ -412,7 +412,7 @@ func OIDCSetting() (*models.OIDCSetting, error) {
 		Endpoint:           cfgMgr.Get(common.OIDCEndpoint).GetString(),
 		VerifyCert:         cfgMgr.Get(common.OIDCVerifyCert).GetBool(),
 		AutoOnboard:        cfgMgr.Get(common.OIDCAutoOnboard).GetBool(),
-		ClientID:           cfgMgr.Get(common.OIDCCLientID).GetString(),
+		ClientID:           cfgMgr.Get(common.OIDCClientID).GetString(),
 		ClientSecret:       cfgMgr.Get(common.OIDCClientSecret).GetString(),
 		GroupsClaim:        cfgMgr.Get(common.OIDCGroupsClaim).GetString(),
 		AdminGroup:         cfgMgr.Get(common.OIDCAdminGroup).GetString(),
