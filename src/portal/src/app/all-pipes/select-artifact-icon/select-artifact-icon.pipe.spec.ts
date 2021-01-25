@@ -8,7 +8,7 @@ describe('SelectArtifactIconPipe', () => {
     const pipe = new SelectArtifactIconPipe();
     expect(pipe).toBeTruthy();
   });
-  it('it should success get adress of icon', () => {
+  it('it should success get address of icon', () => {
     const pipe = new SelectArtifactIconPipe();
     expect(pipe.transform(mockTypeImage, '')).toBe('images/artifact-image.svg');
     expect(pipe.transform(mockTypeChart, '')).toBe('images/artifact-chart.svg');
