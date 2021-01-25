@@ -14,7 +14,7 @@ func (a HarborAPI) HarborLogin(user UsrInfo) (int, error) {
 	v.Set("principal", user.Name)
 	v.Set("password", user.Passwd)
 
-	body := ioutil.NopCloser(strings.NewReader(v.Encode())) // endode v:[body struce]
+	body := ioutil.NopCloser(strings.NewReader(v.Encode())) // encode v:[body struce]
 
 	client := &http.Client{}
 	reqest, err := http.NewRequest("POST", a.basePath+"/login", body)
