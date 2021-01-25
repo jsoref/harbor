@@ -40,7 +40,7 @@ func TestOIDCCli(t *testing.T) {
 	assert.Nil(t, ctx)
 
 	// pass
-	username := "oidcModiferTester"
+	username := "oidcModifierTester"
 	password := "oidcSecret"
 	oidc.SetHardcodeVerifierForTest(password)
 	req = req.WithContext(lib.WithAuthMode(req.Context(), common.OIDCAuth))
