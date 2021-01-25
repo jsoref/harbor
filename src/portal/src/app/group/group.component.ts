@@ -157,7 +157,7 @@ export class GroupComponent implements OnInit, OnDestroy {
     );
   }
 
-  groupToSring(type: number) {
+  groupToString(type: number) {
     if (type === GroupType.LDAP_TYPE) {
       return 'GROUP.LDAP_TYPE';
     } else if (type === GroupType.HTTP_TYPE) {
