@@ -202,7 +202,7 @@ func getErrorMessage(resp *http.Response) error {
 
 	data, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		// abandon to read deatiled error message
+		// abandon to read detailed error message
 		return nil
 	}
 
