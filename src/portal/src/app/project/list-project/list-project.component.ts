@@ -169,7 +169,7 @@ export class ListProjectComponent implements OnDestroy {
                 }
 
                 this.projects = response.body as Project[];
-                // Do customising filtering and sorting
+                // Do customizing filtering and sorting
                 this.projects = doFiltering<Project>(this.projects, state);
                 this.projects = doSorting<Project>(this.projects, state);
 

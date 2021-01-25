@@ -143,7 +143,7 @@ export class ArtifactTagComponent implements OnInit, OnDestroy {
         }
       }
       this.currentTags = res.body;
-      // Do customising filtering and sorting
+      // Do customizing filtering and sorting
       this.currentTags = doFiltering<Tag>(this.currentTags, state);
       this.currentTags = doSorting<Tag>(this.currentTags, state);
     }, error => {
