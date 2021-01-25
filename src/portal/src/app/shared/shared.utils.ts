@@ -51,7 +51,7 @@ export const accessErrorHandler = function (error: any, msgService: MessageServi
     return false;
 };
 
-// Provide capability of reconstructing the query paramter
+// Provide capability of reconstructing the query parameter
 export const maintainUrlQueryParmas = function (uri: string, key: string, value: string): string {
     let re: RegExp = new RegExp("([?&])" + key + "=.*?(&|#|$)", "i");
     if (value === undefined) {
