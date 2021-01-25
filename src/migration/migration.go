@@ -17,7 +17,7 @@ package migration
 import (
 	"context"
 	"fmt"
-	beegorm "github.com/astaxie/beego/orm"
+	beegoorm "github.com/astaxie/beego/orm"
 	"github.com/goharbor/harbor/src/common/dao"
 	"github.com/goharbor/harbor/src/common/models"
 	"github.com/goharbor/harbor/src/lib/log"
@@ -56,7 +56,7 @@ func MigrateDB(database *models.Database) error {
 // AbstractArtifactData accesses the registry to
 func AbstractArtifactData() error {
 	log.Info("Abstracting artifact data to DB...")
-	ctx := orm.NewContext(context.Background(), beegorm.NewOrm())
+	ctx := orm.NewContext(context.Background(), beegoorm.NewOrm())
 	dataVersion, err := getDataVersion(ctx)
 	if err != nil {
 		return err

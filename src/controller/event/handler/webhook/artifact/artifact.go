@@ -18,7 +18,7 @@ import (
 	"context"
 	"fmt"
 
-	beegorm "github.com/astaxie/beego/orm"
+	beegoorm "github.com/astaxie/beego/orm"
 	"github.com/goharbor/harbor/src/common/models"
 	"github.com/goharbor/harbor/src/controller/event"
 	"github.com/goharbor/harbor/src/controller/event/handler/util"
@@ -116,7 +116,7 @@ func (a *Handler) constructArtifactPayload(event *event.ArtifactEvent, project *
 		Operator: event.Operator,
 	}
 
-	ctx := orm.NewContext(context.Background(), beegorm.NewOrm())
+	ctx := orm.NewContext(context.Background(), beegoorm.NewOrm())
 	repoRecord, err := repository.Mgr.GetByName(ctx, repoName)
 	if err != nil {
 		log.Errorf("failed to get repository with name %s: %v", repoName, err)

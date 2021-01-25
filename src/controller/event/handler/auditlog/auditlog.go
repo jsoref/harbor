@@ -16,7 +16,7 @@ package auditlog
 
 import (
 	"context"
-	beegorm "github.com/astaxie/beego/orm"
+	beegoorm "github.com/astaxie/beego/orm"
 	"github.com/goharbor/harbor/src/controller/event"
 	"github.com/goharbor/harbor/src/lib/log"
 	"github.com/goharbor/harbor/src/lib/orm"
@@ -40,7 +40,7 @@ func (h *Handler) Name() string {
 
 // Handle ...
 func (h *Handler) Handle(value interface{}) error {
-	ctx := orm.NewContext(context.Background(), beegorm.NewOrm())
+	ctx := orm.NewContext(context.Background(), beegoorm.NewOrm())
 	var auditLog *am.AuditLog
 	switch v := value.(type) {
 	case *event.PushArtifactEvent, *event.PullArtifactEvent, *event.DeleteArtifactEvent,
