@@ -10,7 +10,7 @@ import (
 func TestValid(t *testing.T) {
 
 	rbacPolicy := &types.Policy{
-		Resource: "/project/libray/repository",
+		Resource: "/project/library/repository",
 		Action:   "pull",
 	}
 	policies := []*types.Policy{}
@@ -27,7 +27,7 @@ func TestValid(t *testing.T) {
 func TestUnValidTokenID(t *testing.T) {
 
 	rbacPolicy := &types.Policy{
-		Resource: "/project/libray/repository",
+		Resource: "/project/library/repository",
 		Action:   "pull",
 	}
 	policies := []*types.Policy{}
@@ -44,7 +44,7 @@ func TestUnValidTokenID(t *testing.T) {
 func TestUnValidProjectID(t *testing.T) {
 
 	rbacPolicy := &types.Policy{
-		Resource: "/project/libray/repository",
+		Resource: "/project/library/repository",
 		Action:   "pull",
 	}
 	policies := []*types.Policy{}
