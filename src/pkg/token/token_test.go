@@ -23,7 +23,7 @@ func TestMain(m *testing.M) {
 
 func TestNew(t *testing.T) {
 	rbacPolicy := &types.Policy{
-		Resource: "/project/libray/repository",
+		Resource: "/project/library/repository",
 		Action:   "pull",
 	}
 	policies := []*types.Policy{}
@@ -79,10 +79,11 @@ func TestRaw(t *testing.T) {
 }
 
 func TestParseWithClaims(t *testing.T) {
-	rawTk := "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6MTIzLCJQcm9qZWN0SUQiOjAsIkFjY2VzcyI6W3siUmVzb3VyY2UiOiIvcHJvamVjdC9saWJyYXkvcmVwb3NpdG9yeSIsIkFjdGlvbiI6InB1bGwiLCJFZmZlY3QiOiIifV0sIlN0YW5kYXJkQ2xhaW1zIjp7ImV4cCI6MTU0ODE0MDIyOSwiaXNzIjoiaGFyYm9yLXRva2VuLWlzc3VlciJ9fQ.Jc3qSKN4SJVUzAvBvemVpRcSOZaHlu0Avqms04qzPm4ru9-r9IRIl3mnSkI6m9XkzLUeJ7Kiwyw63ghngnVKw_PupeclOGC6s3TK5Cfmo4h-lflecXjZWwyy-dtH_e7Us_ItS-R3nXDJtzSLEpsGHCcAj-1X2s93RB2qD8LNSylvYeDezVkTzqRzzfawPJheKKh9JTrz-3eUxCwQard9-xjlwvfUYULoHTn9npNAUq4-jqhipW4uE8HL-ym33AGF57la8U0RO11hmDM5K8-PiYknbqJ_oONeS3HBNym2pEFeGjtTv2co213wl4T5lemlg4SGolMBuJ03L7_beVZ0o-MKTkKDqDwJalb6_PM-7u3RbxC9IzJMiwZKIPnD3FvV10iPxUUQHaH8Jz5UZ2pFIhi_8BNnlBfT0JOPFVYATtLjHMczZelj2YvAeR1UHBzq3E0jPpjjwlqIFgaHCaN_KMwEvadTo_Fi2sEH4pNGP7M3yehU_72oLJQgF4paJarsmEoij6ZtPs6xekBz1fccVitq_8WNIz9aeCUdkUBRwI5QKw1RdW4ua-w74ld5MZStWJA8veyoLkEb_Q9eq2oAj5KWFjJbW5-ltiIfM8gxKflsrkWAidYGcEIYcuXr7UdqEKXxtPiWM0xb3B91ovYvO5402bn3f9-UGtlcestxNHA"
+	rawTk := "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MTI1Mjc5NzUsImlkIjoxMjMsInBpZCI6MCwiYWNjZXNzIjpbeyJyZXNvdXJjZSI6Ii9wcm9qZWN0L2xpYnJhcnkvcmVwb3NpdG9yeSIsImFjdGlvbiI6InB1bGwifV19.dOdYz76ePanUrs2GUU-pB4au-xzu9UFwTTq2sEIZhBO2kVwQkJkibtAi1VsqvjsMnOMwyfBF95I3vZmWxKpYiw6DEXUH4EMcUDhEUJMTVnEnkLagOGxPhKWma96HoV4ZGvI_ZniC6ZSm6cXckQUsomLW09sVI96CETQYiZAULhW5hxbKqN0VGQfVd1_PBoZNxou4RH_CNzPX3YHWmvrXc0tEW5rdrm07plfzoKaH3Yebcye5_-cZBrfy2Gm55tZgYhLkRHEBJ2HvlnSf_P3m4FnLlhqNMTHyP2q1j_-fdEm35wgMGBZCDL20Q0lg1YSoMY4NPwVbF4HTLrvUhkR6QJKIPgR7JBaGGBxypSHM-yIX7LNY6M5-s727846fzWAK9PyIee5aGuS78w2iLOULdsnlhXdbsjzWJYmmz-r0_Gezp7VKsXxtp897IBH7gKsZPxRr_i2FA8XirpLlhmgtEsiXtLHzMR9lt6snqe211N9189ppxsGcY6CnqzJ-W0vA7ozeDixIpvmmUMd1M0MLGoHRXws9Khe2kxLxNYrePKY8_012YMBbe2c-6t07WRyqq9ZUVlJqu4JuL7pOYNdf_WLJnz9z_C92mbnQ1JXymarB0fAtnWEnPuQ0zE_HKq4IdCf2ZsEIDZ4VjcWMzup7eAwg5r7UbLyBxLxzFDQo4pY"
+
 	rClaims := &robot_claim.Claim{}
 	_, _ = Parse(DefaultTokenOptions(), rawTk, rClaims)
 	assert.Equal(t, int64(123), rClaims.TokenID)
 	assert.Equal(t, int64(0), rClaims.ProjectID)
-	assert.Equal(t, "/project/libray/repository", rClaims.Access[0].Resource.String())
+	assert.Equal(t, "/project/library/repository", rClaims.Access[0].Resource.String())
 }
