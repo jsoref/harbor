@@ -46,7 +46,7 @@ type RequestConfig struct {
 	// ResourcesWarningPercent value from 0 to 100
 	ResourcesWarningPercent int
 
-	// ResourcesWarning returns event which will be notified when resources usage exceeded the wanring percent
+	// ResourcesWarning returns event which will be notified when resources usage exceeded the warning percent
 	ResourcesWarning func(r *http.Request, reference, referenceID string, message string) event.Metadata
 
 	// ResourcesExceeded returns event which will be notified when resources exceeded the limitation
