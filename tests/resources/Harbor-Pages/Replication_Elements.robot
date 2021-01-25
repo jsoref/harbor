@@ -34,7 +34,7 @@ ${link_to_registries}  //clr-modal//span[contains(.,'Endpoint')]
 ${new_endpoint_button}  //hbr-endpoint//button[contains(.,'New Endpoint')]
 ${rule_name}  //input[@id='ruleName']
 ${source_image_filter_add}  //hbr-create-edit-rule/clr-modal//clr-icon[@id='add-label-list']
-${source_iamge_repo_filter}  //hbr-create-edit-rule//section/div[4]/div/div[1]/div/label/input
+${source_image_repo_filter}  //hbr-create-edit-rule//section/div[4]/div/div[1]/div/label/input
 ${source_image_tag_filter}  //hbr-create-edit-rule//section/div[4]/div/div[2]/div/label/input
 ${rule_target_select}  //select[@id='ruleTarget']
 ${rule_trigger_select}  //select[@id='ruleTrigger']
