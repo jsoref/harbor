@@ -34,7 +34,7 @@ be added to this list as they transition to production deployments.
 <a href="https://pivotal.io/" target="_blank" border="0"><img alt="Pivotal" src="https://raw.githubusercontent.com/goharbor/website/master/docs/img/adopters/pivotal.png" height="40"></a>&nbsp; &nbsp; &nbsp; &nbsp;
 <a href="https://www.163yun.com" target="_blank" border="0"><img alt="Netease Cloud" src="https://raw.githubusercontent.com/goharbor/website/master/docs/img/adopters/wangyi.png" height="50"></a>&nbsp; &nbsp; &nbsp; &nbsp;
 <a href="http://www.yanrongyun.com" target="_blank" border="0"><img alt="Yanrongyun" src="https://raw.githubusercontent.com/goharbor/website/master/docs/img/adopters/Yanrong.jpg" height="40"></a>&nbsp; &nbsp; &nbsp; &nbsp;
-<a href="https://anchore.com" target="_blank" border="0"><img alt="Anchore" src="https://raw.githubusercontent.com/goharbor/website/master/docs/img/adopters/anchore_logo.png" height="40"></a>&nbsp; &nbsp; &nbsp; &nbsp;
+<a href="https://anchor.com" target="_blank" border="0"><img alt="Anchor" src="https://raw.githubusercontent.com/goharbor/website/master/docs/img/adopters/anchore_logo.png" height="40"></a>&nbsp; &nbsp; &nbsp; &nbsp;
 
 ## Success Stories
 
