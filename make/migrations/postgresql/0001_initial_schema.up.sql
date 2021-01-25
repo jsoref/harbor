@@ -188,7 +188,7 @@ create table replication_target (
  /*
  target_type indicates the type of target registry,
  0 means it's a harbor instance,
- 1 means it's a regulart registry
+ 1 means it's a regular registry
  */
  target_type SMALLINT NOT NULL DEFAULT 0,
  insecure boolean NOT NULL DEFAULT false,
