@@ -79,10 +79,10 @@ func TestUserResettable(t *testing.T) {
 		Username: "jack",
 		Email:    "jack@test.com",
 	}
-	assert.False(isUserResetable(u1))
-	assert.True(isUserResetable(u2))
+	assert.False(isUserResettable(u1))
+	assert.True(isUserResettable(u2))
 	config.InitWithSettings(DBAuthConfig)
-	assert.True(isUserResetable(u1))
+	assert.True(isUserResettable(u1))
 }
 
 func TestRedirectForOIDC(t *testing.T) {
