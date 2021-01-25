@@ -18,7 +18,7 @@ import {
     Output,
     EventEmitter, ViewChild, Input,
 } from "@angular/core";
-import { Retention, Rule, RuleMetadate } from "../retention";
+import { Retention, Rule, RuleMetadata } from "../retention";
 import { TagRetentionService } from "../tag-retention.service";
 import { InlineAlertComponent } from "../../../../shared/inline-alert/inline-alert.component";
 import { compareValue } from "../../../../../lib/utils/utils";
@@ -36,7 +36,7 @@ export class AddRuleComponent implements OnInit, OnDestroy {
     addRuleOpened: boolean = false;
     @Output() clickAdd = new EventEmitter<Rule>();
     @Input() retention: Retention;
-    metadata: RuleMetadate = new RuleMetadate();
+    metadata: RuleMetadata = new RuleMetadata();
     rule: Rule = new Rule();
     isAdd: boolean = true;
     editRuleOrigin: Rule;

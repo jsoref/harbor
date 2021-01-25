@@ -7,11 +7,11 @@ class Retention(base.Base):
     def __init__(self):
         super(Retention,self).__init__(api_type="retention")
 
-    def get_metadatas(self, expect_status_code = 200, **kwargs):
+    def get_metadata(self, expect_status_code = 200, **kwargs):
         client = self._get_client(**kwargs)
-        metadatas, status_code, _ = client.get_retention_metadata_with_http_info()
+        metadata, status_code, _ = client.get_retention_metadata_with_http_info()
         base._assert_status_code(expect_status_code, status_code)
-        return metadatas
+        return metadata
 
     def create_retention_policy(self, project_id, selector_repository="**", selector_tag="**", expect_status_code = 201, **kwargs):
         policy=swagger_client.RetentionPolicy(
@@ -179,7 +179,7 @@ class Retention(base.Base):
         base._assert_status_code(expect_status_code, status_code)
         return r
 
-    def get_retention_metadatas(self, expect_status_code = 200, **kwargs):
+    def get_retention_metadata(self, expect_status_code = 200, **kwargs):
         client = self._get_client(**kwargs)
 
         r, status_code, _ = client.get_retention_metadata_with_http_info()

@@ -30,16 +30,16 @@ var (
 
 // Manager defines the operations that a project metadata manager should implement
 type Manager interface {
-	// Add metadatas for project specified by projectID
+	// Add metadata for project specified by projectID
 	Add(ctx context.Context, projectID int64, meta map[string]string) error
 
-	// Delete metadatas whose keys are specified in parameter meta, if it is absent, delete all
+	// Delete metadata whose keys are specified in parameter meta, if it is absent, delete all
 	Delete(ctx context.Context, projectID int64, meta ...string) error
 
-	// Update metadatas
+	// Update metadata
 	Update(ctx context.Context, projectID int64, meta map[string]string) error
 
-	// Get metadatas whose keys are specified in parameter meta, if it is absent, get all
+	// Get metadata whose keys are specified in parameter meta, if it is absent, get all
 	Get(ctx context.Context, projectID int64, meta ...string) (map[string]string, error)
 
 	// List metadata according to the name and value
@@ -55,7 +55,7 @@ type manager struct {
 	dao dao.DAO
 }
 
-// Add metadatas for project specified by projectID
+// Add metadata for project specified by projectID
 func (m *manager) Add(ctx context.Context, projectID int64, meta map[string]string) error {
 	h := func(ctx context.Context) error {
 		for name, value := range meta {
@@ -68,12 +68,12 @@ func (m *manager) Add(ctx context.Context, projectID int64, meta map[string]stri
 	return orm.WithTransaction(h)(ctx)
 }
 
-// Delete metadatas whose keys are specified in parameter meta, if it is absent, delete all
+// Delete metadata whose keys are specified in parameter meta, if it is absent, delete all
 func (m *manager) Delete(ctx context.Context, projectID int64, meta ...string) error {
 	return m.dao.Delete(ctx, makeQuery(projectID, meta...))
 }
 
-// Update metadatas
+// Update metadata
 func (m *manager) Update(ctx context.Context, projectID int64, meta map[string]string) error {
 	if len(meta) == 0 {
 		return nil
@@ -92,7 +92,7 @@ func (m *manager) Update(ctx context.Context, projectID int64, meta map[string]s
 	return orm.WithTransaction(h)(ctx)
 }
 
-// Get metadatas whose keys are specified in parameter meta, if it is absent, get all
+// Get metadata whose keys are specified in parameter meta, if it is absent, get all
 func (m *manager) Get(ctx context.Context, projectID int64, meta ...string) (map[string]string, error) {
 	mds, err := m.dao.List(ctx, makeQuery(projectID, meta...))
 	if err != nil {

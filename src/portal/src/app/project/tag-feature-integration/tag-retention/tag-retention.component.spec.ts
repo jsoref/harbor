@@ -11,7 +11,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ActivatedRoute } from '@angular/router';
 import { AddRuleComponent } from "./add-rule/add-rule.component";
 import { TagRetentionService } from "./tag-retention.service";
-import { RuleMetadate, Retention } from './retention';
+import { RuleMetadata, Retention } from './retention';
 import { delay } from 'rxjs/operators';
 import { ErrorHandler } from "../../../../lib/utils/error-handler";
 
@@ -36,7 +36,7 @@ describe('TagRetentionComponent', () => {
                 retention_id: 1
             }
         }).pipe(delay(0)),
-        getRetentionMetadata: () => of(new RuleMetadate()).pipe(delay(0)),
+        getRetentionMetadata: () => of(new RuleMetadata()).pipe(delay(0)),
         getRetention: () => of(new Retention()).pipe(delay(0)),
     };
     const mockActivatedRoute = {

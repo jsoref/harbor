@@ -34,7 +34,7 @@ func AddProjectMetadata(meta *models.ProjectMetadata) error {
 }
 
 // DeleteProjectMetadata deleted metadata of a project. If name is absent
-// all metadatas will be deleted, otherwise only the metadatas specified
+// all metadata will be deleted, otherwise only the metadata specified
 // by name will be deleted
 func DeleteProjectMetadata(projectID int64, name ...string) error {
 	params := make([]interface{}, 1)
@@ -62,7 +62,7 @@ func UpdateProjectMetadata(meta *models.ProjectMetadata) error {
 }
 
 // GetProjectMetadata returns the metadata of a project. If name is absent
-// all metadatas will be returned, otherwise only the metadatas specified
+// all metadata will be returned, otherwise only the metadata specified
 // by name will be returned
 func GetProjectMetadata(projectID int64, name ...string) ([]*models.ProjectMetadata, error) {
 	proMetas := []*models.ProjectMetadata{}
@@ -95,7 +95,7 @@ func ParamPlaceholderForIn(n int) string {
 func ListProjectMetadata(name, value string) ([]*models.ProjectMetadata, error) {
 	sql := `select * from project_metadata 
 				where name = ? and value = ? `
-	metadatas := []*models.ProjectMetadata{}
-	_, err := GetOrmer().Raw(sql, name, value).QueryRows(&metadatas)
-	return metadatas, err
+	metadata := []*models.ProjectMetadata{}
+	_, err := GetOrmer().Raw(sql, name, value).QueryRows(&metadata)
+	return metadata, err
 }

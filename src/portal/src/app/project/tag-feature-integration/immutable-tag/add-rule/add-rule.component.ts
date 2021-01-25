@@ -5,7 +5,7 @@ import {
     Output,
     EventEmitter, ViewChild, Input,
 } from "@angular/core";
-import { ImmutableRetentionRule, RuleMetadate } from "../../tag-retention/retention";
+import { ImmutableRetentionRule, RuleMetadata } from "../../tag-retention/retention";
 import { ImmutableTagService } from "../immutable-tag.service";
 import { compareValue } from "../../../../../lib/utils/utils";
 import { InlineAlertComponent } from "../../../../shared/inline-alert/inline-alert.component";
@@ -22,7 +22,7 @@ export class AddRuleComponent implements OnInit, OnDestroy {
     @Output() clickAdd = new EventEmitter<ImmutableRetentionRule>();
     @Input() rules: ImmutableRetentionRule[];
     @Input() projectId: number;
-    metadata: RuleMetadate = new RuleMetadate();
+    metadata: RuleMetadata = new RuleMetadata();
     rule: ImmutableRetentionRule = new ImmutableRetentionRule(this.projectId);
     isAdd: boolean = true;
     editRuleOrigin: ImmutableRetentionRule;
