@@ -50,7 +50,7 @@ func GetInternalCertPair() (tls.Certificate, error) {
 
 // GetInternalTLSConfig return a tls.Config for internal https communicate
 func GetInternalTLSConfig() (*tls.Config, error) {
-	// genrate key pair
+	// generate key pair
 	cert, err := GetInternalCertPair()
 	if err != nil {
 		return nil, fmt.Errorf("internal TLS enabled but can't get cert file %w", err)
