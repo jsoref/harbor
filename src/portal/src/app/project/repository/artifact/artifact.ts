@@ -9,7 +9,7 @@ export interface ArtifactFront extends Artifact {
     tagNumber?: number;
 }
 
-export const mutipleFilter = [
+export const multipleFilter = [
     {
       filterBy: 'type',
       filterByShowText: 'Type',
