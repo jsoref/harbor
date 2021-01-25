@@ -138,8 +138,8 @@ export class ProjectPolicyConfigComponent implements OnInit {
 
     private getPermission(): void {
         this.userPermission.getPermission(this.projectId,
-            USERSTATICPERMISSION.CONFIGURATION.KEY, USERSTATICPERMISSION.CONFIGURATION.VALUE.UPDATE).subscribe(permissins => {
-            this.hasChangeConfigRole = permissins as boolean;
+            USERSTATICPERMISSION.CONFIGURATION.KEY, USERSTATICPERMISSION.CONFIGURATION.VALUE.UPDATE).subscribe(permissions => {
+            this.hasChangeConfigRole = permissions as boolean;
         });
     }
 
