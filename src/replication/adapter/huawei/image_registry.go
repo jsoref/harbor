@@ -258,7 +258,7 @@ type hwDescriptor struct {
 	// URLs contains the source URLs of this content.
 	URLs []string `json:"urls,omitempty"`
 
-	// depandence
+	// dependence
 	Dependence string `json:"dependence,omitempty"`
 }
 
