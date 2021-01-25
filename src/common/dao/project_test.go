@@ -111,7 +111,7 @@ func Test_projectQueryConditions(t *testing.T) {
 	}
 }
 
-func TestProjetExistsByName(t *testing.T) {
+func TestProjectExistsByName(t *testing.T) {
 	name := "project_exist_by_name_test"
 	exist := ProjectExistsByName(name)
 	if exist {

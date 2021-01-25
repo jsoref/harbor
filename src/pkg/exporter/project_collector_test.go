@@ -111,11 +111,11 @@ func tearDownTest(t *testing.T) {
 	dao.GetOrmer().Raw("delete from harbor_user where user_id in (?, ?, ?)", []int{alice.UserID, bob.UserID, eve.UserID}).Exec()
 }
 
-type PorjectCollectorTestSuite struct {
+type ProjectCollectorTestSuite struct {
 	suite.Suite
 }
 
-func (c *PorjectCollectorTestSuite) TestProjectCollector() {
+func (c *ProjectCollectorTestSuite) TestProjectCollector() {
 	pMap := make(map[int64]*projectInfo)
 	updateProjectBasicInfo(pMap)
 	updateProjectMemberInfo(pMap)
@@ -144,8 +144,8 @@ func (c *PorjectCollectorTestSuite) TestProjectCollector() {
 
 }
 
-func TestPorjectCollectorTestSuite(t *testing.T) {
+func TestProjectCollectorTestSuite(t *testing.T) {
 	setupTest(t)
 	defer tearDownTest(t)
-	suite.Run(t, new(PorjectCollectorTestSuite))
+	suite.Run(t, new(ProjectCollectorTestSuite))
 }
