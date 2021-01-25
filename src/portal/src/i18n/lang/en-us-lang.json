@@ -1200,7 +1200,7 @@
     "CONFLICT_ERROR": "We are unable to perform your action because your submission has conflicts.",
     "PRECONDITION_FAILED": "We are unable to perform your action because of a precondition failure.",
     "SERVER_ERROR": "We are unable to perform your action because internal server errors have occurred.",
-    "INCONRRECT_OLD_PWD": "The old password is incorrect.",
+    "INCORRECT_OLD_PWD": "The old password is incorrect.",
     "UNKNOWN": "n/a",
     "STATUS": "Status",
     "START_TIME": "Start Time",

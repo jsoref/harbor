@@ -180,7 +180,7 @@ export class PasswordSettingComponent implements AfterViewChecked {
                     // Special case for 400
                     let msg = '' + error.error;
                     if (msg && msg.includes('old_password_is_not_correct')) {
-                        this.inlineAlert.showInlineError("INCONRRECT_OLD_PWD");
+                        this.inlineAlert.showInlineError("INCORRECT_OLD_PWD");
                     } else {
                         this.inlineAlert.showInlineError(error);
                     }
