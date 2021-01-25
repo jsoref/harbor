@@ -67,7 +67,7 @@ var defaultConfig = map[string]interface{}{
 	common.RobotNamePrefix:            "robot$",
 }
 
-// GetDefaultConfigMap returns the defailt config map for easier modification.
+// GetDefaultConfigMap returns the default config map for easier modification.
 func GetDefaultConfigMap() map[string]interface{} {
 	return defaultConfig
 }
