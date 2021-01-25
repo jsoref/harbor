@@ -651,13 +651,13 @@ Test Case - Push Helm Chart and Display
     ${d}=    Get Current Date    result_format=%m%s
     ${chart_file}=  Set Variable  https://storage.googleapis.com/harbor-builds/helm-chart-test-files/harbor-0.2.0.tgz
     ${archive}=  Set Variable  harbor/
-    ${verion}=  Set Variable  0.2.0
+    ${version}=  Set Variable  0.2.0
     ${repo_name}=  Set Variable  harbor_chart_test
 
     Sign In Harbor  ${HARBOR_URL}  user010  Test1@34
     Create An New Project And Go Into Project  test${d}
 
-    Helm Chart Push  ${ip}  user010  Test1@34  ${chart_file}  ${archive}  test${d}  ${repo_name}  ${verion}
+    Helm Chart Push  ${ip}  user010  Test1@34  ${chart_file}  ${archive}  test${d}  ${repo_name}  ${version}
 
     Go Into Project  test${d}
     Wait Until Page Contains  test${d}/${repo_name}

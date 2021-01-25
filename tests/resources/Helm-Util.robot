@@ -35,7 +35,7 @@ Helm Repo Push
     Wait Until Command Success  ${helm_cmd} push --ca-file=/ca/server.crt --username=${user} --password=${pwd} ${chart_filename} ${helm_repo_name}
 
 Helm Chart Push
-    [Arguments]  ${ip}  ${user}  ${pwd}  ${chart_file}  ${archive}  ${project}  ${repo_name}  ${verion}
-    ${rc}  ${output}=  Run And Return Rc And Output  ./tests/robot-cases/Group0-Util/helm_push_chart.sh ${ip} ${user} ${pwd} ${chart_file} ${archive} ${project} ${repo_name} ${verion}
+    [Arguments]  ${ip}  ${user}  ${pwd}  ${chart_file}  ${archive}  ${project}  ${repo_name}  ${version}
+    ${rc}  ${output}=  Run And Return Rc And Output  ./tests/robot-cases/Group0-Util/helm_push_chart.sh ${ip} ${user} ${pwd} ${chart_file} ${archive} ${project} ${repo_name} ${version}
     Log  ${output}
     Should Be Equal As Integers  ${rc}  0
