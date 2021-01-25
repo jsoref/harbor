@@ -23,7 +23,7 @@ Default Tags  BAT
 ${HARBOR_URL}  https://${ip}
 
 *** Test Cases ***
-Test Case - Registry Basic Verfication
+Test Case - Registry Basic Verification
     Init Chrome Driver
     ${d}=   Get Current Date    result_format=%m%s
 
@@ -35,7 +35,7 @@ Test Case - Registry Basic Verfication
 
     Close Browser
 
-Test Case - Notary Basic Verfication
+Test Case - Notary Basic Verification
     Enable Notary Client
 
     ${rc}  ${output}=  Run And Return Rc And Output  docker pull hello-world:latest
@@ -51,7 +51,7 @@ Test Case - Notary Basic Verfication
     Should Be Equal As Integers  ${rc}  0
     #Should Contain  ${output}  sha256
 
-Test Case - Ldap Basic Verfication
+Test Case - Ldap Basic Verification
     Switch To LDAP
     Init Chrome Driver
     Sign In Harbor  ${HARBOR_URL}  %{HARBOR_ADMIN}  %{HARBOR_PASSWORD}
