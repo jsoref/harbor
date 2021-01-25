@@ -115,11 +115,11 @@ var (
 			{Resource: rbac.ResourceArtifactLabel, Action: rbac.ActionCreate},
 			{Resource: rbac.ResourceArtifactLabel, Action: rbac.ActionDelete},
 
-			{Resource: rbac.ResourcePreatPolicy, Action: rbac.ActionCreate},
-			{Resource: rbac.ResourcePreatPolicy, Action: rbac.ActionRead},
-			{Resource: rbac.ResourcePreatPolicy, Action: rbac.ActionUpdate},
-			{Resource: rbac.ResourcePreatPolicy, Action: rbac.ActionDelete},
-			{Resource: rbac.ResourcePreatPolicy, Action: rbac.ActionList},
+			{Resource: rbac.ResourcePreheatPolicy, Action: rbac.ActionCreate},
+			{Resource: rbac.ResourcePreheatPolicy, Action: rbac.ActionRead},
+			{Resource: rbac.ResourcePreheatPolicy, Action: rbac.ActionUpdate},
+			{Resource: rbac.ResourcePreheatPolicy, Action: rbac.ActionDelete},
+			{Resource: rbac.ResourcePreheatPolicy, Action: rbac.ActionList},
 		},
 
 		"maintainer": {
