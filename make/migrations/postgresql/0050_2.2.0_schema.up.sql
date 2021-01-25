@@ -475,7 +475,7 @@ END $$;
 
 /*
 Common vulnerability reporting schema.
-Github proposal link : https://github.com/goharbor/community/pull/145
+GitHub proposal link : https://github.com/goharbor/community/pull/145
 */
 
 /*

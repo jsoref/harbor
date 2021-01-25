@@ -28,7 +28,7 @@ const ADAPTERS_MAP = {
   "quay": "Quay",
   "dtr": "DTR",
   "tencent-tcr": "Tencent TCR",
-  "github-ghcr": "Github GHCR"
+  "github-ghcr": "GitHub GHCR"
 };
 
 export const HELM_HUB: string = "helm-hub";
