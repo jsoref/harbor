@@ -179,9 +179,9 @@ func GetUIAuthSecret() string {
 
 // Load env variables
 func (c *Configuration) loadEnvs() {
-	prot := utils.ReadEnv(jobServiceProtocol)
-	if !utils.IsEmptyStr(prot) {
-		c.Protocol = prot
+	protocol := utils.ReadEnv(jobServiceProtocol)
+	if !utils.IsEmptyStr(protocol) {
+		c.Protocol = protocol
 	}
 
 	p := utils.ReadEnv(jobServicePort)

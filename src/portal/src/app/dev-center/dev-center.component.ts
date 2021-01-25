@@ -42,8 +42,8 @@ export class DevCenterComponent extends DevCenterBase implements AfterViewInit, 
         const json: object = {};
         mergeDeep(json, jsonArr[0], jsonArr[1]);
         json['host'] = window.location.host;
-        const protocal = window.location.protocol;
-        json['schemes'] = [protocal.replace(":", "")];
+        const protocol = window.location.protocol;
+        json['schemes'] = [protocol.replace(":", "")];
         this.ui = SwaggerUI({
           spec: json,
           domNode: this.el.nativeElement.querySelector('.swagger-container'),
