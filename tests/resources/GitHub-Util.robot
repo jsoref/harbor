@@ -13,10 +13,10 @@
 # limitations under the License
 
 *** Settings ***
-Documentation  This resource provides keywords to interact with Github
+Documentation  This resource provides keywords to interact with GitHub
 
 *** Keywords ***
-Get State Of Github Issue
+Get State Of GitHub Issue
     [Arguments]  ${num}
     [Tags]  secret
     FOR  ${idx}  IN RANGE  0  5

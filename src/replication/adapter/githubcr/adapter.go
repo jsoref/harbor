@@ -22,11 +22,11 @@ import (
 // - NOT support DELETE manifest.
 
 func init() {
-	if err := adp.RegisterFactory(model.RegistryTypeGithubCR, new(factory)); err != nil {
-		log.Errorf("failed to register factory for %s: %v", model.RegistryTypeGithubCR, err)
+	if err := adp.RegisterFactory(model.RegistryTypeGitHubCR, new(factory)); err != nil {
+		log.Errorf("failed to register factory for %s: %v", model.RegistryTypeGitHubCR, err)
 		return
 	}
-	log.Infof("the factory for adapter %s registered", model.RegistryTypeGithubCR)
+	log.Infof("the factory for adapter %s registered", model.RegistryTypeGitHubCR)
 }
 
 type factory struct{}
@@ -94,7 +94,7 @@ func newAdapter(registry *model.Registry) *adapter {
 // Info ...
 func (a *adapter) Info() (info *model.RegistryInfo, err error) {
 	info = &model.RegistryInfo{
-		Type: model.RegistryTypeGithubCR,
+		Type: model.RegistryTypeGitHubCR,
 		SupportedResourceTypes: []model.ResourceType{
 			model.ResourceTypeImage,
 		},
