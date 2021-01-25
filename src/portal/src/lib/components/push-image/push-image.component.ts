@@ -14,7 +14,7 @@ export class PushImageButtonComponent {
   @Input() projectName: string = "unknown";
 
   @ViewChild("tagCopyImage") tagCopyImageInput: CopyInputComponent;
-  @ViewChild("pushCopyImage") pushCopImageyInput: CopyInputComponent;
+  @ViewChild("pushCopyImage") pushCopyImageInput: CopyInputComponent;
   @ViewChild("tagCopyChart") tagCopyChartInput: CopyInputComponent;
   @ViewChild("pushCopyChart") pushCopyChartInput: CopyInputComponent;
   @ViewChild("pushCopyCnab") pushCopCnabyInput: CopyInputComponent;
@@ -48,8 +48,8 @@ export class PushImageButtonComponent {
       this.tagCopyImageInput.reset();
     }
 
-    if (this.pushCopImageyInput) {
-      this.pushCopImageyInput.reset();
+    if (this.pushCopyImageInput) {
+      this.pushCopyImageInput.reset();
     }
     if (this.tagCopyChartInput) {
       this.tagCopyChartInput.reset();
