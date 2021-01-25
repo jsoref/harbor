@@ -10,7 +10,7 @@ class MigrationVersion:
     '''
     The version used to migration
 
-    Arttribute:
+    Attribute:
         name(str): version name like `1.0.0`
         module: the python module object for a specific migration which contains migrate info, codes and templates
         down_versions(list): previous versions that can migrated to this version
