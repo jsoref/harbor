@@ -243,7 +243,7 @@ export class MemberComponent implements OnInit, OnDestroy {
         ConfirmationTargets.PROJECT_MEMBER,
         ConfirmationButtons.DELETE_CANCEL
       );
-      this.OperateDialogService.openComfirmDialog(deletionMessage);
+      this.OperateDialogService.openConfirmDialog(deletionMessage);
     }
   }
 

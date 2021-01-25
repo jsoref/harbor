@@ -36,7 +36,7 @@ export class ConfirmationDialogService {
     }
 
     // Open the confirmation dialog
-    public openComfirmDialog(message: ConfirmationMessage): void {
+    public openConfirmDialog(message: ConfirmationMessage): void {
         this.confirmationAnnouncedSource.next(message);
     }
 }

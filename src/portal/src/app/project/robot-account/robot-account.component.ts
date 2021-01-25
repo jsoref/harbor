@@ -244,7 +244,7 @@ export class RobotAccountComponent implements OnInit, OnDestroy {
         ConfirmationTargets.PROJECT_ROBOT_ACCOUNT,
         ConfirmationButtons.DELETE_CANCEL
     );
-    this.operateDialogService.openComfirmDialog(deletionMessage);
+    this.operateDialogService.openConfirmDialog(deletionMessage);
   }
 
   disableOrEnable() {
@@ -258,7 +258,7 @@ export class RobotAccountComponent implements OnInit, OnDestroy {
         ConfirmationTargets.PROJECT_ROBOT_ACCOUNT_ENABLE_OR_DISABLE,
         this.selectedRows[0].disable ? ConfirmationButtons.ENABLE_CANCEL : ConfirmationButtons.DISABLE_CANCEL
     );
-    this.operateDialogService.openComfirmDialog(deletionMessage);
+    this.operateDialogService.openConfirmDialog(deletionMessage);
   }
 
   operateRobot() {

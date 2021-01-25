@@ -198,7 +198,7 @@ export class ListProjectComponent implements OnDestroy {
                 ConfirmationTargets.PROJECT,
                 ConfirmationButtons.DELETE_CANCEL
                 );
-                this.deletionDialogService.openComfirmDialog(deletionMessage);
+                this.deletionDialogService.openConfirmDialog(deletionMessage);
         }
     }
     delProjects(projects: Project[]) {
