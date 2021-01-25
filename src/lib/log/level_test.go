@@ -55,6 +55,6 @@ func TestParseLevel(t *testing.T) {
 	}
 
 	if _, err := parseLevel("UNKNOWN"); err == nil {
-		t.Errorf("unexpected behaviour: should be error here")
+		t.Errorf("unexpected behavior: should be error here")
 	}
 }
