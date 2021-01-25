@@ -196,12 +196,12 @@ Verify Tag Retention Rule
         Go Into Project  ${project}  has_image=${has_image}
         Switch To Tag Retention
         ${actions_count}=  Set Variable  8
-        ${repository_patten}=  Get Value From Json  ${json}  $.projects[?(@.name=${project})].tag_retention_rule.repository_patten
+        ${repository_pattern}=  Get Value From Json  ${json}  $.projects[?(@.name=${project})].tag_retention_rule.repository_pattern
         ${tag_decoration}=  Get Value From Json  ${json}  $.projects[?(@.name=${project})].tag_retention_rule.tag_decoration
         ${latestPushedK}=  Get Value From Json  ${json}  $.projects[?(@.name=${project})].tag_retention_rule.latestPushedK_verify
         ${cron}=  Get Value From Json  ${json}  $.projects[?(@.name=${project})].tag_retention_rule.cron
-        Log To Console  '${repository_patten}[0]'
-        Page Should Contain  ${repository_patten}[0]
+        Log To Console  '${repository_pattern}[0]'
+        Page Should Contain  ${repository_pattern}[0]
         Page Should Contain  ${tag_decoration}[0]
         Page Should Contain  ${latestPushedK}[0]
         Page Should Contain  ${cron}[0]

@@ -398,7 +398,7 @@ class HarborAPI:
                                 {
                                     "kind":"doublestar",
                                     "decoration":"repoMatches",
-                                    "pattern":tag_retention_rule["repository_patten"]
+                                    "pattern":tag_retention_rule["repository_pattern"]
                                 }
                             ]
                         },
