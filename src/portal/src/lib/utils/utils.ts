@@ -537,7 +537,7 @@ export const getByte = (count: number, unit: string): number => {
     }, count);
 };
 /**
- * get integet and unit  in hard storage and used storage;and the unit of used storage <= the unit of hard storage
+ * get integer and unit  in hard storage and used storage;and the unit of used storage <= the unit of hard storage
  * @param hardNumber hard storage number
  * @param quotaUnitsDeep clone(Quotas)
  * @param usedNumber used storage number
