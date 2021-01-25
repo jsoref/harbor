@@ -408,18 +408,18 @@ func OIDCSetting() (*models.OIDCSetting, error) {
 	extEndpoint := strings.TrimSuffix(cfgMgr.Get(common.ExtEndpoint).GetString(), "/")
 	scope := splitAndTrim(scopeStr, ",")
 	return &models.OIDCSetting{
-		Name:               cfgMgr.Get(common.OIDCName).GetString(),
-		Endpoint:           cfgMgr.Get(common.OIDCEndpoint).GetString(),
-		VerifyCert:         cfgMgr.Get(common.OIDCVerifyCert).GetBool(),
-		AutoOnboard:        cfgMgr.Get(common.OIDCAutoOnboard).GetBool(),
-		ClientID:           cfgMgr.Get(common.OIDCClientID).GetString(),
-		ClientSecret:       cfgMgr.Get(common.OIDCClientSecret).GetString(),
-		GroupsClaim:        cfgMgr.Get(common.OIDCGroupsClaim).GetString(),
-		AdminGroup:         cfgMgr.Get(common.OIDCAdminGroup).GetString(),
-		RedirectURL:        extEndpoint + common.OIDCCallbackPath,
-		Scope:              scope,
-		UserClaim:          cfgMgr.Get(common.OIDCUserClaim).GetString(),
-		ExtraRedirectParms: cfgMgr.Get(common.OIDCExtraRedirectParms).GetStringToStringMap(),
+		Name:                cfgMgr.Get(common.OIDCName).GetString(),
+		Endpoint:            cfgMgr.Get(common.OIDCEndpoint).GetString(),
+		VerifyCert:          cfgMgr.Get(common.OIDCVerifyCert).GetBool(),
+		AutoOnboard:         cfgMgr.Get(common.OIDCAutoOnboard).GetBool(),
+		ClientID:            cfgMgr.Get(common.OIDCClientID).GetString(),
+		ClientSecret:        cfgMgr.Get(common.OIDCClientSecret).GetString(),
+		GroupsClaim:         cfgMgr.Get(common.OIDCGroupsClaim).GetString(),
+		AdminGroup:          cfgMgr.Get(common.OIDCAdminGroup).GetString(),
+		RedirectURL:         extEndpoint + common.OIDCCallbackPath,
+		Scope:               scope,
+		UserClaim:           cfgMgr.Get(common.OIDCUserClaim).GetString(),
+		ExtraRedirectParams: cfgMgr.Get(common.OIDCExtraRedirectParams).GetStringToStringMap(),
 	}, nil
 }
 

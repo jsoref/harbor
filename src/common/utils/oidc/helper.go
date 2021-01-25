@@ -163,7 +163,7 @@ func AuthCodeURL(state string) (string, error) {
 	}
 	var options []oauth2.AuthCodeOption
 	setting := provider.setting.Load().(models.OIDCSetting)
-	for k, v := range setting.ExtraRedirectParms {
+	for k, v := range setting.ExtraRedirectParams {
 		options = append(options, oauth2.SetAuthURLParam(k, v))
 	}
 	if strings.HasPrefix(conf.Endpoint.AuthURL, googleEndpoint) { // make sure the refresh token will be returned

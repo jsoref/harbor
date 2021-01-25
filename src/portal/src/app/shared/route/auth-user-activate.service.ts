@@ -22,7 +22,7 @@ import {
 import { SessionService } from '../../shared/session.service';
 import { AdmiralQueryParamKey } from '../../shared/shared.const';
 import { AppConfigService } from '../../services/app-config.service';
-import { maintainUrlQueryParmas } from '../../shared/shared.utils';
+import { maintainUrlQueryParams } from '../../shared/shared.utils';
 import { MessageHandlerService } from '../message-handler/message-handler.service';
 import { SearchTriggerService } from '../../base/global-search/search-trigger.service';
 import { Observable } from "rxjs";
@@ -60,7 +60,7 @@ export class AuthCheckGuard implements CanActivate, CanActivateChild {
         if (queryParams[AdmiralQueryParamKey]) {
           this.appConfigService.saveAdmiralEndpoint(queryParams[AdmiralQueryParamKey]);
           // Remove the query parameter key pair and redirect
-          let keyRemovedUrl = maintainUrlQueryParmas(state.url, AdmiralQueryParamKey, undefined);
+          let keyRemovedUrl = maintainUrlQueryParams(state.url, AdmiralQueryParamKey, undefined);
           if (!/[?]{1}.+/i.test(keyRemovedUrl)) {
             keyRemovedUrl = keyRemovedUrl.replace('?', '');
           }

@@ -108,7 +108,7 @@ const (
 	OIDCAdminGroup                   = "oidc_admin_group"
 	OIDCGroupsClaim                  = "oidc_groups_claim"
 	OIDCAutoOnboard                  = "oidc_auto_onboard"
-	OIDCExtraRedirectParms           = "oidc_extra_redirect_params"
+	OIDCExtraRedirectParams          = "oidc_extra_redirect_params"
 	OIDCScope                        = "oidc_scope"
 	OIDCUserClaim                    = "oidc_user_claim"
 

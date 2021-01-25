@@ -16,7 +16,7 @@ import { HttpClient } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie';
 import { AppConfig } from './app-config';
 import { CookieKeyOfAdmiral, HarborQueryParamKey } from '../shared/shared.const';
-import { maintainUrlQueryParmas } from '../shared/shared.utils';
+import { maintainUrlQueryParams } from '../shared/shared.utils';
 import { map } from "rxjs/operators";
 import { Observable } from "rxjs";
 import { CURRENT_BASE_HREF, HTTP_GET_OPTIONS } from "../../lib/utils/utils";
@@ -82,7 +82,7 @@ export class AppConfigService {
             return "#";
         }
 
-        return maintainUrlQueryParmas(admiralUrl, HarborQueryParamKey, encodeURIComponent(currentHref));
+        return maintainUrlQueryParams(admiralUrl, HarborQueryParamKey, encodeURIComponent(currentHref));
     }
 
     public saveAdmiralEndpoint(endpoint: string): void {

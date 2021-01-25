@@ -91,14 +91,14 @@ func TestHelperGet(t *testing.T) {
 
 func TestAuthCodeURL(t *testing.T) {
 	conf := map[string]interface{}{
-		common.OIDCName:               "test",
-		common.OIDCEndpoint:           "https://accounts.google.com",
-		common.OIDCVerifyCert:         "true",
-		common.OIDCScope:              "openid, profile, offline_access",
-		common.OIDCClientID:           "client",
-		common.OIDCClientSecret:       "secret",
-		common.ExtEndpoint:            "https://harbor.test",
-		common.OIDCExtraRedirectParms: `{"test_key":"test_value"}`,
+		common.OIDCName:                "test",
+		common.OIDCEndpoint:            "https://accounts.google.com",
+		common.OIDCVerifyCert:          "true",
+		common.OIDCScope:               "openid, profile, offline_access",
+		common.OIDCClientID:            "client",
+		common.OIDCClientSecret:        "secret",
+		common.ExtEndpoint:             "https://harbor.test",
+		common.OIDCExtraRedirectParams: `{"test_key":"test_value"}`,
 	}
 	config.GetCfgManager().UpdateConfig(conf)
 	res, err := AuthCodeURL("random")
