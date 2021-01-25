@@ -56,7 +56,7 @@ import { operateChanges, OperateInfo, OperationState } from "../../../../../../l
 import { errorHandler } from "../../../../../../lib/utils/shared/shared.utils";
 import {
   ArtifactFront as Artifact,
-  mutipleFilter,
+  multipleFilter,
   artifactPullCommands,
   artifactDefault, ArtifactFront
 } from '../../../artifact/artifact';
@@ -160,8 +160,8 @@ export class ArtifactListTabComponent implements OnInit, OnDestroy {
   triggerSub: Subscription;
   labelNameFilterSub: Subscription;
   stickLabelNameFilterSub: Subscription;
-  mutipleFilter = clone(mutipleFilter);
-  filterByType: string = this.mutipleFilter[0].filterBy;
+  multipleFilter = clone(multipleFilter);
+  filterByType: string = this.multipleFilter[0].filterBy;
   openSelectFilterPiece = false;
   // could Pagination filter
   filters: string[];
