@@ -719,11 +719,11 @@ Test Case - Proxy Cache
     Cannot Push image  ${ip}  ${test_user}  ${test_pwd}  project${d}  busybox:latest  err_msg=can not push artifact to a proxy project
     Pull Image  ${ip}  ${HARBOR_ADMIN}  ${HARBOR_PASSWORD}  project${d}  ${user_namespace}/${image}  tag=${tag}
     Pull Image  ${ip}  ${test_user}  ${test_pwd}  project${d}  ${user_namespace}/${manifest_index}  tag=${manifest_tag}
-    Log To Console  Start to Sleep 3 minitues......
+    Log To Console  Start to Sleep 3 minutes......
     Sleep  180
     Go Into Project  project${d}
     Go Into Repo  project${d}/${user_namespace}/${image}
-    Log To Console  Start to Sleep 10 minitues......
+    Log To Console  Start to Sleep 10 minutes......
     Sleep  500
     Go Into Project  project${d}
     Go Into Repo  project${d}/${user_namespace}/${manifest_index}
