@@ -2193,7 +2193,7 @@ paths:
   '/projects/{project_id}/webhook/events':
     get:
       summary: Get supported event types and notify types.
-      description: Get supportted event types and notify types.
+      description: Get supported event types and notify types.
       tags:
         - Products
       parameters:
@@ -4171,7 +4171,7 @@ definitions:
 
   SupportedWebhookEventTypes:
     type: object
-    description: Supportted webhook event types and notify types.
+    description: Supported webhook event types and notify types.
     properties:
       event_type:
         type: array
@@ -4183,11 +4183,11 @@ definitions:
           $ref: '#/definitions/NotifyType'
   EventType:
     type: string
-    description: Webhook supportted event type.
+    description: Webhook supported event type.
     example: 'pullImage'
   NotifyType:
     type: string
-    description: Webhook supportted notify type.
+    description: Webhook supported notify type.
     example: 'http'
   ImmutableRule:
     type: object
