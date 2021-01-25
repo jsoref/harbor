@@ -317,7 +317,7 @@ func TestResetUserPassword(t *testing.T) {
 	}
 
 	if loginedUser.Username != username {
-		t.Errorf("The username returned by Login does not match, expected: %s, acutal: %s", username, loginedUser.Username)
+		t.Errorf("The username returned by Login does not match, expected: %s, actual: %s", username, loginedUser.Username)
 	}
 }
 
@@ -344,7 +344,7 @@ func TestChangeUserPassword(t *testing.T) {
 	}
 
 	if loginedUser.Username != username {
-		t.Errorf("The username returned by Login does not match, expected: %s, acutal: %s", username, loginedUser.Username)
+		t.Errorf("The username returned by Login does not match, expected: %s, actual: %s", username, loginedUser.Username)
 	}
 }
 func TestAddProject(t *testing.T) {
@@ -487,13 +487,13 @@ func TestChangeUserProfile(t *testing.T) {
 	}
 	if loginedUser != nil {
 		if loginedUser.Email != username+"@163.com" {
-			t.Errorf("user email does not update, expected: %s, acutal: %s", username+"@163.com", loginedUser.Email)
+			t.Errorf("user email does not update, expected: %s, actual: %s", username+"@163.com", loginedUser.Email)
 		}
 		if loginedUser.Realname != "test" {
-			t.Errorf("user realname does not update, expected: %s, acutal: %s", "test", loginedUser.Realname)
+			t.Errorf("user realname does not update, expected: %s, actual: %s", "test", loginedUser.Realname)
 		}
 		if loginedUser.Comment != "Unit Test" {
-			t.Errorf("user email does not update, expected: %s, acutal: %s", "Unit Test", loginedUser.Comment)
+			t.Errorf("user email does not update, expected: %s, actual: %s", "Unit Test", loginedUser.Comment)
 		}
 	}
 }
