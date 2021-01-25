@@ -526,18 +526,18 @@ Verify P2P Preheat Policy
     Navigate To Projects
     @{project}=  Get Value From Json  ${json}  $.projects.[*].name
     FOR    ${project}    IN    @{project}
-        @{p2p_preheat_policys}=  Get Value From Json  ${json}  $.projects[?(@.name=${project})].p2p_preheat_policy
+        @{p2p_preheat_policies}=  Get Value From Json  ${json}  $.projects[?(@.name=${project})].p2p_preheat_policy
         @{policy_names}=  Get Value From Json  ${json}  $.projects[?(@.name=${project})].p2p_preheat_policy..name
         @{out_has_image}=  Get Value From Json  ${json}  $.projects[?(@.name=${project})].has_image
         ${has_image}  Set Variable If  ${out_has_image}[0] == ${true}  ${true}  ${false}
-        Run Keyword If  ${p2p_preheat_policys}[0] == ${null}  Continue For Loop
+        Run Keyword If  ${p2p_preheat_policies}[0] == ${null}  Continue For Loop
         Go Into Project  ${project}  has_image=${has_image}
         Switch To P2P Preheat
-        Loop P2P Preheat Policys  ${json}  ${project}  @{policy_names}
+        Loop P2P Preheat Policies  ${json}  ${project}  @{policy_names}
     END
     Close Browser
 
-Loop P2P Preheat Policys
+Loop P2P Preheat Policies
     [Arguments]  ${json}  ${project}  @{policy_names}
     FOR    ${policy}    IN    @{policy_names}
         ${provider_name}=  Get Value From Json  ${json}  $.projects[?(@.name=${project})].p2p_preheat_policy[?(@.name=${policy})].provider_name
