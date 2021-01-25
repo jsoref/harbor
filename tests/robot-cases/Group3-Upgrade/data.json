@@ -363,7 +363,7 @@
          "tag_immutability_rule":{
             "repo_decoration":"repoExcludes",
             "tag_decoration":"matches",
-            "repo_pattern":"*buxybox*",
+            "repo_pattern":"*busybox*",
             "tag_pattern":"*v3*"
          },
          "webhook":{
