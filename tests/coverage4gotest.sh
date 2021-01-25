@@ -6,7 +6,7 @@ deps=""
 
 # listDeps lists packages referenced by package in $1, 
 # excluding golang standard library and packages in 
-# direcotry vendor
+# directory vendor
 function listDeps(){
 	pkg=$1
 	deps=$pkg
