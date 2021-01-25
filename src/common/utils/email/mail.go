@@ -71,7 +71,7 @@ func Send(addr, identity, username, password string,
 
 // Ping tests the connection and authentication with email server
 // If tls is true, a secure connection is established, or Ping
-// tries to upgrate the insecure connection to a secure one if
+// tries to upgrade the insecure connection to a secure one if
 // email server supports it.
 // Ping doesn't verify the server's certificate and hostname when
 // needed if the parameter insecure is true
