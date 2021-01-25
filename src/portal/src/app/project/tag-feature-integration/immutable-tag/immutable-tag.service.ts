@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { ImmutableRetentionRule, RuleMetadate } from "../tag-retention/retention";
+import { ImmutableRetentionRule, RuleMetadata } from "../tag-retention/retention";
 import { Observable, throwError as observableThrowError } from "rxjs";
 import { map, catchError } from "rxjs/operators";
 import { Project } from "../../project";
@@ -32,9 +32,9 @@ export class ImmutableTagService {
         return str;
     }
 
-    getRetentionMetadata(): Observable<RuleMetadate> {
-        return this.http.get(`${ CURRENT_BASE_HREF }/retentions/metadatas`)
-            .pipe(map(response => response as RuleMetadate))
+    getRetentionMetadata(): Observable<RuleMetadata> {
+        return this.http.get(`${ CURRENT_BASE_HREF }/retentions/metadata`)
+            .pipe(map(response => response as RuleMetadata))
             .pipe(catchError(error => observableThrowError(error)));
     }
 

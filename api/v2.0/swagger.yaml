@@ -2343,16 +2343,16 @@ paths:
           description: The API server is alive
           schema:
             type: string
-  /retentions/metadatas:
+  /retentions/metadata:
     get:
-      summary: Get Retention Metadatas
-      description: Get Retention Metadatas.
+      summary: Get Retention Metadata
+      description: Get Retention Metadata.
       operationId: getRentenitionMetadata
       tags:
         - Retention
       responses:
         '200':
-          description: Get Retention Metadatas successfully.
+          description: Get Retention Metadata successfully.
           schema:
             $ref: '#/definitions/RetentionMetadata'
 
@@ -2361,8 +2361,8 @@ paths:
       summary: Create Retention Policy
       operationId: createRetention
       description: >-
-        Create Retention Policy, you can reference metadatas API for the policy model.
-        You can check project metadatas to find whether a retention policy is already bound.
+        Create Retention Policy, you can reference metadata API for the policy model.
+        You can check project metadata to find whether a retention policy is already bound.
         This method should only be called when no retention policy bound to project yet.
       tags:
         - Retention
@@ -2414,8 +2414,8 @@ paths:
       summary: Update Retention Policy
       operationId: updateRetention
       description: >-
-        Update Retention Policy, you can reference metadatas API for the policy model.
-        You can check project metadatas to find whether a retention policy is already bound.
+        Update Retention Policy, you can reference metadata API for the policy model.
+        You can check project metadata to find whether a retention policy is already bound.
         This method should only be called when retention policy has already bound to project.
       tags:
         - Retention

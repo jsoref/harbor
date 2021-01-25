@@ -53,7 +53,7 @@ paths:
               $ref: '#/definitions/Search'
         '500':
           description: Unexpected internal errors.
-  '/projects/{project_id}/metadatas':
+  '/projects/{project_id}/metadata':
     get:
       summary: Get project metadata.
       description: |
@@ -110,7 +110,7 @@ paths:
           $ref: '#/responses/UnsupportedMediaType'
         '500':
           description: Internal server errors.
-  '/projects/{project_id}/metadatas/{meta_name}':
+  '/projects/{project_id}/metadata/{meta_name}':
     get:
       summary: Get project metadata
       description: |
@@ -124,7 +124,7 @@ paths:
           format: int64
         - name: meta_name
           in: path
-          description: The name of metadat.
+          description: The name of metadata.
           required: true
           type: string
       tags:
@@ -151,7 +151,7 @@ paths:
           description: The ID of project.
         - name: meta_name
           in: path
-          description: The name of metadat.
+          description: The name of metadata.
           required: true
           type: string
       tags:
@@ -182,7 +182,7 @@ paths:
           format: int64
         - name: meta_name
           in: path
-          description: The name of metadat.
+          description: The name of metadata.
           required: true
           type: string
       tags:

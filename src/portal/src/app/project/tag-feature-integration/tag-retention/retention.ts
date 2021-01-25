@@ -120,16 +120,16 @@ export class Template {
     params: Array<Param>;
 }
 
-export class SelectorRuleMetadate {
+export class SelectorRuleMetadata {
     display_text: string;
     kind: string;
     decorations: Array<string>;
 }
 
-export class RuleMetadate {
+export class RuleMetadata {
     templates: Array<Template>;
-    scope_selectors: Array<SelectorRuleMetadate>;
-    tag_selectors: Array<SelectorRuleMetadate>;
+    scope_selectors: Array<SelectorRuleMetadata>;
+    tag_selectors: Array<SelectorRuleMetadata>;
 
     constructor() {
         this.templates = [];

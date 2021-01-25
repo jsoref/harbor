@@ -102,9 +102,9 @@ func init() {
 	beego.Router("/api/users/:id([0-9]+)/password", &UserAPI{}, "put:ChangePassword")
 	beego.Router("/api/users/:id/permissions", &UserAPI{}, "get:ListUserPermissions")
 	beego.Router("/api/users/:id/sysadmin", &UserAPI{}, "put:ToggleUserAdminRole")
-	beego.Router("/api/projects/:id([0-9]+)/metadatas/?:name", &MetadataAPI{}, "get:Get")
-	beego.Router("/api/projects/:id([0-9]+)/metadatas/", &MetadataAPI{}, "post:Post")
-	beego.Router("/api/projects/:id([0-9]+)/metadatas/:name", &MetadataAPI{}, "put:Put;delete:Delete")
+	beego.Router("/api/projects/:id([0-9]+)/metadata/?:name", &MetadataAPI{}, "get:Get")
+	beego.Router("/api/projects/:id([0-9]+)/metadata/", &MetadataAPI{}, "post:Post")
+	beego.Router("/api/projects/:id([0-9]+)/metadata/:name", &MetadataAPI{}, "put:Put;delete:Delete")
 	beego.Router("/api/projects/:pid([0-9]+)/members/?:pmid([0-9]+)", &ProjectMemberAPI{})
 	beego.Router("/api/statistics", &StatisticAPI{})
 	beego.Router("/api/users/?:id", &UserAPI{})
@@ -806,7 +806,7 @@ func (a testapi) PingEmail(authInfo usrInfo, settings []byte) (int, string, erro
 
 func (a testapi) PostMeta(authInfor usrInfo, projectID int64, metas map[string]string) (int, string, error) {
 	_sling := sling.New().Base(a.basePath).
-		Post(fmt.Sprintf("/api/projects/%d/metadatas/", projectID)).
+		Post(fmt.Sprintf("/api/projects/%d/metadata/", projectID)).
 		BodyJSON(metas)
 
 	code, body, err := request(_sling, jsonAcceptHeader, authInfor)
@@ -816,7 +816,7 @@ func (a testapi) PostMeta(authInfor usrInfo, projectID int64, metas map[string]s
 func (a testapi) PutMeta(authInfor usrInfo, projectID int64, name string,
 	metas map[string]string) (int, string, error) {
 	_sling := sling.New().Base(a.basePath).
-		Put(fmt.Sprintf("/api/projects/%d/metadatas/%s", projectID, name)).
+		Put(fmt.Sprintf("/api/projects/%d/metadata/%s", projectID, name)).
 		BodyJSON(metas)
 
 	code, body, err := request(_sling, jsonAcceptHeader, authInfor)
@@ -825,7 +825,7 @@ func (a testapi) PutMeta(authInfor usrInfo, projectID int64, name string,
 
 func (a testapi) GetMeta(authInfor usrInfo, projectID int64, name ...string) (int, map[string]string, error) {
 	_sling := sling.New().Base(a.basePath).
-		Get(fmt.Sprintf("/api/projects/%d/metadatas/", projectID))
+		Get(fmt.Sprintf("/api/projects/%d/metadata/", projectID))
 	if len(name) > 0 {
 		_sling = _sling.Path(name[0])
 	}
@@ -843,7 +843,7 @@ func (a testapi) GetMeta(authInfor usrInfo, projectID int64, name ...string) (in
 
 func (a testapi) DeleteMeta(authInfor usrInfo, projectID int64, name string) (int, string, error) {
 	_sling := sling.New().Base(a.basePath).
-		Delete(fmt.Sprintf("/api/projects/%d/metadatas/%s", projectID, name))
+		Delete(fmt.Sprintf("/api/projects/%d/metadata/%s", projectID, name))
 
 	code, body, err := request(_sling, jsonAcceptHeader, authInfor)
 	return code, string(body), err

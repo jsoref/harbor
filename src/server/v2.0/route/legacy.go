@@ -39,8 +39,8 @@ func registerLegacyRoutes() {
 	beego.Router("/api/"+version+"/email/ping", &api.EmailAPI{}, "post:Ping")
 	beego.Router("/api/"+version+"/health", &api.HealthAPI{}, "get:CheckHealth")
 	beego.Router("/api/"+version+"/search", &api.SearchAPI{})
-	beego.Router("/api/"+version+"/projects/:id([0-9]+)/metadatas/?:name", &api.MetadataAPI{}, "get:Get")
-	beego.Router("/api/"+version+"/projects/:id([0-9]+)/metadatas/", &api.MetadataAPI{}, "post:Post")
+	beego.Router("/api/"+version+"/projects/:id([0-9]+)/metadata/?:name", &api.MetadataAPI{}, "get:Get")
+	beego.Router("/api/"+version+"/projects/:id([0-9]+)/metadata/", &api.MetadataAPI{}, "post:Post")
 
 	beego.Router("/api/"+version+"/quotas", &api.QuotaAPI{}, "get:List")
 	beego.Router("/api/"+version+"/quotas/:id([0-9]+)", &api.QuotaAPI{}, "get:Get;put:Put")
