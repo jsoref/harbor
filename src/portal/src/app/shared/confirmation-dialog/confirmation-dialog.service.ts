@@ -19,10 +19,10 @@ import { ConfirmationAcknowledgement } from './confirmation-state-message';
 
 @Injectable()
 export class ConfirmationDialogService {
-    confirmationAnnoucedSource = new Subject<ConfirmationMessage>();
+    confirmationAnnouncedSource = new Subject<ConfirmationMessage>();
     confirmationConfirmSource = new Subject<ConfirmationAcknowledgement>();
 
-    confirmationAnnouced$ = this.confirmationAnnoucedSource.asObservable();
+    confirmationAnnounced$ = this.confirmationAnnouncedSource.asObservable();
     confirmationConfirm$ = this.confirmationConfirmSource.asObservable();
 
     // User confirm the action
@@ -37,6 +37,6 @@ export class ConfirmationDialogService {
 
     // Open the confirmation dialog
     public openComfirmDialog(message: ConfirmationMessage): void {
-        this.confirmationAnnoucedSource.next(message);
+        this.confirmationAnnouncedSource.next(message);
     }
 }

@@ -60,7 +60,7 @@ describe('AccountSettingsModalComponent', () => {
     let fakeConfirmationDialogService = {
         cancel: () => of(null),
         confirm: () => of(null),
-        confirmationAnnouced$: of(new ConfirmationMessage("null", "null", "null", "null", null, null))
+        confirmationAnnounced$: of(new ConfirmationMessage("null", "null", "null", "null", null, null))
     };
     let fakeRouter = {
         navigate: () => { }
