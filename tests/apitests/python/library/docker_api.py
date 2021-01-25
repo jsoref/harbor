@@ -152,7 +152,7 @@ class DockerAPI(object):
         ret = ""
         try:
             ret = self.DCLIENT.tag(image, harbor_registry, _tag, force=True)
-            print("Docker image tag commond return:", ret)
+            print("Docker image tag command return:", ret)
             return harbor_registry, _tag
         except docker.errors.APIError as err:
             raise Exception(r" Docker tag image {} failed, error is [{}]".format (image, str(err)))
