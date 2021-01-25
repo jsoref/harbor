@@ -46,7 +46,7 @@ func BuildRepositoryFilters(filters []*model.Filter) (RepositoryFilters, error) 
 	return fs, nil
 }
 
-// RepositoryFilter filter repositoreis
+// RepositoryFilter filter repositories
 type RepositoryFilter interface {
 	Filter([]*model.Repository) ([]*model.Repository, error)
 }

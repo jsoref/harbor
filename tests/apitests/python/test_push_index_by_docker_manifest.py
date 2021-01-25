@@ -49,7 +49,7 @@ class TestManifest(unittest.TestCase):
         Test step and expected result:
             1. Create a new user(UA);
             2. Create a new project(PA) by user(UA);
-            3. Create 2 new repositorys(RA,RB) in project(PA) by user(UA);
+            3. Create 2 new repositories(RA,RB) in project(PA) by user(UA);
             4. Push an index(IA) to Harbor by docker manifest CLI successfully;
             5. Get Artifacts successfully;
             6. Get index(IA) by reference successfully;
@@ -84,7 +84,7 @@ class TestManifest(unittest.TestCase):
         #2. Create a new project(PA) by user(UA);
         TestManifest.project_id, TestManifest.project_name = TestManifest.project.create_project(metadata = {"public": "false"}, **TestManifest.USER_CLIENT)
 
-        #3. Create 2 new repositorys(RA,RB) in project(PA) by user(UA);
+        #3. Create 2 new repositories(RA,RB) in project(PA) by user(UA);
         repo_name_a, tag_a = push_self_build_image_to_project(TestManifest.project_name, harbor_server, 'admin', 'Harbor12345', TestManifest.image_a, "latest")
         repo_name_b, tag_b = push_self_build_image_to_project(TestManifest.project_name, harbor_server, 'admin', 'Harbor12345', TestManifest.image_b, "latest")
 

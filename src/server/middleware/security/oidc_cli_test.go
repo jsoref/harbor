@@ -60,7 +60,7 @@ func TestOIDCCliValid(t *testing.T) {
 	req7, _ := http.NewRequest(http.MethodGet, "https://test.goharbor.io/api/v2.0/labels?scope=g", nil)
 	req8, _ := http.NewRequest(http.MethodDelete, "https://test.goharbor.io/api/v2.0/projects/library/repositories/ubuntu/artifacts/sha256:xxxxx/tags/v14.04", nil)
 	req9, _ := http.NewRequest(http.MethodPut, "https://test.goharbor.io/api/v2.0/projects/library/repositories/ubuntu", nil)
-	req10, _ := http.NewRequest(http.MethodGet, "https://test.goharbor.io/api/v2.0/projects/library/repositores/ubuntu/artifacts/sha256:xxxx/tags", nil)
+	req10, _ := http.NewRequest(http.MethodGet, "https://test.goharbor.io/api/v2.0/projects/library/repositories/ubuntu/artifacts/sha256:xxxx/tags", nil)
 	req11, _ := http.NewRequest(http.MethodGet, "https://test.goharbor.io/api/v2.0/projects/library/repositories/ubuntu", nil)
 
 	cases := []struct {
