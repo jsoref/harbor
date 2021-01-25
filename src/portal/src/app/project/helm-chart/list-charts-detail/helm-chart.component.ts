@@ -64,7 +64,7 @@ export class HelmChartComponent implements OnInit {
   provFile: File;
   chartFile: File;
 
-  // For View swtich
+  // For View switch
   isCardView: boolean;
   cardHover = false;
   listHover = false;
