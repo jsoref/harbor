@@ -2711,7 +2711,7 @@ definitions:
         items:
           $ref: '#/definitions/SearchRepository'
       chart:
-        description: Search results of the charts that macthed the filter keywords.
+        description: Search results of the charts that matched the filter keywords.
         type: array
         items:
           $ref: '#/definitions/SearchResult'
