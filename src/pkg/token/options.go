@@ -64,7 +64,7 @@ func DefaultTokenOptions() *Options {
 	return opt
 }
 
-// NewOptions create Options based on input parms
+// NewOptions create Options based on input params
 func NewOptions(sm, iss, keyPath string) (*Options, error) {
 	pk, err := ioutil.ReadFile(keyPath)
 	if err != nil {

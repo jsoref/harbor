@@ -28,7 +28,7 @@ type Checker struct {
 	signatures map[string]string
 }
 
-// IsTagSigned checks if the tag of the artifact is signed, it also checks the signed artifact has the same digest as parm.
+// IsTagSigned checks if the tag of the artifact is signed, it also checks the signed artifact has the same digest as param.
 func (sc Checker) IsTagSigned(tag, digest string) bool {
 	d, ok := sc.signatures[tag]
 	if len(digest) == 0 {
