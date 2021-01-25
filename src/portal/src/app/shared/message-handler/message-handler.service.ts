@@ -44,7 +44,7 @@ export class MessageHandlerService implements ErrorHandler {
             let code = error.statusCode || error.status;
             if (code === httpStatusCode.Unauthorized) {
                 this.msgService.announceAppLevelMessage(code, msg, AlertType.DANGER);
-                // Session is invalid now, clare session cache
+                // Session is invalid now, clear session cache
                 this.session.clear();
             } else {
                 this.msgService.announceMessage(code, msg, AlertType.DANGER);
@@ -60,7 +60,7 @@ export class MessageHandlerService implements ErrorHandler {
         let code = error.statusCode || error.status;
         if (code === httpStatusCode.Unauthorized) {
             this.msgService.announceAppLevelMessage(code, msg, AlertType.DANGER);
-            // Session is invalid now, clare session cache
+            // Session is invalid now, clear session cache
             this.session.clear();
         }
     }
