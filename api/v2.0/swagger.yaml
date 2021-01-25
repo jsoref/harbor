@@ -469,32 +469,32 @@ paths:
         - $ref: '#/parameters/acceptVulnerabilities'
         - name: with_tag
           in: query
-          description: Specify whether the tags are inclued inside the returning artifacts
+          description: Specify whether the tags are included inside the returning artifacts
           type: boolean
           required: false
           default: true
         - name: with_label
           in: query
-          description: Specify whether the labels are inclued inside the returning artifacts
+          description: Specify whether the labels are included inside the returning artifacts
           type: boolean
           required: false
           default: false
         - name: with_scan_overview
           in: query
-          description: Specify whether the scan overview is inclued inside the returning artifacts
+          description: Specify whether the scan overview is included inside the returning artifacts
           type: boolean
           required: false
           default: false
         # should be in tag level
         - name: with_signature
           in: query
-          description: Specify whether the signature is inclued inside the returning artifacts
+          description: Specify whether the signature is included inside the returning artifacts
           type: boolean
           required: false
           default: false
         - name: with_immutable_status
           in: query
-          description: Specify whether the immutable status is inclued inside the tags of the returning artifacts. Only works when setting "with_tag=true"
+          description: Specify whether the immutable status is included inside the tags of the returning artifacts. Only works when setting "with_tag=true"
           type: boolean
           required: false
           default: false
