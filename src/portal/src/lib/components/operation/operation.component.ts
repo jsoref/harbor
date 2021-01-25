@@ -23,7 +23,7 @@ export class OperationComponent implements OnInit, OnDestroy {
   beforeUnloadHandler(event) {
     // storage to localStorage
     let timp = new Date().getTime();
-    localStorage.setItem('operaion', JSON.stringify({timp: timp,  data: this.resultLists}));
+    localStorage.setItem('operation', JSON.stringify({timp: timp,  data: this.resultLists}));
     localStorage.setItem('newMessageCount', this._newMessageCount.toString());
   }
 
@@ -91,12 +91,12 @@ export class OperationComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this._newMessageCount = +localStorage.getItem('newMessageCount');
-    let requestCookie = localStorage.getItem('operaion');
+    let requestCookie = localStorage.getItem('operation');
     if (requestCookie) {
       let operInfors: any = JSON.parse(requestCookie);
       if (operInfors) {
         if ((new Date().getTime() - operInfors.timp) > 1000 * 60 * 60 * 24) {
-          localStorage.removeItem('operaion');
+          localStorage.removeItem('operation');
         } else {
           if (operInfors.data) {
             operInfors.data.forEach(operInfo => {
