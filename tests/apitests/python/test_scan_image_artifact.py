@@ -57,7 +57,7 @@ class TestScan(unittest.TestCase):
             4. Get private project of user(UA), user(UA) can see only one private project which is project(PA);
             5. Create a new repository(RA) and tag(TA) in project(PA) by user(UA);
             6. Send scan image command and get tag(TA) information to check scan result, it should be finished;
-            7. Swith Scanner;
+            7. Switch Scanner;
             8. Send scan another image command and get tag(TA) information to check scan result, it should be finished.
         Tear down:
             1. Delete repository(RA) by user(UA);
@@ -93,7 +93,7 @@ class TestScan(unittest.TestCase):
             4. Get private project of user(UA), user(UA) can see only one private project which is project(PA);
             5. Create a new repository(RA) and tag(TA) in project(PA) by user(UA);
             6. Send scan image command and get tag(TA) information to check scan result, it should be finished;
-            7. Swith Scanner;
+            7. Switch Scanner;
             8. Send scan another image command and get tag(TA) information to check scan result, it should be finished.
         Tear down:
             1. Delete repository(RA) by user(UA);
