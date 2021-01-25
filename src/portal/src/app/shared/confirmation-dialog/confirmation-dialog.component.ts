@@ -31,13 +31,13 @@ export class ConfirmationDialogComponent implements OnDestroy {
     dialogTitle: string = "";
     dialogContent: string = "";
     message: ConfirmationMessage;
-    annouceSubscription: Subscription;
+    announceSubscription: Subscription;
     buttons: ConfirmationButtons;
     isDelete: boolean = false;
     constructor(
         private confirmationService: ConfirmationDialogService,
         private translate: TranslateService) {
-        this.annouceSubscription = confirmationService.confirmationAnnouced$.subscribe(msg => {
+        this.announceSubscription = confirmationService.confirmationAnnouced$.subscribe(msg => {
             this.dialogTitle = msg.title;
             this.dialogContent = msg.message;
             this.message = msg;
@@ -50,8 +50,8 @@ export class ConfirmationDialogComponent implements OnDestroy {
     }
 
     ngOnDestroy(): void {
-        if (this.annouceSubscription) {
-            this.annouceSubscription.unsubscribe();
+        if (this.announceSubscription) {
+            this.announceSubscription.unsubscribe();
         }
     }
 
