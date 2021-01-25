@@ -85,7 +85,7 @@ export class ChartVersionComponent implements OnInit {
     private errorHandler: ErrorHandler,
     private systemInfoService: SystemInfoService,
     private helmChartService: HelmChartService,
-    private resrouceLabelService: LabelService,
+    private resourceLabelService: LabelService,
     public userPermissionService: UserPermissionService,
     private operationService: OperationService,
     private translateService: TranslateService,
@@ -112,7 +112,7 @@ export class ChartVersionComponent implements OnInit {
   }
 
   getLabels() {
-    forkJoin(this.resrouceLabelService.getLabels("g"), this.resrouceLabelService.getProjectLabels(this.projectId))
+    forkJoin(this.resourceLabelService.getLabels("g"), this.resourceLabelService.getProjectLabels(this.projectId))
       .subscribe(
         (labels) => {
           this.labels = [].concat(...labels);
@@ -321,7 +321,7 @@ export class ChartVersionComponent implements OnInit {
   }
 
   onLabelChange(version: HelmChartVersion) {
-    this.resrouceLabelService.getChartVersionLabels(this.projectName, this.chartName, version.version)
+    this.resourceLabelService.getChartVersionLabels(this.projectName, this.chartName, version.version)
       .subscribe(labels => {
         let versionIdx = this.chartVersions.findIndex(v => v.name === version.name);
         this.chartVersions[versionIdx].labels = labels;
