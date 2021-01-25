@@ -36,7 +36,7 @@ type retentionAPI struct {
 }
 
 var (
-	rentenitionMetadataPayload = &models.RetentionMetadata{
+	retentionMetadataPayload = &models.RetentionMetadata{
 		Templates: []*models.RetentionRuleMetadata{
 			{
 				Action:       "retain",
@@ -124,8 +124,8 @@ func (r *retentionAPI) Prepare(ctx context.Context, operation string, params int
 	return nil
 }
 
-func (r *retentionAPI) GetRentenitionMetadata(ctx context.Context, params operation.GetRentenitionMetadataParams) middleware.Responder {
-	return operation.NewGetRentenitionMetadataOK().WithPayload(rentenitionMetadataPayload)
+func (r *retentionAPI) GetRetentionMetadata(ctx context.Context, params operation.GetRetentionMetadataParams) middleware.Responder {
+	return operation.NewGetRetentionMetadataOK().WithPayload(retentionMetadataPayload)
 }
 
 func (r *retentionAPI) GetRetention(ctx context.Context, params operation.GetRetentionParams) middleware.Responder {
