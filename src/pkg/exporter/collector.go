@@ -11,11 +11,11 @@ var (
 
 var (
 	scrapeDuration = typedDesc{
-		desc:      newDescWithLables(subsystem, "collector_duration_seconds", "Duration of a collector scrape", "collector"),
+		desc:      newDescWithLabels(subsystem, "collector_duration_seconds", "Duration of a collector scrape", "collector"),
 		valueType: prometheus.GaugeValue,
 	}
 	scrapeSuccess = typedDesc{
-		desc:      newDescWithLables(subsystem, "collector_success", " Whether a collector succeeded.", "collector"),
+		desc:      newDescWithLabels(subsystem, "collector_success", " Whether a collector succeeded.", "collector"),
 		valueType: prometheus.GaugeValue,
 	}
 )
@@ -27,7 +27,7 @@ func newDesc(subsystem, name, help string) *prometheus.Desc {
 	)
 }
 
-func newDescWithLables(subsystem, name, help string, labels ...string) *prometheus.Desc {
+func newDescWithLabels(subsystem, name, help string, labels ...string) *prometheus.Desc {
 	return prometheus.NewDesc(
 		prometheus.BuildFQName(namespace, subsystem, name),
 		help, labels, nil,
