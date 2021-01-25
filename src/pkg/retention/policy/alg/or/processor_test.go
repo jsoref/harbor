@@ -51,7 +51,7 @@ func TestProcessor(t *testing.T) {
 
 // SetupSuite ...
 func (suite *ProcessorTestSuite) SetupSuite() {
-	dao.PrepareTestForPostgresSQL()
+	dao.PrepareTestForPostgreSQL()
 	suite.all = []*selector.Candidate{
 		{
 			Namespace:  "library",

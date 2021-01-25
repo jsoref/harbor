@@ -17,6 +17,9 @@ package dao
 import (
 	"context"
 	"fmt"
+	"testing"
+	"time"
+
 	beegoorm "github.com/astaxie/beego/orm"
 	common_dao "github.com/goharbor/harbor/src/common/dao"
 	"github.com/goharbor/harbor/src/common/models"
@@ -28,8 +31,6 @@ import (
 	"github.com/goharbor/harbor/src/pkg/tag/model/tag"
 	v1 "github.com/opencontainers/image-spec/specs-go/v1"
 	"github.com/stretchr/testify/suite"
-	"testing"
-	"time"
 )
 
 var (
@@ -49,7 +50,7 @@ func (d *daoTestSuite) SetupSuite() {
 	d.dao = New()
 	d.tagDao = tag_dao.New()
 	d.afDao = af_dao.New()
-	common_dao.PrepareTestForPostgresSQL()
+	common_dao.PrepareTestForPostgreSQL()
 	d.ctx = orm.NewContext(nil, beegoorm.NewOrm())
 }
 

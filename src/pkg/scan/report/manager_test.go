@@ -40,7 +40,7 @@ func TestManager(t *testing.T) {
 
 // SetupSuite prepares test env for suite TestManagerSuite.
 func (suite *TestManagerSuite) SetupSuite() {
-	dao.PrepareTestForPostgresSQL()
+	dao.PrepareTestForPostgreSQL()
 
 	suite.m = NewManager()
 }

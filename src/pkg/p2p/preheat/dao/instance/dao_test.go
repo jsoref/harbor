@@ -36,7 +36,7 @@ type instanceSuite struct {
 }
 
 func (is *instanceSuite) SetupSuite() {
-	common_dao.PrepareTestForPostgresSQL()
+	common_dao.PrepareTestForPostgreSQL()
 	is.ctx = orm.NewContext(nil, beego_orm.NewOrm())
 	is.dao = New()
 }
