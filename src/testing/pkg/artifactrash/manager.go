@@ -29,7 +29,7 @@ type FakeManager struct {
 }
 
 // Create ...
-func (f *FakeManager) Create(ctx context.Context, artifactrsh *model.ArtifactTrash) (id int64, err error) {
+func (f *FakeManager) Create(ctx context.Context, artifacttrash *model.ArtifactTrash) (id int64, err error) {
 	args := f.Called()
 	return int64(args.Int(0)), args.Error(1)
 }
