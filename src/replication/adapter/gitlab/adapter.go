@@ -41,14 +41,14 @@ type adapter struct {
 	url             string
 	username        string
 	token           string
-	clientGitlabAPI *Client
+	clientGitLabAPI *Client
 }
 
 func newAdapter(registry *model.Registry) *adapter {
 	return &adapter{
 		registry:        registry,
 		url:             registry.URL,
-		clientGitlabAPI: NewClient(registry),
+		clientGitLabAPI: NewClient(registry),
 		Adapter:         native.NewAdapter(registry),
 	}
 }
@@ -95,7 +95,7 @@ func (a *adapter) FetchArtifacts(filters []*model.Filter) ([]*model.Resource, er
 
 	projects = a.getProjectsByPattern(nameFilter)
 	if len(projects) == 0 {
-		projects, err = a.clientGitlabAPI.getProjects()
+		projects, err = a.clientGitLabAPI.getProjects()
 		if err != nil {
 			return nil, err
 		}
@@ -109,7 +109,7 @@ func (a *adapter) FetchArtifacts(filters []*model.Filter) ([]*model.Resource, er
 	}
 
 	for _, project := range projects {
-		repositories, err := a.clientGitlabAPI.getRepositories(project.ID)
+		repositories, err := a.clientGitLabAPI.getRepositories(project.ID)
 		if err != nil {
 			return nil, err
 		}
@@ -120,7 +120,7 @@ func (a *adapter) FetchArtifacts(filters []*model.Filter) ([]*model.Resource, er
 			if !existPatterns(repository.Path, pathPatterns) {
 				continue
 			}
-			vTags, err := a.clientGitlabAPI.getTags(project.ID, repository.ID)
+			vTags, err := a.clientGitLabAPI.getTags(project.ID, repository.ID)
 			if err != nil {
 				return nil, err
 			}
@@ -173,7 +173,7 @@ func (a *adapter) getProjectsByPattern(pattern string) []*Project {
 					continue
 				}
 				projectset[substrings[1]] = true
-				var projectsByName, err = a.clientGitlabAPI.getProjectsByName(substrings[1])
+				var projectsByName, err = a.clientGitLabAPI.getProjectsByName(substrings[1])
 				if err != nil {
 					return nil
 				}
@@ -196,7 +196,7 @@ func (a *adapter) getProjectsByPattern(pattern string) []*Project {
 			if strings.Contains(projectName, "*") {
 				return projects
 			}
-			projects, err = a.clientGitlabAPI.getProjectsByName(projectName)
+			projects, err = a.clientGitLabAPI.getProjectsByName(projectName)
 			if err != nil {
 				return projects
 			}
