@@ -2473,7 +2473,7 @@ paths:
         - name: registration
           in: body
           required: true
-          description: A scanner registraiton to be updated.
+          description: A scanner registration to be updated.
           schema:
             $ref: '#/definitions/ScannerRegistrationReq'
       responses:
