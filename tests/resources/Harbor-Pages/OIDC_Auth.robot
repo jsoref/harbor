@@ -34,7 +34,7 @@ Sign In Harbor With OIDC User
 
     #If input box for harbor user name is visible, it means it's the 1st time login of this user,
     #  but if this user has been logged into harbor successfully, this input box will not show up,
-    #  so there is condition branch for this stituation.
+    #  so there is condition branch for this situation.
     ${isVisible}=  Run Keyword And Return Status  Element Should Be Visible  ${oidc_username_input}
     Run Keyword If  ${is_onboard} == ${true}  Should Not Be True  ${isVisible}
     Run Keyword If  '${isVisible}' == 'True'  Run Keywords  Retry Text Input    ${oidc_username_input}    ${username}  AND  Retry Element Click    ${save_btn}
