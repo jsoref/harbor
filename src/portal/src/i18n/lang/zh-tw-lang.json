@@ -668,7 +668,7 @@
     "NAME": "名稱",
     "TAGS":"標籤",
     "PLATFORM":"OS / ARCH",
-    "ARTIFACT_TOOTIP":"單擊此圖標進入引用的工件列表",
+    "ARTIFACT_TOOLTIP":"單擊此圖標進入引用的工件列表",
     "ARTIFACTS_COUNT":"工件",
     "PULL_COUNT": "下載數",
     "PULL_COMMAND":"Pull命令",
