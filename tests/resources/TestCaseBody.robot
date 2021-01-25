@@ -239,7 +239,7 @@ Body Of Verfiy System Level CVE Allowlist
     Create An New Project And Go Into Project    project${d}
     Push Image    ${ip}    ${signin_user}    ${signin_pwd}    project${d}    ${image}    sha256=${sha256}
     Go Into Project  project${d}
-    Set Vulnerabilty Serverity  2
+    Set Vulnerabilty Severity  2
     Cannot Pull Image  ${ip}    ${signin_user}    ${signin_pwd}    project${d}    ${image}    tag=${sha256}  err_msg=current image without vulnerability scanning cannot be pulled due to configured policy
     Go Into Project  project${d}
     Go Into Repo  project${d}/${image}
@@ -272,7 +272,7 @@ Body Of Verfiy Project Level CVE Allowlist
     Push Image    ${ip}    ${signin_user}    ${signin_pwd}    project${d}    ${image}    sha256=${sha256}
     Pull Image    ${ip}    ${signin_user}    ${signin_pwd}    project${d}    ${image}    tag=${sha256}
     Go Into Project  project${d}
-    Set Vulnerabilty Serverity  2
+    Set Vulnerabilty Severity  2
     Cannot Pull Image  ${ip}    ${signin_user}    ${signin_pwd}    project${d}    ${image}    tag=${sha256}
     Go Into Project  project${d}
     Go Into Repo  project${d}/${image}
@@ -304,7 +304,7 @@ Body Of Verfiy Project Level CVE Allowlist By Quick Way of Add System
     Create An New Project And Go Into Project    project${d}
     Push Image    ${ip}    ${signin_user}    ${signin_pwd}    project${d}    ${image}    sha256=${sha256}
     Go Into Project  project${d}
-    Set Vulnerabilty Serverity  2
+    Set Vulnerabilty Severity  2
     Go Into Project  project${d}
     Go Into Repo  project${d}/${image}
     Scan Repo  ${sha256}  Succeed
