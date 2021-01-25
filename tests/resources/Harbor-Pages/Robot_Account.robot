@@ -59,7 +59,7 @@ Create A Random Project Permission List
     Log To Console  tmp_list:'@{tmp_list}'
     [Return]  ${tmp_list}
 
-Filter Project In Project Permisstion List
+Filter Project In Project Permission List
     [Arguments]  ${name}
     Retry Double Keywords When Error  Retry Element Click  ${save_sys_robot_project_filter_chb}  Retry Wait Until Page Contains Element  ${save_sys_robot_project_filter_input}
     Retry Text Input  ${save_sys_robot_project_filter_input}   ${name}
@@ -103,7 +103,7 @@ Create A New System Robot Account
         Log To Console  project_name: ${project_name}
         ${permission_item_list}=  Get From Dictionary  ${tmp}  permission_item_list
         Log To Console  permission_item_list: ${permission_item_list}
-        Filter Project In Project Permisstion List  ${project_name}
+        Filter Project In Project Permission List  ${project_name}
         Retry Element Click  //clr-dg-row[contains(.,'${project_name}')]//clr-checkbox-wrapper/label
         Retry Element Click  //clr-dg-row[contains(., '${project_name}')]//clr-dropdown/button
         Select Project Permission  ${project_name}  ${permission_item_list}
