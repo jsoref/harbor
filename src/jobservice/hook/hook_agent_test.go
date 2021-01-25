@@ -90,7 +90,7 @@ func (suite *HookAgentTestSuite) SetupTest() {
 	suite.NoError(err, "mock job stats")
 
 	suite.event = &Event{
-		URL:       "http://domian.com",
+		URL:       "http://domain.com",
 		Message:   "HookAgentTestSuite",
 		Timestamp: time.Now().Unix(),
 		Data: &job.StatusChange{
