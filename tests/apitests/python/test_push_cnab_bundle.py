@@ -45,7 +45,7 @@ class TestCNAB(unittest.TestCase):
             2. Create a new project(PA) by user(UA);
             3. Push bundle to harbor as repository(RA);
             4. Get repository from Harbor successfully;
-            5. Verfiy bundle name;
+            5. Verify bundle name;
             6. Get artifact by sha256;
             7. Verify artifact information.
         """
@@ -97,7 +97,7 @@ class TestCNAB(unittest.TestCase):
         #library.containerd.ctr_images_pull(TestCNAB.user_name, TestCNAB.user_push_cnab_password, target)
         #library.containerd.ctr_images_list(oci_ref = target)
 
-        #5. Verfiy bundle name;
+        #5. Verify bundle name;
         self.assertEqual(TestCNAB.cnab_bundle_data.name, TestCNAB.project_name + "/" + TestCNAB.cnab_repo_name)
 
         #6. Get artifact by sha256;

@@ -36,7 +36,7 @@ class TestProjects(unittest.TestCase):
             1. Create user-001
             2. Create a new private project(PA) by user(UA);
             3. Push a sif file to harbor by singularity;
-            4. Get repository from Harbor successfully, and verfiy repository name is repo pushed by singularity CLI;
+            4. Get repository from Harbor successfully, and verify repository name is repo pushed by singularity CLI;
             5. Get and verify artifacts by tag;
             6. Pull sif file from harbor by singularity;
         Tear down:
@@ -57,7 +57,7 @@ class TestProjects(unittest.TestCase):
         library.singularity.push_singularity_to_harbor("library:", "library/default/", harbor_server, user_name, user_001_password, TestProjects.project_name, self.repo_name, self.tag)
 
 
-        #4. Get repository from Harbor successfully, and verfiy repository name is repo pushed by singularity CLI;
+        #4. Get repository from Harbor successfully, and verify repository name is repo pushed by singularity CLI;
         repo_data = self.repo.get_repository(TestProjects.project_name, self.repo_name, **TestProjects.USER_CLIENT)
         self.assertEqual(repo_data.name, TestProjects.project_name + "/" + self.repo_name)
 

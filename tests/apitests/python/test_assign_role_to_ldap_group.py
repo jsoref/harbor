@@ -37,9 +37,9 @@ class TestAssignRoleToLdapGroup(unittest.TestCase):
             2. Create a new public project(PA) by Admin;
             3. Add 3 member groups to project(PA);
             4. Push image by each member role;
-            5. Verfify that admin_user can add project member, dev_user and guest_user can not add project member;
-            6. Verfify that admin_user and dev_user can push image, guest_user can not push image;
-            7. Verfify that admin_user, dev_user and guest_user can view logs, test user can not view logs.
+            5. Verify that admin_user can add project member, dev_user and guest_user can not add project member;
+            6. Verify that admin_user and dev_user can push image, guest_user can not push image;
+            7. Verify that admin_user, dev_user and guest_user can view logs, test user can not view logs.
             8. Delete repository(RA) by user(UA);
             9. Delete project(PA);
         """

@@ -36,10 +36,10 @@ class TestProjects(unittest.TestCase):
             1. Create user-001
             2. Create a new private project(PA) by user(UA);
             3. ORAS CLI push artifacts;
-            4. Get repository from Harbor successfully, and verfiy repository name is repo pushed by ORAS CLI;
+            4. Get repository from Harbor successfully, and verify repository name is repo pushed by ORAS CLI;
             5. Get and verify artifacts by tag;
             6. ORAS CLI pull artifacts index by tag;
-            7. Verfiy MD5 between artifacts pushed by ORAS and artifacts pulled by ORAS;
+            7. Verify MD5 between artifacts pushed by ORAS and artifacts pulled by ORAS;
         Tear down:
             NA
         """
@@ -57,7 +57,7 @@ class TestProjects(unittest.TestCase):
         #3. ORAS CLI push artifacts;
         md5_list_push = library.oras.oras_push(harbor_server, user_name, user_001_password, TestProjects.project_name, self.repo_name, self.tag)
 
-        #4. Get repository from Harbor successfully, and verfiy repository name is repo pushed by ORAS CLI;
+        #4. Get repository from Harbor successfully, and verify repository name is repo pushed by ORAS CLI;
         repo_data = self.repo.get_repository(TestProjects.project_name, self.repo_name, **TestProjects.USER_CLIENT)
         self.assertEqual(repo_data.name, TestProjects.project_name + "/" + self.repo_name)
 
@@ -68,7 +68,7 @@ class TestProjects(unittest.TestCase):
         #6. ORAS CLI pull artifacts index by tag;
         md5_list_pull = library.oras.oras_pull(harbor_server, user_name, user_001_password, TestProjects.project_name, self.repo_name, self.tag)
 
-        #7. Verfiy MD5 between artifacts pushed by ORAS and artifacts pulled by ORAS;
+        #7. Verify MD5 between artifacts pushed by ORAS and artifacts pulled by ORAS;
         if set(md5_list_push) != set(md5_list_pull):
             raise Exception(r"MD5 check failed with {} and {}.".format(str(md5_list_push), str(md5_list_pull)))
 
