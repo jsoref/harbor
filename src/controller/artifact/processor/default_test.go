@@ -138,38 +138,38 @@ func (d *defaultProcessorTestSuite) TestGetArtifactType() {
 	mediaType := ""
 	art := &artifact.Artifact{MediaType: mediaType}
 	processor := &defaultProcessor{}
-	typee := processor.GetArtifactType(nil, art)
-	d.Equal(ArtifactTypeUnknown, typee)
+	t := processor.GetArtifactType(nil, art)
+	d.Equal(ArtifactTypeUnknown, t)
 
 	mediaType = "unknown"
 	art = &artifact.Artifact{MediaType: mediaType}
 	processor = &defaultProcessor{}
-	typee = processor.GetArtifactType(nil, art)
-	d.Equal(ArtifactTypeUnknown, typee)
+	t = processor.GetArtifactType(nil, art)
+	d.Equal(ArtifactTypeUnknown, t)
 
 	mediaType = "application/vnd.oci.image.config.v1+json"
 	art = &artifact.Artifact{MediaType: mediaType}
 	processor = &defaultProcessor{}
-	typee = processor.GetArtifactType(nil, art)
-	d.Equal("IMAGE", typee)
+	t = processor.GetArtifactType(nil, art)
+	d.Equal("IMAGE", t)
 
 	mediaType = "application/vnd.cncf.helm.chart.config.v1+json"
 	art = &artifact.Artifact{MediaType: mediaType}
 	processor = &defaultProcessor{}
-	typee = processor.GetArtifactType(nil, art)
-	d.Equal("HELM.CHART", typee)
+	t = processor.GetArtifactType(nil, art)
+	d.Equal("HELM.CHART", t)
 
 	mediaType = "application/vnd.sylabs.sif.config.v1+json"
 	art = &artifact.Artifact{MediaType: mediaType}
 	processor = &defaultProcessor{}
-	typee = processor.GetArtifactType(nil, art)
-	d.Equal("SIF", typee)
+	t = processor.GetArtifactType(nil, art)
+	d.Equal("SIF", t)
 
 	mediaType = "application/vnd.caicloud.model.config.v1alpha1+json"
 	art = &artifact.Artifact{MediaType: mediaType}
 	processor = &defaultProcessor{}
-	typee = processor.GetArtifactType(nil, art)
-	d.Equal("MODEL", typee)
+	t = processor.GetArtifactType(nil, art)
+	d.Equal("MODEL", t)
 }
 
 func (d *defaultProcessorTestSuite) TestAbstractMetadata() {

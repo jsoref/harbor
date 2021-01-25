@@ -54,24 +54,24 @@ var (
 )
 
 // Register register cache factory for type
-func Register(typ string, factory func(opts Options) (Cache, error)) {
+func Register(t string, factory func(opts Options) (Cache, error)) {
 	factoriesMu.Lock()
 	defer factoriesMu.Unlock()
 
-	factories[typ] = factory
+	factories[t] = factory
 }
 
 // New returns cache from addr
-func New(typ string, opt ...Option) (Cache, error) {
+func New(t string, opt ...Option) (Cache, error) {
 	opts := newOptions(opt...)
 	opts.Codec = codec // use the default codec for the cache
 
 	factoriesMu.Lock()
 	defer factoriesMu.Unlock()
 
-	factory, ok := factories[typ]
+	factory, ok := factories[t]
 	if !ok {
-		return nil, fmt.Errorf("cache type %s not support", typ)
+		return nil, fmt.Errorf("cache type %s not support", t)
 	}
 
 	return factory(opts)
@@ -82,8 +82,8 @@ var (
 )
 
 // Initialize initialize the default cache from the addr
-func Initialize(typ, addr string) error {
-	c, err := New(typ, Address(addr), Prefix("cache:"))
+func Initialize(t, addr string) error {
+	c, err := New(t, Address(addr), Prefix("cache:"))
 	if err != nil {
 		return err
 	}

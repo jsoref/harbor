@@ -56,17 +56,17 @@ func GetResourceActions(scopes []string) []*token.ResourceActions {
 		items := strings.Split(s, ":")
 		length := len(items)
 
-		typee := ""
+		t := ""
 		name := ""
 		actions := make([]string, 0)
 
 		if length == 1 {
-			typee = items[0]
+			t = items[0]
 		} else if length == 2 {
-			typee = items[0]
+			t = items[0]
 			name = items[1]
 		} else {
-			typee = items[0]
+			t = items[0]
 			name = strings.Join(items[1:length-1], ":")
 			if len(items[length-1]) > 0 {
 				actions = strings.Split(items[length-1], ",")
@@ -74,7 +74,7 @@ func GetResourceActions(scopes []string) []*token.ResourceActions {
 		}
 
 		res = append(res, &token.ResourceActions{
-			Type:    typee,
+			Type:    t,
 			Name:    name,
 			Actions: actions,
 		})
