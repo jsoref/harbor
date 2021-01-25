@@ -22,7 +22,7 @@ import {
  */
 export abstract class ProjectService {
   /**
-   * Get Informations about a specific Project.
+   * Get Information about a specific Project.
    *
    * @abstract
    *  ** deprecated param {string|number} [projectId]
