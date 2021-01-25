@@ -57,7 +57,7 @@ func TestScanImagePreprocessHandler(t *testing.T) {
 
 // SetupSuite prepares env for test suite.
 func (suite *ScanImagePreprocessHandlerSuite) SetupSuite() {
-	common_dao.PrepareTestForPostgresSQL()
+	common_dao.PrepareTestForPostgreSQL()
 	cfg := map[string]interface{}{
 		common.NotificationEnable: true,
 	}

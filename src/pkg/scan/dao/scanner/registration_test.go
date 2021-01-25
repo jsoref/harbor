@@ -39,7 +39,7 @@ func TestRegistrationDAO(t *testing.T) {
 
 // SetupSuite prepare testing env for the suite
 func (suite *RegistrationDAOTestSuite) SetupSuite() {
-	dao.PrepareTestForPostgresSQL()
+	dao.PrepareTestForPostgreSQL()
 }
 
 // SetupTest prepare stuff for test cases

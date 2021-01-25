@@ -97,7 +97,7 @@ type OrmSuite struct {
 // SetupSuite ...
 func (suite *OrmSuite) SetupSuite() {
 	RegisterModel(&Foo{})
-	dao.PrepareTestForPostgresSQL()
+	dao.PrepareTestForPostgreSQL()
 
 	o, err := FromContext(Context())
 	if err != nil {

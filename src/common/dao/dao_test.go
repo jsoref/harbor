@@ -115,7 +115,7 @@ func TestMain(m *testing.M) {
 		result := 1
 		switch database {
 		case "postgresql":
-			PrepareTestForPostgresSQL()
+			PrepareTestForPostgreSQL()
 			PrepareTestData([]string{"delete from admin_job"}, []string{})
 		default:
 			log.Fatalf("invalid database: %s", database)

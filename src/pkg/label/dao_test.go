@@ -39,7 +39,7 @@ type labelDaoTestSuite struct {
 }
 
 func (l *labelDaoTestSuite) SetupSuite() {
-	common_dao.PrepareTestForPostgresSQL()
+	common_dao.PrepareTestForPostgreSQL()
 	l.dao = &defaultDAO{}
 	l.artDAO = artdao.New()
 	l.ctx = orm.NewContext(nil, beegoorm.NewOrm())

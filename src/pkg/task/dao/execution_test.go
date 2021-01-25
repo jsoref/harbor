@@ -36,7 +36,7 @@ type executionDAOTestSuite struct {
 }
 
 func (e *executionDAOTestSuite) SetupSuite() {
-	dao.PrepareTestForPostgresSQL()
+	dao.PrepareTestForPostgreSQL()
 	e.ctx = orm.Context()
 	e.taskDao = &taskDAO{}
 	e.executionDAO = &executionDAO{

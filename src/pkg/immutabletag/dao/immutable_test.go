@@ -22,7 +22,7 @@ type immutableRuleDaoTestSuite struct {
 func (t *immutableRuleDaoTestSuite) SetupSuite() {
 	t.require = require.New(t.T())
 	t.assert = assert.New(t.T())
-	dao.PrepareTestForPostgresSQL()
+	dao.PrepareTestForPostgreSQL()
 	t.dao = New()
 }
 

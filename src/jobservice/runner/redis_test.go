@@ -50,7 +50,7 @@ type RedisRunnerTestSuite struct {
 
 // TestRedisRunnerTestSuite is entry of go test
 func TestRedisRunnerTestSuite(t *testing.T) {
-	common_dao.PrepareTestForPostgresSQL()
+	common_dao.PrepareTestForPostgreSQL()
 	suite.Run(t, new(RedisRunnerTestSuite))
 }
 

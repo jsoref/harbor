@@ -33,8 +33,8 @@ func PrepareTestForMySQL() {
 func PrepareTestForSQLite() {
 }
 
-// PrepareTestForPostgresSQL is for test only.
-func PrepareTestForPostgresSQL() {
+// PrepareTestForPostgreSQL is for test only.
+func PrepareTestForPostgreSQL() {
 	dbHost := os.Getenv("POSTGRESQL_HOST")
 	if len(dbHost) == 0 {
 		log.Fatalf("environment variable POSTGRESQL_HOST is not set")

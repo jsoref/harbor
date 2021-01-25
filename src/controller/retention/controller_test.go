@@ -49,7 +49,7 @@ func (s *ControllerTestSuite) SetupSuite() {
 }
 
 func TestMain(m *testing.M) {
-	dao.PrepareTestForPostgresSQL()
+	dao.PrepareTestForPostgreSQL()
 	os.Exit(m.Run())
 }
 

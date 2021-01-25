@@ -20,7 +20,7 @@ func TestMain(m *testing.M) {
 		result := 1
 		switch database {
 		case "postgresql":
-			dao.PrepareTestForPostgresSQL()
+			dao.PrepareTestForPostgreSQL()
 		default:
 			log.Fatalf("invalid database: %s", database)
 		}

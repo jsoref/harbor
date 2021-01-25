@@ -45,7 +45,7 @@ type ContextImplTestSuite struct {
 
 // TestContextImplTestSuite is entry of go test
 func TestContextImplTestSuite(t *testing.T) {
-	common_dao.PrepareTestForPostgresSQL()
+	common_dao.PrepareTestForPostgreSQL()
 	suite.Run(t, new(ContextImplTestSuite))
 }
 

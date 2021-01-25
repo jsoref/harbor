@@ -213,7 +213,7 @@ func TestIsScheduleTriggerChanged(t *testing.T) {
 }
 
 func TestCreate(t *testing.T) {
-	dao.PrepareTestForPostgresSQL()
+	dao.PrepareTestForPostgreSQL()
 	scheduler := &scheduler.Scheduler{}
 	ctl := &controller{
 		scheduler: scheduler,

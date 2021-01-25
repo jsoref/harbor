@@ -225,7 +225,7 @@ func TestGetRelatedPolicies(t *testing.T) {
 }
 
 func TestHandle(t *testing.T) {
-	dao.PrepareTestForPostgresSQL()
+	dao.PrepareTestForPostgreSQL()
 	config.Config = &config.Configuration{}
 	ctl := &replication.Controller{}
 	ctl.On("Start", mock.Anything, mock.Anything, mock.Anything, mock.Anything).Return(int64(1), nil)

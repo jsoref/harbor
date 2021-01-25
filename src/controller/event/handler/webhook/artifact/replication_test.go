@@ -167,7 +167,7 @@ func (f *fakedReplicationRegistryMgr) HealthCheck() error {
 }
 
 func TestReplicationHandler_Handle(t *testing.T) {
-	common_dao.PrepareTestForPostgresSQL()
+	common_dao.PrepareTestForPostgreSQL()
 	config.Init()
 
 	PolicyMgr := notification.PolicyMgr

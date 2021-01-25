@@ -11,7 +11,7 @@ import (
 )
 
 func TestMain(m *testing.M) {
-	dao.PrepareTestForPostgresSQL()
+	dao.PrepareTestForPostgreSQL()
 	cfgStore := NewConfigStore(&driver.Database{})
 	cfgStore.Set("ldap_url", metadata.ConfigureValue{Name: "ldap_url", Value: "ldap://ldap.vmware.com"})
 	err := cfgStore.Save()
