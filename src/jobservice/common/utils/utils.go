@@ -92,7 +92,7 @@ func IsValidPort(port uint) bool {
 	return port != 0 && port < 65536
 }
 
-// IsValidURL validates if the url is well-formted
+// IsValidURL validates if the url is well-formed
 func IsValidURL(address string) bool {
 	if IsEmptyStr(address) {
 		return false
