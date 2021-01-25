@@ -109,7 +109,7 @@ Test Case - Ldap User Push An Image
     Close Browser
 
 Test Case - Ldap User Can Not login
-    Docker Login Fail  ${ip}  testerDeesExist  123456
+    Docker Login Fail  ${ip}  testerDoesExist  123456
 
 Test Case - Ldap Group Admin DN Setting
     Init Chrome Driver
