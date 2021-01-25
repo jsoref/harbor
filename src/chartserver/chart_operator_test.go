@@ -14,7 +14,7 @@ func TestGetChartDetails(t *testing.T) {
 	}
 
 	if len(chartDetails.Dependencies) == 0 {
-		t.Fatal("At least 1 dependency exitsing, but we got 0 now")
+		t.Fatal("At least 1 dependency existing, but we got 0 now")
 	}
 
 	if len(chartDetails.Values) == 0 {
