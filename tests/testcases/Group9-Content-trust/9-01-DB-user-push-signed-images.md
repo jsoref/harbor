@@ -21,7 +21,7 @@ In below test, <harbor_ip> should be replaced by your harbor's ip or FQDN. If yo
 2. On Docker client, run  
 ```sh
 export DOCKER_CONTENT_TRUST=1
-export DOCKER_CONTNET_TRUST_SERVER=https://<harbor_ip>:4443
+export DOCKER_CONTENT_TRUST_SERVER=https://<harbor_ip>:4443
 ```
 and login Harbor.  
 3. Push an image to the project created in step1.  
