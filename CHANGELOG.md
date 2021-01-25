@@ -17,7 +17,7 @@ API explorer integration. End users can now explore and trigger Harbor’s API v
 * Bumped up Clair to v2.0.8
 * Fixed issues in supporting windows images. #6992 #6369
 * Removed user-agent check-in notification handler. #5729
-* Fixed the issue global search not working if chartmusuem is not installed #6753
+* Fixed the issue global search not working if chartmuseum is not installed #6753
 
 ## v1.7.4 (2019-03-04)
 [Full list of issues fixed in v1.7.4](https://github.com/goharbor/harbor/issues?q=is%3Aissue+is%3Aclosed+label%3Atarget%2F1.7.4)
