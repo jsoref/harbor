@@ -88,7 +88,7 @@ Test Case - View Scan Results
     [Tags]  run-once
     Body Of View Scan Results  High
 
-Test Case - Project Level Image Serverity Policy
+Test Case - Project Level Image Severity Policy
     [Tags]  run-once
     Init Chrome Driver
     Sign In Harbor  ${HARBOR_URL}  ${HARBOR_ADMIN}  ${HARBOR_PASSWORD}
@@ -105,7 +105,7 @@ Test Case - Project Level Image Serverity Policy
     Scan Repo  ${sha256}  Succeed
     Navigate To Projects
     Go Into Project  project${d}
-    Set Vulnerabilty Serverity  3
+    Set Vulnerabilty Severity  3
     Cannot Pull Image  ${ip}  ${HARBOR_ADMIN}  ${HARBOR_PASSWORD}  project${d}  ${image}  tag=${sha256}  err_msg=To continue with pull, please contact your project administrator to exempt matched vulnerabilities through configuring the CVE allowlist
     Close Browser
 

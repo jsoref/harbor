@@ -445,7 +445,7 @@ Test Case - Manual Scan All
     Summary Chart Should Display  latest
     Close Browser
 #
-Test Case - Project Level Image Serverity Policy
+Test Case - Project Level Image Severity Policy
     Init Chrome Driver
     Push Image  ${ip}  ${HARBOR_ADMIN}  ${HARBOR_PASSWORD}  library  haproxy
     Sign In Harbor  ${HARBOR_URL}  ${HARBOR_ADMIN}  ${HARBOR_PASSWORD}
@@ -454,7 +454,7 @@ Test Case - Project Level Image Serverity Policy
     Scan Repo  latest  Succeed
     Navigate To Projects
     Go Into Project  library
-    Set Vulnerabilty Serverity  0
+    Set Vulnerabilty Severity  0
     Cannot pull image  ${ip}  ${HARBOR_ADMIN}  ${HARBOR_PASSWORD}  library  haproxy
     Close Browser
 
