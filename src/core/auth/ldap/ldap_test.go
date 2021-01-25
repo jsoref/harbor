@@ -184,11 +184,11 @@ func TestAuthenticateWithoutAdmin(t *testing.T) {
 	}
 }
 func TestSearchUser_02(t *testing.T) {
-	var username = "nonexist"
+	var username = "nonexistent"
 	var auth *Auth
 	user, _ := auth.SearchUser(username)
 	if user != nil {
-		t.Errorf("Should failed to search nonexist user")
+		t.Errorf("Should failed to search nonexistent user")
 	}
 
 }

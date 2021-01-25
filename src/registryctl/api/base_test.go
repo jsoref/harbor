@@ -49,7 +49,7 @@ func TestHandleError(t *testing.T) {
 	}
 
 	w = httptest.NewRecorder()
-	HandleError(w, driver.PathNotFoundError{Path: "/blobstore/nonexist"})
+	HandleError(w, driver.PathNotFoundError{Path: "/blobstore/nonexistent"})
 	if w.Code != http.StatusNotFound {
 		t.Errorf("unexpected status code: %d != %d", w.Code, http.StatusNotFound)
 	}

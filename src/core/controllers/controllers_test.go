@@ -87,9 +87,9 @@ func TestUserResettable(t *testing.T) {
 
 func TestRedirectForOIDC(t *testing.T) {
 	ctx := lib.WithAuthMode(context.Background(), common.DBAuth)
-	assert.False(t, redirectForOIDC(ctx, "nonexist"))
+	assert.False(t, redirectForOIDC(ctx, "nonexistent"))
 	ctx = lib.WithAuthMode(context.Background(), common.OIDCAuth)
-	assert.True(t, redirectForOIDC(ctx, "nonexist"))
+	assert.True(t, redirectForOIDC(ctx, "nonexistent"))
 	assert.False(t, redirectForOIDC(ctx, "admin"))
 
 }

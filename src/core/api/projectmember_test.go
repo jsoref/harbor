@@ -146,7 +146,7 @@ func TestProjectMemberAPI_Post(t *testing.T) {
 				bodyJSON: &models.MemberReq{
 					Role: 1,
 					MemberUser: models.User{
-						Username: "notexistuser",
+						Username: "nonexistentuser",
 					},
 				},
 				credential: admin,
