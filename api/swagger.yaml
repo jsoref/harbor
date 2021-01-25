@@ -264,7 +264,7 @@ paths:
           $ref: '#/definitions/InsufficientStorageChartAPIError'
   /chartrepo/charts:
     post:
-      summary: Upload a chart file to the defult 'library' project.
+      summary: Upload a chart file to the default 'library' project.
       description: Upload a chart file to the default 'library' project. Uploading together with the prov file at the same time is also supported.
       tags:
         - Chart Repository
