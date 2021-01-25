@@ -65,7 +65,7 @@ Filter Project In Project Permisstion List
     Retry Text Input  ${save_sys_robot_project_filter_input}   ${name}
     Retry Double Keywords When Error  Retry Element Click  ${save_sys_robot_project_filter_close_btn}  Retry Wait Until Page Not Contains Element  ${save_sys_robot_project_filter_input}
 
-Clear Global Permissions By JaveScript
+Clear Global Permissions By JavaScript
     Retry Element Click  //button[contains(., 'RESET PERMISSIONS')]
     FOR  ${i}  IN RANGE  0  10
         Execute JavaScript  document.getElementsByClassName('dropdown-item')[${i}].click();
@@ -91,7 +91,7 @@ Create A New System Robot Account
     ...  Retry Element Click  xpath=${sys_robot_account_expiration_type_select}//option[@value='${expiration_type}']
     Run Keyword If  '${description}' != '${null}'  Retry Text Input  ${sys_robot_account_description_textarea}  ${description}
     Run Keyword If  '${is_cover_all}' == '${true}'  Retry Double Keywords When Error  Retry Element Click  ${sys_robot_account_coverall_chb}   Retry Checkbox Should Be Selected  ${sys_robot_account_coverall_chb_input}
-    ...  ELSE  Clear Global Permissions By JaveScript
+    ...  ELSE  Clear Global Permissions By JavaScript
 
     # Select project
     FOR  ${project}  IN  @{project_permission_list}
