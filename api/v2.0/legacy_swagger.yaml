@@ -2624,7 +2624,7 @@ paths:
           description: Internal server error happened
   '/projects/{project_id}/scanner/candidates':
     get:
-      summary: Get scanner registration candidates for configurating project level scanner
+      summary: Get scanner registration candidates for configuring project level scanner
       description: |
         Retrieve the system configured scanner registrations as candidates of setting project level scanner.
       tags:
