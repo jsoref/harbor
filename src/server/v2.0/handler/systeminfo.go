@@ -73,7 +73,7 @@ func (s *sysInfoAPI) convertInfo(d *si.Data) *models.GeneralInfo {
 	if d.AuthProxySettings != nil {
 		res.AuthproxySettings = &models.AuthproxySetting{
 			Endpoint:            d.AuthProxySettings.Endpoint,
-			TokenreivewEndpoint: d.AuthProxySettings.TokenReviewEndpoint,
+			TokenreviewEndpoint: d.AuthProxySettings.TokenReviewEndpoint,
 			ServerCertificate:   d.AuthProxySettings.ServerCertificate,
 			VerifyCert:          d.AuthProxySettings.VerifyCert,
 			SkipSearch:          d.AuthProxySettings.SkipSearch,

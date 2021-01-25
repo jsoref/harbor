@@ -3999,7 +3999,7 @@ definitions:
       endpoint:
         type: string
         description: The fully qualified URI of login endpoint of authproxy, such as 'https://192.168.1.2:8443/login'
-      tokenreivew_endpoint:
+      tokenreview_endpoint:
         type: string
         description: The fully qualified URI of token review endpoint of authproxy, such as 'https://192.168.1.2:8443/tokenreview'
       skip_search:
