@@ -60,7 +60,7 @@ func ParamPlaceholderForIn(n int) string {
 // QuerySetter generates the query setter according to the query. "ignoredCols" is used to set the columns that will not be queried.
 // Currently, it supports two ways to generate the query setter, the first one is to generate by the fields of the model,
 // and the second one is to generate by the methods their name begins with `FilterBy` of the model.
-// e.g. for the following model the queriable fields are  :
+// e.g. for the following model the queryable fields are  :
 // "Field2", "customized_field2", "Field3", "field3" and "Field4" (or "field4").
 // type Foo struct{
 //   Field1 string `orm:"-"`
@@ -92,8 +92,8 @@ func QuerySetter(ctx context.Context, model interface{}, query *q.Query, ignored
 		ignored[col] = true
 	}
 
-	columns := queriableColumns(model)
-	methods := queriableMethods(model)
+	columns := queryableColumns(model)
+	methods := queryableMethods(model)
 	for k, v := range query.Keywords {
 		field := strings.SplitN(k, orm.ExprSep, 2)[0]
 		if ignored[field] {
@@ -200,7 +200,7 @@ var (
 //   Field2 string `orm:"column(customized_field2)"`
 //   Field3 string
 // }
-func queriableColumns(model interface{}) map[string]bool {
+func queryableColumns(model interface{}) map[string]bool {
 	typ := reflect.Indirect(reflect.ValueOf(model)).Type()
 
 	key := getFullName(typ) + "-columns"
@@ -243,7 +243,7 @@ func queriableColumns(model interface{}) map[string]bool {
 }
 
 // get model methods which begin with `FilterBy`
-func queriableMethods(model interface{}) map[string]string {
+func queryableMethods(model interface{}) map[string]string {
 	val := reflect.ValueOf(model)
 
 	key := getFullName(reflect.Indirect(val).Type()) + "-methods"

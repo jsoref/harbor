@@ -58,7 +58,7 @@ func (bar *Bar) FilterBy() {}
 
 func (bar *Bar) FilterByField4() {}
 
-func Test_queriableColumns(t *testing.T) {
+func Test_queryableColumns(t *testing.T) {
 	toWant := func(fields ...string) map[string]bool {
 		want := map[string]bool{}
 
@@ -81,14 +81,14 @@ func Test_queriableColumns(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := queriableColumns(tt.args.model); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("queriableColumns() = %v, want %v", got, tt.want)
+			if got := queryableColumns(tt.args.model); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("queryableColumns() = %v, want %v", got, tt.want)
 			}
 		})
 	}
 }
 
-func Test_queriableMethods(t *testing.T) {
+func Test_queryableMethods(t *testing.T) {
 	type args struct {
 		model interface{}
 	}
@@ -101,8 +101,8 @@ func Test_queriableMethods(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := queriableMethods(tt.args.model); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("queriableMethods() = %v, want %v", got, tt.want)
+			if got := queryableMethods(tt.args.model); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("queryableMethods() = %v, want %v", got, tt.want)
 			}
 		})
 	}
