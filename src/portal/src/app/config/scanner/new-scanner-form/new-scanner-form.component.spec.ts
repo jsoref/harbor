@@ -48,7 +48,7 @@ describe('NewScannerFormComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
-  it('should creat', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
   it('should show "name is required"', () => {

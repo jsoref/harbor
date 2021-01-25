@@ -72,7 +72,7 @@ describe('NewScannerModalComponent', () => {
           component.newScannerFormComponent.checkEndpointUrlSubscribe = null;
       }
   });
-  it('should creat', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
   it('should be add mode', () => {
