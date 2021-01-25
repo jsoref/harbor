@@ -8,7 +8,7 @@ db="${POSTGRES_DB:-$POSTGRES_USER}"
 export PGPASSWORD="${POSTGRES_PASSWORD:-}"
 
 args=(
-	# force postgres to not use the local unix socket (test "external" connectibility)
+	# force postgres to not use the local unix socket (test "external" connectability)
 	--host "$host"
 	--username "$user"
 	--dbname "$db"
