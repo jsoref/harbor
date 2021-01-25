@@ -56,7 +56,7 @@ func (api *preheatAPI) Prepare(ctx context.Context, operation string, params int
 }
 
 func (api *preheatAPI) CreateInstance(ctx context.Context, params operation.CreateInstanceParams) middleware.Responder {
-	if err := api.RequireSystemAccess(ctx, rbac.ActionCreate, rbac.ResourcePreatInstance); err != nil {
+	if err := api.RequireSystemAccess(ctx, rbac.ActionCreate, rbac.ResourcePreheatInstance); err != nil {
 		return api.SendError(ctx, err)
 	}
 
@@ -75,7 +75,7 @@ func (api *preheatAPI) CreateInstance(ctx context.Context, params operation.Crea
 }
 
 func (api *preheatAPI) DeleteInstance(ctx context.Context, params operation.DeleteInstanceParams) middleware.Responder {
-	if err := api.RequireSystemAccess(ctx, rbac.ActionDelete, rbac.ResourcePreatInstance); err != nil {
+	if err := api.RequireSystemAccess(ctx, rbac.ActionDelete, rbac.ResourcePreheatInstance); err != nil {
 		return api.SendError(ctx, err)
 	}
 
@@ -93,7 +93,7 @@ func (api *preheatAPI) DeleteInstance(ctx context.Context, params operation.Dele
 }
 
 func (api *preheatAPI) GetInstance(ctx context.Context, params operation.GetInstanceParams) middleware.Responder {
-	if err := api.RequireSystemAccess(ctx, rbac.ActionRead, rbac.ResourcePreatInstance); err != nil {
+	if err := api.RequireSystemAccess(ctx, rbac.ActionRead, rbac.ResourcePreheatInstance); err != nil {
 		return api.SendError(ctx, err)
 	}
 
@@ -113,7 +113,7 @@ func (api *preheatAPI) GetInstance(ctx context.Context, params operation.GetInst
 
 // ListInstances is List p2p instances
 func (api *preheatAPI) ListInstances(ctx context.Context, params operation.ListInstancesParams) middleware.Responder {
-	if err := api.RequireSystemAccess(ctx, rbac.ActionList, rbac.ResourcePreatInstance); err != nil {
+	if err := api.RequireSystemAccess(ctx, rbac.ActionList, rbac.ResourcePreheatInstance); err != nil {
 		return api.SendError(ctx, err)
 	}
 
@@ -147,7 +147,7 @@ func (api *preheatAPI) ListInstances(ctx context.Context, params operation.ListI
 }
 
 func (api *preheatAPI) ListProviders(ctx context.Context, params operation.ListProvidersParams) middleware.Responder {
-	if err := api.RequireSystemAccess(ctx, rbac.ActionList, rbac.ResourcePreatInstance); err != nil {
+	if err := api.RequireSystemAccess(ctx, rbac.ActionList, rbac.ResourcePreheatInstance); err != nil {
 		return api.SendError(ctx, err)
 	}
 
@@ -162,7 +162,7 @@ func (api *preheatAPI) ListProviders(ctx context.Context, params operation.ListP
 
 // UpdateInstance is Update instance
 func (api *preheatAPI) UpdateInstance(ctx context.Context, params operation.UpdateInstanceParams) middleware.Responder {
-	if err := api.RequireSystemAccess(ctx, rbac.ActionUpdate, rbac.ResourcePreatInstance); err != nil {
+	if err := api.RequireSystemAccess(ctx, rbac.ActionUpdate, rbac.ResourcePreheatInstance); err != nil {
 		return api.SendError(ctx, err)
 	}
 
@@ -196,7 +196,7 @@ func convertProvidersToFrontend(backend []*provider.Metadata) (frontend []*model
 
 // GetPolicy is Get a preheat policy
 func (api *preheatAPI) GetPolicy(ctx context.Context, params operation.GetPolicyParams) middleware.Responder {
-	if err := api.RequireProjectAccess(ctx, params.ProjectName, rbac.ActionRead, rbac.ResourcePreatPolicy); err != nil {
+	if err := api.RequireProjectAccess(ctx, params.ProjectName, rbac.ActionRead, rbac.ResourcePreheatPolicy); err != nil {
 		return api.SendError(ctx, err)
 	}
 
@@ -228,7 +228,7 @@ func (api *preheatAPI) GetPolicy(ctx context.Context, params operation.GetPolicy
 
 // CreatePolicy is Create a preheat policy under a project
 func (api *preheatAPI) CreatePolicy(ctx context.Context, params operation.CreatePolicyParams) middleware.Responder {
-	if err := api.RequireProjectAccess(ctx, params.ProjectName, rbac.ActionCreate, rbac.ResourcePreatPolicy); err != nil {
+	if err := api.RequireProjectAccess(ctx, params.ProjectName, rbac.ActionCreate, rbac.ResourcePreheatPolicy); err != nil {
 		return api.SendError(ctx, err)
 	}
 
@@ -248,7 +248,7 @@ func (api *preheatAPI) CreatePolicy(ctx context.Context, params operation.Create
 
 // UpdatePolicy is Update preheat policy
 func (api *preheatAPI) UpdatePolicy(ctx context.Context, params operation.UpdatePolicyParams) middleware.Responder {
-	if err := api.RequireProjectAccess(ctx, params.ProjectName, rbac.ActionUpdate, rbac.ResourcePreatPolicy); err != nil {
+	if err := api.RequireProjectAccess(ctx, params.ProjectName, rbac.ActionUpdate, rbac.ResourcePreheatPolicy); err != nil {
 		return api.SendError(ctx, err)
 	}
 
@@ -266,7 +266,7 @@ func (api *preheatAPI) UpdatePolicy(ctx context.Context, params operation.Update
 
 // DeletePolicy is Delete a preheat policy
 func (api *preheatAPI) DeletePolicy(ctx context.Context, params operation.DeletePolicyParams) middleware.Responder {
-	if err := api.RequireProjectAccess(ctx, params.ProjectName, rbac.ActionDelete, rbac.ResourcePreatPolicy); err != nil {
+	if err := api.RequireProjectAccess(ctx, params.ProjectName, rbac.ActionDelete, rbac.ResourcePreheatPolicy); err != nil {
 		return api.SendError(ctx, err)
 	}
 
@@ -311,7 +311,7 @@ func (api *preheatAPI) DeletePolicy(ctx context.Context, params operation.Delete
 
 // ListPolicies is List preheat policies
 func (api *preheatAPI) ListPolicies(ctx context.Context, params operation.ListPoliciesParams) middleware.Responder {
-	if err := api.RequireProjectAccess(ctx, params.ProjectName, rbac.ActionList, rbac.ResourcePreatPolicy); err != nil {
+	if err := api.RequireProjectAccess(ctx, params.ProjectName, rbac.ActionList, rbac.ResourcePreheatPolicy); err != nil {
 		return api.SendError(ctx, err)
 	}
 
@@ -360,7 +360,7 @@ func (api *preheatAPI) ListPolicies(ctx context.Context, params operation.ListPo
 
 // ManualPreheat is manual preheat
 func (api *preheatAPI) ManualPreheat(ctx context.Context, params operation.ManualPreheatParams) middleware.Responder {
-	if err := api.RequireProjectAccess(ctx, params.ProjectName, rbac.ActionRead, rbac.ResourcePreatPolicy); err != nil {
+	if err := api.RequireProjectAccess(ctx, params.ProjectName, rbac.ActionRead, rbac.ResourcePreheatPolicy); err != nil {
 		return api.SendError(ctx, err)
 	}
 
@@ -387,7 +387,7 @@ func (api *preheatAPI) ManualPreheat(ctx context.Context, params operation.Manua
 }
 
 func (api *preheatAPI) PingInstances(ctx context.Context, params operation.PingInstancesParams) middleware.Responder {
-	if err := api.RequireSystemAccess(ctx, rbac.ActionRead, rbac.ResourcePreatInstance); err != nil {
+	if err := api.RequireSystemAccess(ctx, rbac.ActionRead, rbac.ResourcePreheatInstance); err != nil {
 		return api.SendError(ctx, err)
 	}
 
@@ -567,7 +567,7 @@ func convertExecutionToPayload(model *task.Execution) (*models.Execution, error)
 
 // GetExecution gets an execution.
 func (api *preheatAPI) GetExecution(ctx context.Context, params operation.GetExecutionParams) middleware.Responder {
-	if err := api.RequireProjectAccess(ctx, params.ProjectName, rbac.ActionRead, rbac.ResourcePreatPolicy); err != nil {
+	if err := api.RequireProjectAccess(ctx, params.ProjectName, rbac.ActionRead, rbac.ResourcePreheatPolicy); err != nil {
 		return api.SendError(ctx, err)
 	}
 
@@ -586,7 +586,7 @@ func (api *preheatAPI) GetExecution(ctx context.Context, params operation.GetExe
 
 // ListExecutions lists executions.
 func (api *preheatAPI) ListExecutions(ctx context.Context, params operation.ListExecutionsParams) middleware.Responder {
-	if err := api.RequireProjectAccess(ctx, params.ProjectName, rbac.ActionList, rbac.ResourcePreatPolicy); err != nil {
+	if err := api.RequireProjectAccess(ctx, params.ProjectName, rbac.ActionList, rbac.ResourcePreheatPolicy); err != nil {
 		return api.SendError(ctx, err)
 	}
 
@@ -635,7 +635,7 @@ func (api *preheatAPI) ListExecutions(ctx context.Context, params operation.List
 
 // StopExecution stops execution.
 func (api *preheatAPI) StopExecution(ctx context.Context, params operation.StopExecutionParams) middleware.Responder {
-	if err := api.RequireProjectAccess(ctx, params.ProjectName, rbac.ActionUpdate, rbac.ResourcePreatPolicy); err != nil {
+	if err := api.RequireProjectAccess(ctx, params.ProjectName, rbac.ActionUpdate, rbac.ResourcePreheatPolicy); err != nil {
 		return api.SendError(ctx, err)
 	}
 
@@ -673,7 +673,7 @@ func convertTaskToPayload(model *task.Task) (*models.Task, error) {
 
 // ListTasks lists tasks.
 func (api *preheatAPI) ListTasks(ctx context.Context, params operation.ListTasksParams) middleware.Responder {
-	if err := api.RequireProjectAccess(ctx, params.ProjectName, rbac.ActionList, rbac.ResourcePreatPolicy); err != nil {
+	if err := api.RequireProjectAccess(ctx, params.ProjectName, rbac.ActionList, rbac.ResourcePreheatPolicy); err != nil {
 		return api.SendError(ctx, err)
 	}
 
@@ -711,7 +711,7 @@ func (api *preheatAPI) ListTasks(ctx context.Context, params operation.ListTasks
 
 // GetPreheatLog gets log.
 func (api *preheatAPI) GetPreheatLog(ctx context.Context, params operation.GetPreheatLogParams) middleware.Responder {
-	if err := api.RequireProjectAccess(ctx, params.ProjectName, rbac.ActionRead, rbac.ResourcePreatPolicy); err != nil {
+	if err := api.RequireProjectAccess(ctx, params.ProjectName, rbac.ActionRead, rbac.ResourcePreheatPolicy); err != nil {
 		return api.SendError(ctx, err)
 	}
 
@@ -725,7 +725,7 @@ func (api *preheatAPI) GetPreheatLog(ctx context.Context, params operation.GetPr
 
 // ListProvidersUnderProject is Get all providers at project level
 func (api *preheatAPI) ListProvidersUnderProject(ctx context.Context, params operation.ListProvidersUnderProjectParams) middleware.Responder {
-	if err := api.RequireProjectAccess(ctx, params.ProjectName, rbac.ActionList, rbac.ResourcePreatPolicy); err != nil {
+	if err := api.RequireProjectAccess(ctx, params.ProjectName, rbac.ActionList, rbac.ResourcePreheatPolicy); err != nil {
 		return api.SendError(ctx, err)
 	}
 

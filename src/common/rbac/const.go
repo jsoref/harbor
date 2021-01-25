@@ -55,8 +55,8 @@ const (
 	ResourceTag                   = Resource("tag")
 	ResourceArtifactAddition      = Resource("artifact-addition")
 	ResourceArtifactLabel         = Resource("artifact-label")
-	ResourcePreatPolicy           = Resource("preheat-policy")
-	ResourcePreatInstance         = Resource("preheat-instance")
+	ResourcePreheatPolicy         = Resource("preheat-policy")
+	ResourcePreheatInstance       = Resource("preheat-instance")
 	ResourceSelf                  = Resource("") // subresource for self
 
 	ResourceAuditLog           = Resource("audit-log")
