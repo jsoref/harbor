@@ -373,7 +373,7 @@ DECLARE
     task_status varchar(32);
     task_status_code integer;
 BEGIN
-    FOR aj IN SELECT * FROM admin_job where job_name='IMAGE_GC' and job_kind='Generic'and deleted=FALSE
+    FOR aj IN SELECT * FROM admin_job where job_name='IMAGE_GC' and job_kind='Generic' and deleted=FALSE
     LOOP
         IF aj.status = 'stopped' THEN
             exec_status = 'Stopped';
