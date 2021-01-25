@@ -522,7 +522,7 @@ func (a *projectAPI) getProject(ctx context.Context, projectNameOrID interface{}
 func (a *projectAPI) validateProjectReq(ctx context.Context, req *models.ProjectReq) error {
 	if req.RegistryID != nil {
 		if *req.RegistryID <= 0 {
-			return errors.BadRequestError(fmt.Errorf("%d is invalid value of registry_id, it should be geater than 0", *req.RegistryID))
+			return errors.BadRequestError(fmt.Errorf("%d is invalid value of registry_id, it should be greater than 0", *req.RegistryID))
 		}
 
 		registry, err := replication.RegistryMgr.Get(*req.RegistryID)
