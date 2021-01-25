@@ -224,7 +224,7 @@ Helm3 CLI Push Without Sign In Harbor
     Retry Double Keywords When Error  Go Into Chart Version  ${harbor_chart_name}  Retry Wait Until Page Contains  ${harbor_chart_version}
 
 #Important Note: All CVE IDs in CVE Allowlist cases must unique!
-Body Of Verfiy System Level CVE Allowlist
+Body Of Verify System Level CVE Allowlist
     [Arguments]  ${image_argument}  ${sha256_argument}  ${most_cve_list}  ${single_cve}
     [Tags]  run-once
     Init Chrome Driver
@@ -258,7 +258,7 @@ Body Of Verfiy System Level CVE Allowlist
     Cannot Pull Image  ${ip}    ${signin_user}    ${signin_pwd}    project${d}    ${image}    tag=${sha256}  err_msg=cannot be pulled due to configured policy
     Close Browser
 
-Body Of Verfiy Project Level CVE Allowlist
+Body Of Verify Project Level CVE Allowlist
     [Arguments]  ${image_argument}  ${sha256_argument}  ${most_cve_list}  ${single_cve}
     [Tags]  run-once
     Init Chrome Driver
@@ -286,7 +286,7 @@ Body Of Verfiy Project Level CVE Allowlist
     Cannot Pull Image  ${ip}    ${signin_user}    ${signin_pwd}    project${d}    ${image}    tag=${sha256}
     Close Browser
 
-Body Of Verfiy Project Level CVE Allowlist By Quick Way of Add System
+Body Of Verify Project Level CVE Allowlist By Quick Way of Add System
     [Arguments]  ${image_argument}  ${sha256_argument}  ${cve_list}
     [Tags]  run-once
     Init Chrome Driver

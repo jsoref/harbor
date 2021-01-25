@@ -434,12 +434,12 @@ Verify Project-level Allowlist
         Run Keyword If  "@{is_reuse_sys_cve_allowlist}[0]" == "true"  Retry Wait Element Should Be Disabled   ${project_config_project_wl_add_btn}
         ...  ELSE  Retry Wait Element  ${project_config_project_wl_add_btn}
         @{cve_ids}=    Get Value From Json    ${json}    $.projects[?(@.name=${project})].configuration.cve
-        Loop Verifiy CVE_IDs  @{cve_ids}
+        Loop Verify CVE_IDs  @{cve_ids}
         Navigate To Projects
     END
     Close Browser
 
-Loop Verifiy CVE_IDs
+Loop Verify CVE_IDs
     [Arguments]    @{cve_ids}
     FOR    ${cve_id}    IN    @{cve_ids}
         Page Should Contain    ${cve_id}
@@ -454,7 +454,7 @@ Verify System Setting Allowlist
     Switch To Configure
     Switch To System Settings
     Log To Console  "@{cve_ids}"
-    Loop Verifiy CVE_IDs  @{cve_ids}
+    Loop Verify CVE_IDs  @{cve_ids}
     Close Browser
 
 Verify Trivy Is Default Scanner
