@@ -218,7 +218,7 @@ Clear Field Of Characters
         Press Keys  ${field}  \\8
     END
 
-Wait Unitl Command Success
+Wait Until Command Success
     [Arguments]  ${cmd}  ${times}=2
     FOR  ${n}  IN RANGE  1  ${times}
         Log  Trying ${cmd}: ${n} ...  console=True

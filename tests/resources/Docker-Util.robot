@@ -20,14 +20,14 @@ Library  Process
 *** Keywords ***
 Run Docker Info
     [Arguments]  ${docker-params}
-    Wait Unitl Command Success  docker ${docker-params} info
+    Wait Until Command Success  docker ${docker-params} info
 
 Pull image
     [Arguments]  ${ip}  ${user}  ${pwd}  ${project}  ${image}  ${tag}=${null}  ${is_robot}=${false}
     Log To Console  \nRunning docker pull ${image}...
     ${image_with_tag}=  Set Variable If  '${tag}'=='${null}'  ${image}  ${image}:${tag}
-    Run Keyword If  ${is_robot}==${false}  Wait Unitl Command Success  docker login -u ${user} -p ${pwd} ${ip}
-    ...  ELSE  Wait Unitl Command Success  docker login -u robot\\\$${user} -p ${pwd} ${ip}
+    Run Keyword If  ${is_robot}==${false}  Wait Until Command Success  docker login -u ${user} -p ${pwd} ${ip}
+    ...  ELSE  Wait Until Command Success  docker login -u robot\\\$${user} -p ${pwd} ${ip}
     ${output}=  Docker Pull  ${ip}/${project}/${image_with_tag}
     Log  ${output}
     Log To Console  ${output}
@@ -35,7 +35,7 @@ Pull image
     Should Contain  ${output}  Status:
     Should Not Contain  ${output}  No such image:
     #Remove image for docker 20
-    Wait Unitl Command Success  docker rmi -f ${ip}/${project}/${image_with_tag}
+    Wait Until Command Success  docker rmi -f ${ip}/${project}/${image_with_tag}
 
 Push image
     # If no tag provided in $(image_with_or_without_tag}, latest will be the tag pulled from docker-hub or read from local
@@ -47,16 +47,16 @@ Push image
     Log To Console  \nRunning docker push ${image_with_or_without_tag}...
     ${image_in_use}=   Set Variable If  ${need_pull_first}==${true}  ${image_in_use}  ${image_with_or_without_tag}
     Run Keyword If  ${need_pull_first}==${true}   Docker Pull  ${LOCAL_REGISTRY}/${LOCAL_REGISTRY_NAMESPACE}/${image_in_use}
-    Run Keyword If  ${is_robot}==${false}  Wait Unitl Command Success  docker login -u ${user} -p ${pwd} ${ip}
-    ...  ELSE  Wait Unitl Command Success  docker login -u robot\\\$${user} -p ${pwd} ${ip}
-    Run Keyword If  ${need_pull_first}==${true}  Wait Unitl Command Success  docker tag ${LOCAL_REGISTRY}/${LOCAL_REGISTRY_NAMESPACE}/${image_in_use} ${ip}/${project}/${image_in_use_with_tag}
-    ...  ELSE  Wait Unitl Command Success  docker tag ${image_in_use} ${ip}/${project}/${image_in_use_with_tag}
-    Wait Unitl Command Success  docker push ${ip}/${project}/${image_in_use_with_tag}
-    Wait Unitl Command Success  docker logout ${ip}
+    Run Keyword If  ${is_robot}==${false}  Wait Until Command Success  docker login -u ${user} -p ${pwd} ${ip}
+    ...  ELSE  Wait Until Command Success  docker login -u robot\\\$${user} -p ${pwd} ${ip}
+    Run Keyword If  ${need_pull_first}==${true}  Wait Until Command Success  docker tag ${LOCAL_REGISTRY}/${LOCAL_REGISTRY_NAMESPACE}/${image_in_use} ${ip}/${project}/${image_in_use_with_tag}
+    ...  ELSE  Wait Until Command Success  docker tag ${image_in_use} ${ip}/${project}/${image_in_use_with_tag}
+    Wait Until Command Success  docker push ${ip}/${project}/${image_in_use_with_tag}
+    Wait Until Command Success  docker logout ${ip}
     #Remove image for docker 20
-    ${output}=  Wait Unitl Command Success  docker rmi -f ${ip}/${project}/${image_in_use_with_tag}
+    ${output}=  Wait Until Command Success  docker rmi -f ${ip}/${project}/${image_in_use_with_tag}
     Log All  Docker rmi: ${output}
-    ${output}=  Run Keyword If  ${need_pull_first}==${true}   Wait Unitl Command Success  docker rmi -f ${LOCAL_REGISTRY}/${LOCAL_REGISTRY_NAMESPACE}/${image_in_use}
+    ${output}=  Run Keyword If  ${need_pull_first}==${true}   Wait Until Command Success  docker rmi -f ${LOCAL_REGISTRY}/${LOCAL_REGISTRY_NAMESPACE}/${image_in_use}
     Log All  Docker rmi: ${output}
     Sleep  1
 
@@ -65,13 +65,13 @@ Push Image With Tag
     [Arguments]  ${ip}  ${user}  ${pwd}  ${project}  ${image}  ${tag}  ${tag1}=latest
     Log To Console  \nRunning docker push ${image}...
     Docker Pull  ${LOCAL_REGISTRY}/${LOCAL_REGISTRY_NAMESPACE}/${image}:${tag1}
-    Wait Unitl Command Success  docker login -u ${user} -p ${pwd} ${ip}
-    Wait Unitl Command Success  docker tag ${LOCAL_REGISTRY}/${LOCAL_REGISTRY_NAMESPACE}/${image}:${tag1} ${ip}/${project}/${image}:${tag}
-    Wait Unitl Command Success  docker push ${ip}/${project}/${image}:${tag}
-    Wait Unitl Command Success  docker logout ${ip}
+    Wait Until Command Success  docker login -u ${user} -p ${pwd} ${ip}
+    Wait Until Command Success  docker tag ${LOCAL_REGISTRY}/${LOCAL_REGISTRY_NAMESPACE}/${image}:${tag1} ${ip}/${project}/${image}:${tag}
+    Wait Until Command Success  docker push ${ip}/${project}/${image}:${tag}
+    Wait Until Command Success  docker logout ${ip}
     #Remove image for docker 20
-    Wait Unitl Command Success  docker rmi -f ${ip}/${project}/${image}:${tag}
-    Wait Unitl Command Success  docker rmi -f ${LOCAL_REGISTRY}/${LOCAL_REGISTRY_NAMESPACE}/${image}:${tag1}
+    Wait Until Command Success  docker rmi -f ${ip}/${project}/${image}:${tag}
+    Wait Until Command Success  docker rmi -f ${LOCAL_REGISTRY}/${LOCAL_REGISTRY_NAMESPACE}/${image}:${tag1}
 
 Cannot Docker Login Harbor
     [Arguments]  ${ip}  ${user}  ${pwd}
@@ -80,7 +80,7 @@ Cannot Docker Login Harbor
 Cannot Pull Image
     [Arguments]  ${ip}  ${user}  ${pwd}  ${project}  ${image}  ${tag}=${null}  ${err_msg}=${null}
     ${image_with_tag}=  Set Variable If  '${tag}'=='${null}'  ${image}  ${image}:${tag}
-    Wait Unitl Command Success  docker login -u ${user} -p ${pwd} ${ip}
+    Wait Until Command Success  docker login -u ${user} -p ${pwd} ${ip}
     FOR  ${idx}  IN RANGE  0  30
         ${out}  Run Keyword And Ignore Error  Command Should be Failed  docker pull ${ip}/${project}/${image_with_tag}
         Exit For Loop If  '${out[0]}'=='PASS'
@@ -92,7 +92,7 @@ Cannot Pull Image
 
 Cannot Pull Unsigned Image
     [Arguments]  ${ip}  ${user}  ${pass}  ${proj}  ${imagewithtag}
-    Wait Unitl Command Success  docker login -u ${user} -p ${pass} ${ip}
+    Wait Until Command Success  docker login -u ${user} -p ${pass} ${ip}
     ${output}=  Command Should be Failed  docker pull ${ip}/${proj}/${imagewithtag}
     Log To Console  ${output}
     Should Contain  ${output}  The image is not signed in Notary
@@ -101,13 +101,13 @@ Cannot Push image
     [Arguments]  ${ip}  ${user}  ${pwd}  ${project}  ${image}  ${err_msg}=${null}  ${err_msg_2}=${null}
     Log To Console  \nRunning docker push ${image}...
     Docker Pull  ${LOCAL_REGISTRY}/${LOCAL_REGISTRY_NAMESPACE}/${image}
-    Wait Unitl Command Success  docker login -u ${user} -p ${pwd} ${ip}
-    Wait Unitl Command Success  docker tag ${LOCAL_REGISTRY}/${LOCAL_REGISTRY_NAMESPACE}/${image} ${ip}/${project}/${image}
+    Wait Until Command Success  docker login -u ${user} -p ${pwd} ${ip}
+    Wait Until Command Success  docker tag ${LOCAL_REGISTRY}/${LOCAL_REGISTRY_NAMESPACE}/${image} ${ip}/${project}/${image}
     ${output}=  Command Should be Failed  docker push ${ip}/${project}/${image}
     Log To Console  ${output}
     Run Keyword If  '${err_msg}' != '${null}'  Should Contain  ${output}  ${err_msg}
     Run Keyword If  '${err_msg_2}' != '${null}'  Should Contain  ${output}  ${err_msg_2}
-    Wait Unitl Command Success  docker logout ${ip}
+    Wait Until Command Success  docker logout ${ip}
 
 Wait Until Container Stops
     [Arguments]  ${container}
@@ -121,11 +121,11 @@ Wait Until Container Stops
 
 Hit Nginx Endpoint
     [Arguments]  ${vch-ip}  ${port}
-    Wait Unitl Command Success  wget ${vch-ip}:${port}
+    Wait Until Command Success  wget ${vch-ip}:${port}
 
 Get Container IP
     [Arguments]  ${docker-params}  ${id}  ${network}=default  ${dockercmd}=docker
-    ${ip}=  Wait Unitl Command Success  ${dockercmd} ${docker-params} network inspect ${network} | jq '.[0].Containers."${id}".IPv4Address' | cut -d \\" -f 2 | cut -d \\/ -f 1
+    ${ip}=  Wait Until Command Success  ${dockercmd} ${docker-params} network inspect ${network} | jq '.[0].Containers."${id}".IPv4Address' | cut -d \\" -f 2 | cut -d \\/ -f 1
     [Return]  ${ip}
 
 # The local dind version is embedded in Dockerfile
@@ -161,25 +161,25 @@ Start Containerd Daemon Locally
 
 Prepare Docker Cert
     [Arguments]  ${ip}
-    Wait Unitl Command Success  mkdir -p /etc/docker/certs.d/${ip}
-    Wait Unitl Command Success  cp harbor_ca.crt /etc/docker/certs.d/${ip}
-    Wait Unitl Command Success  cp harbor_ca.crt /usr/local/share/ca-certificates/
-    Wait Unitl Command Success  update-ca-certificates
+    Wait Until Command Success  mkdir -p /etc/docker/certs.d/${ip}
+    Wait Until Command Success  cp harbor_ca.crt /etc/docker/certs.d/${ip}
+    Wait Until Command Success  cp harbor_ca.crt /usr/local/share/ca-certificates/
+    Wait Until Command Success  update-ca-certificates
 
 Prepare Docker Cert For Nightly
     [Arguments]  ${ip}
-    Wait Unitl Command Success  mkdir -p /etc/docker/certs.d/${ip}
-    Wait Unitl Command Success  cp harbor_ca.crt /etc/docker/certs.d/${ip}
-    Wait Unitl Command Success  cp harbor_ca.crt /usr/local/share/ca-certificates/
+    Wait Until Command Success  mkdir -p /etc/docker/certs.d/${ip}
+    Wait Until Command Success  cp harbor_ca.crt /etc/docker/certs.d/${ip}
+    Wait Until Command Success  cp harbor_ca.crt /usr/local/share/ca-certificates/
     #Add pivotal ecs cert for docker manifest push test.
-    Wait Unitl Command Success  cp /ecs_ca/vmwarecert.crt /usr/local/share/ca-certificates/
-    Wait Unitl Command Success  update-ca-certificates
+    Wait Until Command Success  cp /ecs_ca/vmwarecert.crt /usr/local/share/ca-certificates/
+    Wait Until Command Success  update-ca-certificates
 
 Kill Local Docker Daemon
     [Arguments]  ${handle}  ${dockerd-pid}
     Terminate Process  ${handle}
     Process Should Be Stopped  ${handle}
-    Wait Unitl Command Success  kill -9 ${dockerd-pid}
+    Wait Until Command Success  kill -9 ${dockerd-pid}
 
 Docker Login Fail
     [Arguments]  ${ip}  ${user}  ${pwd}
@@ -190,21 +190,21 @@ Docker Login Fail
 
 Docker Login
     [Arguments]  ${server}  ${username}  ${password}
-    Wait Unitl Command Success  docker login -u ${username} -p ${password} ${server}
+    Wait Until Command Success  docker login -u ${username} -p ${password} ${server}
 
 Docker Pull
     [Arguments]  ${image}
-    ${output}=  Retry Keyword N Times When Error  2  Wait Unitl Command Success  docker pull ${image}
+    ${output}=  Retry Keyword N Times When Error  2  Wait Until Command Success  docker pull ${image}
     Log All  Docker Pull: ${output}
     [Return]  ${output}
 
 Docker Tag
     [Arguments]  ${src_image}   ${dst_image}
-    Wait Unitl Command Success  docker tag ${src_image} ${dst_image}
+    Wait Until Command Success  docker tag ${src_image} ${dst_image}
 
 Docker Push
     [Arguments]  ${image}
-    Wait Unitl Command Success  docker push ${image}
+    Wait Until Command Success  docker push ${image}
 
 Docker Push Index
     [Arguments]  ${ip}  ${user}  ${pwd}  ${index}  ${image1}  ${image2}
