@@ -26,7 +26,7 @@ class TestProjects(unittest.TestCase):
         self.chart_file = "https://storage.googleapis.com/harbor-builds/helm-chart-test-files/harbor-0.2.0.tgz"
         self.archive = "harbor/"
         self.CHART_NAME=self.archive.replace("/", "")
-        self.verion = "0.2.0"
+        self.version = "0.2.0"
         self.chart_repo_name = "chart_local"
         self.repo_name = "harbor_api_test"
 
@@ -68,7 +68,7 @@ class TestProjects(unittest.TestCase):
         self.chart.chart_should_exist(TestProjects.project_name, self.CHART_NAME, **TestProjects.API_CHART_CLIENT)
 
         #6. Push chart to project(PA) by Helm3 CLI with robot account(RA);
-        chart_cli_ret = library.helm.helm_chart_push_to_harbor(self.chart_file, self.archive,  harbor_server, TestProjects.project_name, self.repo_name, self.verion, robot_account.name, robot_account.secret)
+        chart_cli_ret = library.helm.helm_chart_push_to_harbor(self.chart_file, self.archive,  harbor_server, TestProjects.project_name, self.repo_name, self.version, robot_account.name, robot_account.secret)
 
 
 if __name__ == '__main__':

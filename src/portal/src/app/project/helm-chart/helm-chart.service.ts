@@ -67,7 +67,7 @@ export abstract class HelmChartService {
   ): Observable<HelmChartDetail>;
 
   /**
-   * Download an specific verison
+   * Download an specific version
    *  ** deprecated param projectName ID of the project
    *  ** deprecated param filename ID of the helm chart
    *  ** deprecated param version Name of version
