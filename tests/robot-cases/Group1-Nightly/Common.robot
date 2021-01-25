@@ -465,7 +465,7 @@ Test Case - Create An New Project With Quotas Set
     Should Be Equal As Strings  ${storage_quota_ret}  0Byte of ${storage_quota}${storage_quota_unit}
     Close Browser
 
-Test Case - Project Storage Quotas Dispaly And Control
+Test Case - Project Storage Quotas Display And Control
     Init Chrome Driver
     ${d}=  Get Current Date  result_format=%m%s
     ${storage_quota}=  Set Variable  350
