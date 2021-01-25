@@ -91,7 +91,7 @@ Test Case - Admin Add New Users
     Init Chrome Driver
     ${d}=   Get Current Date    result_format=%m%s
     Sign In Harbor  ${HARBOR_URL}  ${HARBOR_ADMIN}  ${HARBOR_PASSWORD}
-    # can add a new user when self-reg is enbled
+    # can add a new user when self-reg is enabled
     Switch To Configure
     Self Reg Should Be Enabled
     Switch to User Tag
