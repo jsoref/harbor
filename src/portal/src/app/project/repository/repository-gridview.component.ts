@@ -393,7 +393,7 @@ export class RepositoryGridviewComponent implements OnChanges, OnInit, OnDestroy
 
         this.totalCount = +repo.headers.get('x-total-count');
         this.repositories = repo.body;
-        // Do customising filtering and sorting
+        // Do customizing filtering and sorting
         this.repositories = doFiltering<NewRepository>(this.repositories, state);
         this.repositories = doSorting<NewRepository>(this.repositories, state);
         this.signedCon = {};

@@ -184,7 +184,7 @@ export class ReplicationTasksComponent implements OnInit, OnDestroy {
           }
         }
         this.tasks = res.body; // Keep the data
-        // Do customising filtering and sorting
+        // Do customizing filtering and sorting
         this.tasks = doFiltering<ReplicationTask>(this.tasks, state);
         this.tasks = doSorting<ReplicationTask>(this.tasks, state);
       },
