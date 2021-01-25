@@ -2442,7 +2442,7 @@ paths:
       parameters:
         - name: registration_id
           in: path
-          description: The scanner registration identifer.
+          description: The scanner registration identifier.
           required: true
           type: string
       responses:
