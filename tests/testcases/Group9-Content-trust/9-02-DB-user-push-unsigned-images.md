@@ -21,7 +21,7 @@ User guide
 
 # Expected Outcome:
 
-* A red cross will displayed under signed colume in UI.
+* A red cross will displayed under signed column in UI.
 
 # Possible Problems:
 None
