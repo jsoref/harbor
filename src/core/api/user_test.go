@@ -698,5 +698,5 @@ func TestValidateSecret(t *testing.T) {
 	assert.NotNil(t, validateSecret("PASSW0RD"))
 	assert.NotNil(t, validateSecret("Sh0rt"))
 	assert.Nil(t, validateSecret("Passw0rd"))
-	assert.Nil(t, validateSecret("Thisis1Valid_password"))
+	assert.Nil(t, validateSecret("ThisIs1Valid_password"))
 }
