@@ -2620,7 +2620,7 @@ paths:
     get:
       summary: Get Retention job task log
       operationId: getRetentionTaskLog
-      description: Get Retention job task log, tags ratain or deletion detail will be shown in a table.
+      description: Get Retention job task log, tags retain or deletion detail will be shown in a table.
       tags:
         - Retention
       produces:
