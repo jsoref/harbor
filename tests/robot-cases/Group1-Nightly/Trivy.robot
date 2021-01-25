@@ -105,7 +105,7 @@ Test Case - Project Level Image Severity Policy
     Scan Repo  ${sha256}  Succeed
     Navigate To Projects
     Go Into Project  project${d}
-    Set Vulnerabilty Severity  3
+    Set Vulnerability Severity  3
     Cannot Pull Image  ${ip}  ${HARBOR_ADMIN}  ${HARBOR_PASSWORD}  project${d}  ${image}  tag=${sha256}  err_msg=To continue with pull, please contact your project administrator to exempt matched vulnerabilities through configuring the CVE allowlist
     Close Browser
 

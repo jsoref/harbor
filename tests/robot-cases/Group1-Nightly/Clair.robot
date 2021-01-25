@@ -36,7 +36,7 @@ Test Case - Disable Scan Schedule
     Close Browser
 
 Test Case - Scan A Tag In The Repo
-    Body Of Scan A Tag In The Repo  hello-world  latest  is_no_vulerabilty=${true}
+    Body Of Scan A Tag In The Repo  hello-world  latest  is_no_vulnerability=${true}
 
 Test Case - Scan As An Unprivileged User
     Init Chrome Driver
@@ -94,7 +94,7 @@ Test Case - Project Level Image Severity Policy
     Scan Repo  ${sha256}  Succeed
     Navigate To Projects
     Go Into Project  project${d}
-    Set Vulnerabilty Severity  3
+    Set Vulnerability Severity  3
     Cannot Pull Image  ${ip}  ${HARBOR_ADMIN}  ${HARBOR_PASSWORD}  project${d}  ${image}  tag=${sha256}  err_msg=To continue with pull, please contact your project administrator to exempt matched vulnerabilities through configuring the CVE allowlist
     Close Browser
 

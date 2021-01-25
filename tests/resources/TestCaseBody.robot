@@ -53,7 +53,7 @@ Body Of Manage project publicity
     Close Browser
 
 Body Of Scan A Tag In The Repo
-    [Arguments]  ${image_argument}  ${tag_argument}  ${is_no_vulerabilty}=${false}
+    [Arguments]  ${image_argument}  ${tag_argument}  ${is_no_vulnerability}=${false}
     Init Chrome Driver
     ${d}=  get current date  result_format=%m%s
 
@@ -63,7 +63,7 @@ Body Of Scan A Tag In The Repo
     Go Into Project  project${d}
     Go Into Repo  project${d}/${image_argument}
     Scan Repo  ${tag_argument}  Succeed
-    Scan Result Should Display In List Row  ${tag_argument}  is_no_vulerabilty=${is_no_vulerabilty}
+    Scan Result Should Display In List Row  ${tag_argument}  is_no_vulnerability=${is_no_vulnerability}
     Pull Image  ${ip}  user023  Test1@34  project${d}  ${image_argument}  ${tag_argument}
     # Edit Repo Info
     Close Browser
@@ -78,7 +78,7 @@ Body Of Scan Image With Empty Vul
     Go Into Repo  ${image_argument}
     Scan Repo  ${tag}  Succeed
     Move To Summary Chart
-    Scan Result Should Display In List Row  ${tag}  is_no_vulerabilty=${true}
+    Scan Result Should Display In List Row  ${tag}  is_no_vulnerability=${true}
     Close Browser
 
 Body Of Manual Scan All
@@ -238,7 +238,7 @@ Body Of Verify System Level CVE Allowlist
     Create An New Project And Go Into Project    project${d}
     Push Image    ${ip}    ${signin_user}    ${signin_pwd}    project${d}    ${image}    sha256=${sha256}
     Go Into Project  project${d}
-    Set Vulnerabilty Severity  2
+    Set Vulnerability Severity  2
     Cannot Pull Image  ${ip}    ${signin_user}    ${signin_pwd}    project${d}    ${image}    tag=${sha256}  err_msg=cannot be pulled due to configured policy
     Go Into Project  project${d}
     Go Into Repo  project${d}/${image}
@@ -275,7 +275,7 @@ Body Of Verify Project Level CVE Allowlist
     Push Image    ${ip}    ${signin_user}    ${signin_pwd}    project${d}    ${image}    sha256=${sha256}
     Pull Image    ${ip}    ${signin_user}    ${signin_pwd}    project${d}    ${image}    tag=${sha256}
     Go Into Project  project${d}
-    Set Vulnerabilty Severity  2
+    Set Vulnerability Severity  2
     Cannot Pull Image  ${ip}    ${signin_user}    ${signin_pwd}    project${d}    ${image}    tag=${sha256}
     Go Into Project  project${d}
     Go Into Repo  project${d}/${image}
@@ -307,7 +307,7 @@ Body Of Verify Project Level CVE Allowlist By Quick Way of Add System
     Create An New Project And Go Into Project    project${d}
     Push Image    ${ip}    ${signin_user}    ${signin_pwd}    project${d}    ${image}    sha256=${sha256}
     Go Into Project  project${d}
-    Set Vulnerabilty Severity  2
+    Set Vulnerability Severity  2
     Go Into Project  project${d}
     Go Into Repo  project${d}/${image}
     Scan Repo  ${sha256}  Succeed

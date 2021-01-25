@@ -223,13 +223,13 @@ Set Scan All To None
     Retry Element Click  //vulnerability-config//select
     Retry Element Click  //vulnerability-config//select/option[@value='none']
     sleep  1
-    Retry Element Click  ${vulnerbility_save_button_xpath}
+    Retry Element Click  ${vulnerability_save_button_xpath}
 
 Set Scan All To Daily
     Retry Element Click  //vulnerability-config//select
     Retry Element Click  //vulnerability-config//select/option[@value='daily']
     sleep  1
-    Retry Element Click  ${vulnerbility_save_button_xpath}
+    Retry Element Click  ${vulnerability_save_button_xpath}
 
 Click Scan Now
     Retry Element Click  //vulnerability-config//button[contains(.,'SCAN')]

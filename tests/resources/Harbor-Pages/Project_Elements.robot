@@ -62,10 +62,10 @@ ${project_member_set_role_xpath}  xpath=//clr-dropdown-menu//label[contains(.,'S
 ${project_config_public_checkbox}  xpath=//input[@name='public']
 ${project_config_content_trust_checkbox}  xpath=//input[@name='content-trust']
 ${project_config_scan_images_on_push_checkbox}  xpath=//input[@name='scan-image-on-push']
-${project_config_prevent_vulnerable_images_from_running_checkbox}  xpath=//input[@name='prevent-vulenrability-image-input']
+${project_config_prevent_vulnerable_images_from_running_checkbox}  xpath=//input[@name='prevent-vulnerability-image-input']
 ${project_config_severity_select}  xpath=//select[@id='severity']
 ${project_config_public_checkbox_label}  xpath=//*[@id="clr-wrapper-public"]/div/clr-checkbox-wrapper/label
-${project_config_prevent_vulenrability_checkbox_label}    xpath=//*[@id='prevent-vulenrability-image']//clr-checkbox-wrapper//label
+${project_config_prevent_vulnerability_checkbox_label}    xpath=//*[@id='prevent-vulnerability-image']//clr-checkbox-wrapper//label
 ${project_config_system_wl_radio_input}    xpath=//clr-radio-wrapper//label[contains(.,'System allowlist')]
 ${project_config_project_wl_radio_input}    xpath=//clr-radio-wrapper//label[contains(.,'Project allowlist')]
 ${project_config_system_wl_radio_input_id}    systemAllowlistOrProjectAllowlist
