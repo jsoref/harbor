@@ -32,7 +32,7 @@ fi
 
 ## --------------------------------------------- Init Env -------------------------------------------------
 dpkg -l > package.list
-# Start Xvfb for Chrome headlesss
+# Start Xvfb for Chrome headless
 Xvfb -ac :99 -screen 0 1280x1024x16 & export DISPLAY=:99
 
 export DRONE_SERVER=$DRONE_SERVER
