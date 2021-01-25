@@ -30,7 +30,7 @@ Install Harbor to Test Server
     Log To Console  \nconfig harbor cfg
     Config Harbor cfg  http_proxy=https
     Prepare Cert
-    Log To Console  \ncomplile and up harbor now
+    Log To Console  \ncompile and up harbor now
     Compile and Up Harbor With Source Code
     ${rc}  ${output}=  Run And Return Rc And Output  docker ps
     Should Be Equal As Integers  ${rc}  0
