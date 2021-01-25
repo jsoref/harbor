@@ -177,7 +177,7 @@ func ParseProjectIDOrName(value interface{}) (int64, string, error) {
 	return id, name, nil
 }
 
-// SafeCastString -- cast a object to string saftely
+// SafeCastString -- cast a object to string safely
 func SafeCastString(value interface{}) string {
 	if result, ok := value.(string); ok {
 		return result
