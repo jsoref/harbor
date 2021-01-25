@@ -85,7 +85,7 @@ class TestTagImmutability(unittest.TestCase):
     def test_artifact_and_repo_is_undeletable(self):
         """
         Test case:
-            Test Artifact And Repo is Undeleteable
+            Test Artifact And Repo is Undeletable
         Test step and expected result:
             1. Create a new project;
             2. Push image A to the project with 2 tags A and B;
@@ -121,7 +121,7 @@ class TestTagImmutability(unittest.TestCase):
     def test_tag_is_undeletable(self):
         """
         Test case:
-            Test Tag is Undeleteable
+            Test Tag is Undeletable
         Test step and expected result:
             1. Push image A to the project with 2 tags A and B;
             2. Create a enabled rule matched image A with tag A;
