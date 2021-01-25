@@ -67,7 +67,7 @@ class TestScanAll(unittest.TestCase):
         #3. Push a image to project_Alice and push another image to project_Luca;
 
         #Note: Please make sure that this Image has never been pulled before by any other cases,
-        #          so it is a not-scanned image rigth after repository creation.
+        #          so it is a not-scanned image right after repository creation.
         #image = "tomcat"
         image_a = "mariadb"
         src_tag = "latest"
@@ -75,7 +75,7 @@ class TestScanAll(unittest.TestCase):
         TestScanAll.repo_Alice_name, tag_Alice = push_self_build_image_to_project(TestScanAll.project_Alice_name, harbor_server, user_Alice_name, user_common_password, image_a, src_tag)
 
         #Note: Please make sure that this Image has never been pulled before by any other cases,
-        #          so it is a not-scanned image rigth after repository creation.
+        #          so it is a not-scanned image right after repository creation.
         image_b = "httpd"
         src_tag = "latest"
         #3.2 push another image to project_Luca;
