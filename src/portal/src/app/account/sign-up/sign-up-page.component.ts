@@ -95,7 +95,7 @@ export class SignUpPageComponent implements OnInit {
             .subscribe(() => {
                 this.onGoing = false;
                 this.msgService.announceMessage(200, "", AlertType.SUCCESS);
-                // Navigate to embeded sign-in
+                // Navigate to embedded sign-in
                 this.router.navigate(['harbor', 'sign-in']);
             }, error => {
                 this.onGoing = false;
