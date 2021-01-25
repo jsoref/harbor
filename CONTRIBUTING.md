@@ -91,7 +91,7 @@ The folder graph below shows the structure of the source code folder `harbor/src
 │   ├── scanner
 │   ├── tag
 │   ├── task
-├── core                # Source code for the main busines logic. Contains rest apis and all service infomation.
+├── core                # Source code for the main business logic. Contains rest apis and all service infomation.
 │   ├── api
 │   ├── auth
 │   ├── config
