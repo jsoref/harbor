@@ -375,7 +375,7 @@ TestCase - Developer Operate Labels
     ${d}=   Get Current Date    result_format=%m%s
     Create An New Project With New User  url=${HARBOR_URL}  username=test${d}  email=test${d}@vmware.com  realname=test${d}  newPassword=Test1@34  comment=harbor  projectname=project${d}  public=false
     Logout Harbor
-    Create An New User  url=${HARBOR_URL}  username=bob${d}  email=bob${d}@vmware.com  realname=bob${d}  newPassword=Test1@34  comment=habor
+    Create An New User  url=${HARBOR_URL}  username=bob${d}  email=bob${d}@vmware.com  realname=bob${d}  newPassword=Test1@34  comment=harbor
     Logout Harbor
 
     Manage Project Member  test${d}  Test1@34  project${d}  bob${d}  Add  has_image=${false}
@@ -482,7 +482,7 @@ Test Case - Manage Project Member
     Create An New Project With New User  url=${HARBOR_URL}  username=alice${d}  email=alice${d}@vmware.com  realname=alice${d}  newPassword=Test1@34  comment=harbor  projectname=project${d}  public=false
     Push image  ip=${ip}  user=alice${d}  pwd=Test1@34  project=project${d}  image=hello-world
     Logout Harbor
-    Create An New User  url=${HARBOR_URL}  username=bob${d}  email=bob${d}@vmware.com  realname=bob${d}  newPassword=Test1@34  comment=habor
+    Create An New User  url=${HARBOR_URL}  username=bob${d}  email=bob${d}@vmware.com  realname=bob${d}  newPassword=Test1@34  comment=harbor
     Logout Harbor
     Create An New User  url=${HARBOR_URL}  username=carol${d}  email=carol${d}@vmware.com  realname=carol${d}  newPassword=Test1@34  comment=harbor
     Logout Harbor
@@ -503,7 +503,7 @@ Test Case - Manage Project Member
 Test Case - Delete A Project
     Init Chrome Driver
     ${d}=    Get Current Date    result_format=%m%s
-    Create An New Project With New User  ${HARBOR_URL}  tester${d}  tester${d}@vmware.com  tester${d}  Test1@34  harobr  project${d}  false
+    Create An New Project With New User  ${HARBOR_URL}  tester${d}  tester${d}@vmware.com  tester${d}  Test1@34  harbor  project${d}  false
     Push Image  ${ip}  tester${d}  Test1@34  project${d}  hello-world
     Project Should Not Be Deleted  project${d}
     Go Into Project  project${d}

@@ -116,7 +116,7 @@ func (cc *CommonController) Login() {
 	cc.PopulateUserSession(*user)
 }
 
-// LogOut Habor UI
+// LogOut Harbor UI
 func (cc *CommonController) LogOut() {
 	cc.DestroySession()
 }
