@@ -58,7 +58,7 @@ func (s *MatchTestSuite) TestImmuMatch() {
 		ProjectID: 1,
 		Priority:  1,
 		Template:  "immutable_template",
-		Action:    "immuablity",
+		Action:    "immutability",
 		TagSelectors: []*model.Selector{
 			{
 				Kind:       "doublestar",
