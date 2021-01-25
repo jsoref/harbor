@@ -2347,7 +2347,7 @@ paths:
     get:
       summary: Get Retention Metadatas
       description: Get Retention Metadatas.
-      operationId: getRentenitionMetadata
+      operationId: getRetentionMetadata
       tags:
         - Retention
       responses:

@@ -9,7 +9,7 @@ class Retention(base.Base):
 
     def get_metadatas(self, expect_status_code = 200, **kwargs):
         client = self._get_client(**kwargs)
-        metadatas, status_code, _ = client.get_rentenition_metadata_with_http_info()
+        metadatas, status_code, _ = client.get_retention_metadata_with_http_info()
         base._assert_status_code(expect_status_code, status_code)
         return metadatas
 
@@ -182,6 +182,6 @@ class Retention(base.Base):
     def get_retention_metadatas(self, expect_status_code = 200, **kwargs):
         client = self._get_client(**kwargs)
 
-        r, status_code, _ = client.get_rentenition_metadata_with_http_info()
+        r, status_code, _ = client.get_retention_metadata_with_http_info()
         base._assert_status_code(expect_status_code, status_code)
         return r
