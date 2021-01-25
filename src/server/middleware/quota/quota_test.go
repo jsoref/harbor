@@ -89,7 +89,7 @@ func (suite *RequestMiddlewareTestSuite) makeRequestConfig(reference, referenceI
 	}
 }
 
-func (suite *RequestMiddlewareTestSuite) TestInvlidConfig() {
+func (suite *RequestMiddlewareTestSuite) TestInvalidConfig() {
 	next := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
 	})

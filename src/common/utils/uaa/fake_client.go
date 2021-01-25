@@ -32,7 +32,7 @@ func (fc *FakeClient) PasswordAuth(username, password string) (*oauth2.Token, er
 	if username == fc.Username && password == fc.Password {
 		return &oauth2.Token{AccessToken: fakeToken}, nil
 	}
-	return nil, fmt.Errorf("Invalide username and password")
+	return nil, fmt.Errorf("Invalid username and password")
 }
 
 // GetUserInfo ...

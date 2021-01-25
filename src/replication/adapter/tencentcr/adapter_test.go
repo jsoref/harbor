@@ -69,7 +69,7 @@ func TestAdapter_NewAdapter_NilAKSK(t *testing.T) {
 }
 
 func TestAdapter_NewAdapter_InvalidEndpoint(t *testing.T) {
-	// Invaild endpoint
+	// Invalid endpoint
 	adapter, err := newAdapter(&model.Registry{
 		Type: model.RegistryTypeTencentTcr,
 		Credential: &model.Credential{
@@ -84,7 +84,7 @@ func TestAdapter_NewAdapter_InvalidEndpoint(t *testing.T) {
 }
 
 func TestAdapter_NewAdapter_Pingfailed(t *testing.T) {
-	// Invaild endpoint
+	// Invalid endpoint
 	adapter, err := newAdapter(&model.Registry{
 		Type: model.RegistryTypeTencentTcr,
 		Credential: &model.Credential{

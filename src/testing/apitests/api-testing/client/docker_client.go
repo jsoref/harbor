@@ -58,7 +58,7 @@ func (dc *DockerClient) Push(image string) error {
 func (dc *DockerClient) Login(userName, password string, uri string) error {
 	if len(strings.TrimSpace(userName)) == 0 ||
 		len(strings.TrimSpace(password)) == 0 {
-		return errors.New("Invlaid credential")
+		return errors.New("Invalid credential")
 	}
 
 	cmdName := "docker"
