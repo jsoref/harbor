@@ -43,11 +43,11 @@ class TestProjects(unittest.TestCase):
             2. Create project(PA) and project(PB) by user(UA);
             3. Push a image in project(PA) and then delete repository by admin;
             4. Get repository by user(UA), it should get nothing;
-            5. Tigger garbage collection operation;
+            5. Trigger garbage collection operation;
             6. Check garbage collection job was finished;
             7. Get garbage collection log, check there is a number of files was deleted;
             8. Push a image in project(PB) by admin and delete the only tag;
-            9. Tigger garbage collection operation;
+            9. Trigger garbage collection operation;
             10. Check garbage collection job was finished;
             11. Repository with untag image should be still there;
             12. But no any artifact in repository anymore.
@@ -81,7 +81,7 @@ class TestProjects(unittest.TestCase):
         push_special_image_to_project(TestProjects.project_gc_untag_name, harbor_server, admin_name, admin_password, self.repo_name_untag, [self.tag])
         self.artifact.delete_tag(TestProjects.project_gc_untag_name, self.repo_name_untag, self.tag, self.tag, **ADMIN_CLIENT)
 
-        #5. Tigger garbage collection operation;
+        #5. Trigger garbage collection operation;
         gc_id = self.gc.gc_now(**ADMIN_CLIENT)
 
         #6. Check garbage collection job was finished;
@@ -95,7 +95,7 @@ class TestProjects(unittest.TestCase):
 
         time.sleep(5)
 
-        #9. Tigger garbage collection operation;
+        #9. Trigger garbage collection operation;
         gc_id = self.gc.gc_now(is_delete_untagged=True, **ADMIN_CLIENT)
 
         #10. Check garbage collection job was finished;
