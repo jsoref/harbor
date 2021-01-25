@@ -228,7 +228,7 @@ class TestTagImmutability(unittest.TestCase):
         Test step and expected result:
             1. Push image A, B and C, image A has only 1 tag named tag1;
             2. Create a matching rule that matches image A and tag named tag2 which is not exist;
-            3. Create a excluding rule to exlude image A and B;
+            3. Create a excluding rule to exclude image A and B;
             4. Add a tag named tag2 to image A, tag2 should be immutable;
             5. Tag2 should be immutable;
             6. All tags in image B should be immutable;
@@ -247,7 +247,7 @@ class TestTagImmutability(unittest.TestCase):
         #2. Create a matching rule that matches image A and tag named tag2 which is not exist;
         rule_id_1 = self.tag_immutability.create_rule(self.project_id, selector_repository=image_a["name"], selector_tag=image_a["tag2"], **self.USER_CLIENT)
 
-        #3. Create a excluding rule to exlude image A and B;
+        #3. Create a excluding rule to exclude image A and B;
         rule_id_2 = self.tag_immutability.create_rule(self.project_id, selector_repository_decoration = "repoExcludes",
                                           selector_repository="{image_priority_a,image_priority_b}", selector_tag="**", **self.USER_CLIENT)
 
