@@ -117,8 +117,8 @@ func QuerySetter(ctx context.Context, model interface{}, query *q.Query, ignored
 }
 
 // get reflect.Type name with package path.
-func getFullName(typ reflect.Type) string {
-	return typ.PkgPath() + "." + typ.Name()
+func getFullName(t reflect.Type) string {
+	return t.PkgPath() + "." + t.Name()
 }
 
 // convert string to snake case
@@ -201,9 +201,9 @@ var (
 //   Field3 string
 // }
 func queryableColumns(model interface{}) map[string]bool {
-	typ := reflect.Indirect(reflect.ValueOf(model)).Type()
+	t := reflect.Indirect(reflect.ValueOf(model)).Type()
 
-	key := getFullName(typ) + "-columns"
+	key := getFullName(t) + "-columns"
 	value, ok := cache.Load(key)
 	if ok {
 		return value.(map[string]bool)
@@ -214,8 +214,8 @@ func queryableColumns(model interface{}) map[string]bool {
 		cache.Store(key, cols)
 	}()
 
-	for i := 0; i < typ.NumField(); i++ {
-		field := typ.Field(i)
+	for i := 0; i < t.NumField(); i++ {
+		field := t.Field(i)
 		orm := field.Tag.Get("orm")
 		if orm == "-" {
 			continue
@@ -258,9 +258,9 @@ func queryableMethods(model interface{}) map[string]string {
 	}()
 
 	prefix := "FilterBy"
-	typ := val.Type()
-	for i := 0; i < typ.NumMethod(); i++ {
-		name := typ.Method(i).Name
+	t := val.Type()
+	for i := 0; i < t.NumMethod(); i++ {
+		name := t.Method(i).Name
 
 		if !strings.HasPrefix(name, prefix) {
 			continue

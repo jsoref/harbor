@@ -43,13 +43,13 @@ func ResolveData(mime string, jsonData []byte, options ...Option) (interface{}, 
 		return nil, errors.New("empty JSON data")
 	}
 
-	ty := reflect.TypeOf(t)
-	if ty.Kind() == reflect.Ptr {
-		ty = ty.Elem()
+	reflectedType := reflect.TypeOf(t)
+	if reflectedType.Kind() == reflect.Ptr {
+		reflectedType = reflectedType.Elem()
 	}
 
 	// New one
-	rp := reflect.New(ty).Elem().Addr().Interface()
+	rp := reflect.New(reflectedType).Elem().Addr().Interface()
 
 	if err := json.Unmarshal(jsonData, rp); err != nil {
 		return nil, err
