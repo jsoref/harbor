@@ -20,7 +20,7 @@ export class OperationComponent implements OnInit, OnDestroy {
   private _timeoutInterval;
 
   @HostListener('window:beforeunload', ['$event'])
-  beforeUnloadHander(event) {
+  beforeUnloadHandler(event) {
     // storage to localStorage
     let timp = new Date().getTime();
     localStorage.setItem('operaion', JSON.stringify({timp: timp,  data: this.resultLists}));

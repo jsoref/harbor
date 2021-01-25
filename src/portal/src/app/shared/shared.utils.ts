@@ -36,7 +36,7 @@ export const isEmptyForm = function (ngForm: NgForm): boolean {
 };
 
 /**
- * Hanlde the 401 and 403 code
+ * Handle the 401 and 403 code
  *
  * If handled the 401 or 403, then return true otherwise false
  */

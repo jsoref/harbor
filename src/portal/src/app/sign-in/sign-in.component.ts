@@ -179,7 +179,7 @@ export class SignInComponent implements AfterViewChecked, OnInit {
         console.error("An error occurred when signing in:", message);
     }
 
-    // Hande form values changes
+    // Handle form values changes
     formChanged() {
         if (this.currentForm === this.signInForm) {
             return;
