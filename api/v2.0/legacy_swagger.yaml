@@ -366,7 +366,7 @@ paths:
     get:
       summary: Get projects number and repositories number relevant to the user
       description: |
-        This endpoint is aimed to statistic all of the projects number and repositories number relevant to the logined user, also the public projects number and repositories number. If the user is admin, he can also get total projects number and total repositories number.
+        This endpoint is aimed to statistic all of the projects number and repositories number relevant to the loggedin user, also the public projects number and repositories number. If the user is admin, he can also get total projects number and total repositories number.
       tags:
         - Products
       responses:
