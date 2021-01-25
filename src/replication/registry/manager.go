@@ -180,7 +180,7 @@ func CheckHealthStatus(r *model.Registry) (model.HealthStatus, error) {
 
 	factory, err := adapter.GetFactory(r.Type)
 	if err != nil {
-		return model.Unknown, fmt.Errorf("get adaper for type '%s' error: %v", r.Type, err)
+		return model.Unknown, fmt.Errorf("get adapter for type '%s' error: %v", r.Type, err)
 	}
 
 	rAdapter, err := factory.Create(r)
