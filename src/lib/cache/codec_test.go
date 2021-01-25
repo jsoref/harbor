@@ -20,12 +20,12 @@ import (
 
 func BenchmarkDefaultCodecEncode(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		codec.Encode("abcdefghigklmopqrztuvwxyz")
+		codec.Encode("abcdefghijklmnopqrstuvwxyz")
 	}
 }
 
 func BenchmarkDefaultCodecDecode(b *testing.B) {
-	data := []byte("abcdefghigklmopqrztuvwxyz")
+	data := []byte("abcdefghijklmnopqrstuvwxyz")
 
 	for i := 0; i < b.N; i++ {
 		var str string
