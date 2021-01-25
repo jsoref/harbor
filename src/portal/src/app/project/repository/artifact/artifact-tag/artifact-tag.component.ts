@@ -33,8 +33,8 @@ import { AppConfigService } from "../../../../services/app-config.service";
 class InitTag {
   name = "";
 }
-const DeleteTagWithNotoryCommand1 = 'notary -s https://';
-const DeleteTagWithNotoryCommand2 = ':4443 -d ~/.docker/trust remove -p ';
+const DeleteTagWithNotaryCommand1 = 'notary -s https://';
+const DeleteTagWithNotaryCommand2 = ':4443 -d ~/.docker/trust remove -p ';
 @Component({
   selector: 'artifact-tag',
   templateUrl: './artifact-tag.component.html',
@@ -270,8 +270,8 @@ export class ArtifactTagComponent implements OnInit, OnDestroy {
     if (tag.signed) {
       forkJoin(this.translateService.get("BATCH.DELETED_FAILURE"),
         this.translateService.get("REPOSITORY.DELETION_SUMMARY_TAG_DENIED")).subscribe(res => {
-          const wrongInfo: string = res[1] + DeleteTagWithNotoryCommand1 + this.deletePort(this.registryUrl) +
-            DeleteTagWithNotoryCommand2 +
+          const wrongInfo: string = res[1] + DeleteTagWithNotaryCommand1 + this.deletePort(this.registryUrl) +
+            DeleteTagWithNotaryCommand2 +
             this.registryUrl + "/" + this.repositoryName +
             " " + tag.name;
           operateChanges(operMessage, OperationState.failure, wrongInfo);
