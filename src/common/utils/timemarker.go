@@ -41,7 +41,7 @@ func (t *TimeMarker) Mark() {
 	t.next = time.Now().Add(t.interval)
 }
 
-// Check returns true if the current time is after the mark by this marker, and the caction the mark guards and be taken.
+// Check returns true if the current time is after the mark by this marker, and the action the mark guards and be taken.
 func (t *TimeMarker) Check() bool {
 	t.RLock()
 	defer t.RUnlock()
