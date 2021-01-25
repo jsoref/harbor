@@ -82,7 +82,7 @@ target_release_version=$(cat ./VERSION)
 Harbor_Package_Version=$target_release_version-'build.'$DRONE_BUILD_NUMBER
 #  the harbor assets version is for tag of harbor images:
 # 1, On master branch, it's same as package version.
-# 2, On release branch(others), it would set to the target realese version so that we can rename the latest passed CI build to publish.
+# 2, On release branch(others), it would set to the target release version so that we can rename the latest passed CI build to publish.
 if [[ $DRONE_BRANCH == "master" ]]; then
   Harbor_Assets_Version=$Harbor_Package_Version
 else
