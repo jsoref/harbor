@@ -88,7 +88,7 @@ User Can Not Change Role
      Retry Element Click  xpath=//*[@id='member-action']
      Retry Wait Until Page Contains Element  xpath=//button[@disabled='' and contains(.,'Admin')]
 
-#this keyworkd seems will not use any more, will delete in the future
+#this keyword seems will not use any more, will delete in the future
 Non-admin View Member Account
     [arguments]  ${times}
     Xpath Should Match X Times  //clr-dg-row-maintainer  ${times}
