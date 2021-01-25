@@ -112,7 +112,7 @@ export class ProjectPolicyConfigComponent implements OnInit {
                     this.dateSystemInput.nativeElement.parentNode.setAttribute("hidden", "hidden");
                 }, 100);
             } , error => this.errorHandler.error(error));
-        // retrive project level policy data
+        // retrieve project level policy data
         this.retrieve();
         this.getPermission();
         this.getSystemAllowlist();
