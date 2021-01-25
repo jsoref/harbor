@@ -293,7 +293,7 @@ func (suite *ControllerTestSuite) TearDownSuite() {
 // TestScanControllerScan ...
 func (suite *ControllerTestSuite) TestScanControllerScan() {
 	{
-		// artifact not provieded
+		// artifact not provided
 		suite.Require().Error(suite.c.Scan(context.TODO(), nil))
 	}
 

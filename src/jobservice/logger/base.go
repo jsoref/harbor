@@ -90,7 +90,7 @@ func GetLogger(loggerOptions ...Option) (Interface, error) {
 // If failed, a nil sweeper and a non-nil error will be returned.
 // Otherwise, a non nil sweeper is returned with nil error.
 func GetSweeper(context context.Context, sweeperOptions ...Option) (sweeper.Interface, error) {
-	// No default sweeper will provdie
+	// No default sweeper will provide
 	// If no one is configured, directly return nil with error
 	if len(sweeperOptions) == 0 {
 		return nil, errors.New("no options provided for creating sweeper controller")
