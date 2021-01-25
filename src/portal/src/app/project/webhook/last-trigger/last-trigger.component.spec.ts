@@ -9,7 +9,7 @@ import { of } from "rxjs";
 import { WebhookService } from "../webhook.service";
 
 describe('LastTriggerComponent', () => {
-  const mokedTriggers: LastTrigger[] = [
+  const mockedTriggers: LastTrigger[] = [
     {
       policy_name: 'http',
       enabled: true,
@@ -54,9 +54,9 @@ describe('LastTriggerComponent', () => {
     expect(component).toBeTruthy();
   });
   it('should render one row', async () => {
-    component.inputLastTriggers = mokedTriggers;
+    component.inputLastTriggers = mockedTriggers;
     component.webhookName = 'slack';
-    component.ngOnChanges({inputLastTriggers: new SimpleChange([], mokedTriggers, true)});
+    component.ngOnChanges({inputLastTriggers: new SimpleChange([], mockedTriggers, true)});
     fixture.detectChanges();
     await fixture.whenStable();
     const rows = fixture.nativeElement.getElementsByTagName('clr-dg-row');
