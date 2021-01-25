@@ -36,7 +36,7 @@ func (p *v1alpha1Parser) Parse(ctx context.Context, artifact *artifact.Artifact,
 		return err
 	}
 
-	// parse skip-list annotation io.goharor.artifact.v1alpha1.skip-list
+	// parse skip-list annotation io.goharbor.artifact.v1alpha1.skip-list
 	parseV1alpha1SkipList(artifact, mani)
 
 	// parse icon annotation io.goharbor.artifact.v1alpha1.icon
