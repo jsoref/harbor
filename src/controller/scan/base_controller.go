@@ -818,7 +818,7 @@ func (bc *basicController) launchScanJob(ctx context.Context, executionID int64,
 	}
 
 	// NOTE: due to the limitation of the beego's orm, the List method of the task manager not support ?! operator for the jsonb field,
-	// we cann't list the tasks for scan reports of uuid1, uuid2 by SQL `SELECT * FROM task WHERE (extra_attrs->'report_uuids')::jsonb ?| array['uuid1', 'uuid2']`
+	// we can't list the tasks for scan reports of uuid1, uuid2 by SQL `SELECT * FROM task WHERE (extra_attrs->'report_uuids')::jsonb ?| array['uuid1', 'uuid2']`
 	// or by `SELECT * FROM task WHERE id IN (SELECT id FROM task WHERE (extra_attrs->'report_uuids')::jsonb ?| array['uuid1', 'uuid2'])`
 	// so save {"report:uuid1": "1", "report:uuid2": "2"} in the extra_attrs of the task, and then list it with
 	// SQL `SELECT * FROM task WHERE extra_attrs->>'report:uuid1' = '1'` in loop
