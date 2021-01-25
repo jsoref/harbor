@@ -78,7 +78,7 @@ func TestOnBoardUser(t *testing.T) {
 	u := &models.User{
 		Username: "user1",
 		Password: "password1",
-		Email:    "dummy@placehodler.com",
+		Email:    "dummy@placeholder.com",
 		Realname: "daniel",
 	}
 	err := OnBoardUser(u)
