@@ -57,7 +57,7 @@
 #	clean specific version binaries and images:
 #				make clean -e VERSIONTAG=[TAG]
 #				note**: If commit new code to github, the git commit TAG will \
-#				change. Better use this commond clean previous images and \
+#				change. Better use this command clean previous images and \
 #				files with specific TAG.
 #   By default DEVFLAG=true, if you want to release new version of Harbor, \
 #		should setting the flag to false.
