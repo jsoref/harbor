@@ -210,7 +210,7 @@ func (l *Auth) SearchGroup(groupKey string) (*models.UserGroup, error) {
 	}
 
 	if len(userGroupList) == 0 {
-		return nil, fmt.Errorf("Failed to searh ldap group with groupDN:%v", groupKey)
+		return nil, fmt.Errorf("Failed to search ldap group with groupDN:%v", groupKey)
 	}
 	userGroup := models.UserGroup{
 		GroupName:   userGroupList[0].GroupName,

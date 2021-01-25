@@ -3172,14 +3172,14 @@ definitions:
         description: The base dn of ldap service.
       ldap_filter:
         type: string
-        description: The serach filter of ldap service.
+        description: The search filter of ldap service.
       ldap_uid:
         type: string
-        description: The serach uid from ldap service attributes.
+        description: The search uid from ldap service attributes.
       ldap_scope:
         type: integer
         format: int64
-        description: The serach scope of ldap service.
+        description: The search scope of ldap service.
       ldap_connection_timeout:
         type: integer
         format: int64
