@@ -353,7 +353,7 @@ export interface ScrollPosition {
  * interface Manifest
  */
 export interface Manifest {
-  manifset: Object;
+  manifest: Object;
   config: string;
 }
 
