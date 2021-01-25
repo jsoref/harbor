@@ -55,7 +55,7 @@ const (
 	configRegistryEndpoint = "registryEndpoint"
 	configCoreInternalAddr = "coreInternalAddr"
 
-	artfiactKey     = "artifact"
+	artifactKey     = "artifact"
 	registrationKey = "registration"
 
 	artifactIDKey  = "artifact_id"
@@ -244,7 +244,7 @@ func (bc *basicController) Scan(ctx context.Context, artifact *ar.Artifact, opti
 
 	if opts.ExecutionID == 0 {
 		extraAttrs := map[string]interface{}{
-			artfiactKey: map[string]interface{}{
+			artifactKey: map[string]interface{}{
 				"id":              artifact.ID,
 				"project_id":      artifact.ProjectID,
 				"repository_name": artifact.RepositoryName,

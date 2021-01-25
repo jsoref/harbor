@@ -773,7 +773,7 @@ paths:
   /projects/{project_name}/repositories/{repository_name}/artifacts/{reference}/labels:
     post:
       summary: Add label to artifact
-      description: Add label to the specified artiact.
+      description: Add label to the specified artifact.
       tags:
         - artifact
       operationId: addLabel
@@ -806,7 +806,7 @@ paths:
   /projects/{project_name}/repositories/{repository_name}/artifacts/{reference}/labels/{label_id}:
     delete:
       summary: Remove label from artifact
-      description: Remove the label from the specified artiact.
+      description: Remove the label from the specified artifact.
       tags:
         - artifact
       operationId: removeLabel
