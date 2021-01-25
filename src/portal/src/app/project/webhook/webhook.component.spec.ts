@@ -43,7 +43,7 @@ describe('WebhookComponent', () => {
             "slack"
         ]
     };
-    const mockedWehook: Webhook = {
+    const mockedWebhook: Webhook = {
         id: 1,
         project_id: 1,
         name: 'test',
@@ -68,7 +68,7 @@ describe('WebhookComponent', () => {
             return of([]).pipe(delay(0));
         },
         listWebhook: () => {
-            return of([mockedWehook
+            return of([mockedWebhook
             ]).pipe(delay(0));
         },
         getWebhookMetadata() {

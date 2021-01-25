@@ -36,7 +36,7 @@ describe('AddWebhookFormComponent', () => {
     const mockMessageHandlerService = {
         handleError: () => { }
     };
-    const mockedWehook: Webhook = {
+    const mockedWebhook: Webhook = {
         id: 1,
         project_id: 1,
         name: 'test',
@@ -132,7 +132,7 @@ describe('AddWebhookFormComponent', () => {
     });
     it("add button should work", async () => {
         const spy: jasmine.Spy = spyOn(component, 'add').and.returnValue(undefined);
-        component.webhook = mockedWehook;
+        component.webhook = mockedWebhook;
         fixture.detectChanges();
         await fixture.whenStable();
         expect(component.isValid).toBeTruthy();
