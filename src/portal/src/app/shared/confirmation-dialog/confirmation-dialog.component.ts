@@ -21,7 +21,7 @@ import { ConfirmationAcknowledgement } from './confirmation-state-message';
 import { ConfirmationState, ConfirmationTargets, ConfirmationButtons } from '../shared.const';
 
 @Component({
-    selector: 'confiramtion-dialog',
+    selector: 'confirmation-dialog-with-announcements',
     templateUrl: 'confirmation-dialog.component.html',
     styleUrls: ['confirmation-dialog.component.scss']
 })
