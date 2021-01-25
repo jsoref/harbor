@@ -2594,7 +2594,7 @@ paths:
           description: Internal server error happened
     put:
       summary: Configure scanner for the specified project
-      description: Set one of the system configured scanner registration as the indepndent scanner of the specified project.
+      description: Set one of the system configured scanner registration as the independent scanner of the specified project.
       tags:
         - Scanners
       parameters:
