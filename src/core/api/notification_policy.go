@@ -333,7 +333,7 @@ func (w *NotificationPolicyAPI) validateTargets(policy *models.NotificationPolic
 
 		_, ok := notification.SupportedNotifyTypes[target.Type]
 		if !ok {
-			w.SendBadRequestError(fmt.Errorf("unsupport target type %s with policy %s", target.Type, policy.Name))
+			w.SendBadRequestError(fmt.Errorf("unsupported target type %s with policy %s", target.Type, policy.Name))
 			return false
 		}
 	}
@@ -350,7 +350,7 @@ func (w *NotificationPolicyAPI) validateEventTypes(policy *models.NotificationPo
 	for _, eventType := range policy.EventTypes {
 		_, ok := w.supportedEvents[eventType]
 		if !ok {
-			w.SendBadRequestError(fmt.Errorf("unsupport event type %s", eventType))
+			w.SendBadRequestError(fmt.Errorf("unsupported event type %s", eventType))
 			return false
 		}
 	}

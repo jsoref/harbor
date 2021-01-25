@@ -316,7 +316,7 @@ func (bc *basicController) startScanAll(ctx context.Context, executionID int64) 
 		SubmitCount       int `json:"submit_count"`
 		ConflictCount     int `json:"conflict_count"`
 		PreconditionCount int `json:"precondition_count"`
-		UnsupportCount    int `json:"unsupport_count"`
+		UnsupportedCount  int `json:"unsupport_count"`
 		UnknowCount       int `json:"unknow_count"`
 	}{}
 
@@ -339,8 +339,8 @@ func (bc *basicController) startScanAll(ctx context.Context, executionID int64) 
 				// scanner not found or it's disabled
 				summary.PreconditionCount++
 			case errors.BadRequestCode:
-				// artifact is unsupport
-				summary.UnsupportCount++
+				// artifact is unsupported
+				summary.UnsupportedCount++
 			default:
 				summary.UnknowCount++
 			}
@@ -368,8 +368,8 @@ func (bc *basicController) startScanAll(ctx context.Context, executionID int64) 
 	} else if summary.PreconditionCount+summary.UnknowCount == 0 { // not scan job submitted and no failed
 		message := fmt.Sprintf("%d artifact(s) found", summary.TotalCount)
 
-		if summary.UnsupportCount > 0 {
-			message = fmt.Sprintf("%s, %d artifact(s) not scannable", message, summary.UnsupportCount)
+		if summary.UnsupportedCount > 0 {
+			message = fmt.Sprintf("%s, %d artifact(s) not scannable", message, summary.UnsupportedCount)
 		}
 
 		if summary.ConflictCount > 0 {

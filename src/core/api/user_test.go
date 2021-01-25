@@ -677,7 +677,7 @@ func TestUsersCurrentPermissions(t *testing.T) {
 	assert.Equal(int(200), httpStatusCode, "httpStatusCode should be 200")
 	assert.NotEmpty(permissions, "permissions should not be empty")
 
-	httpStatusCode, permissions, err = apiTest.UsersGetPermissions("current", "/unsupport-scope", *projAdmin)
+	httpStatusCode, permissions, err = apiTest.UsersGetPermissions("current", "/unsupported-scope", *projAdmin)
 	assert.Nil(err)
 	assert.Equal(int(200), httpStatusCode, "httpStatusCode should be 200")
 	assert.Empty(permissions, "permissions should be empty")

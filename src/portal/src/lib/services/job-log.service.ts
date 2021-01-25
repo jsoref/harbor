@@ -80,7 +80,7 @@ export class JobLogDefaultService extends JobLogService {
     jobId: number | string
   ): Observable<string> {
     if (!this._isSupportedJobType(jobType)) {
-      return observableThrowError("Unsupport job type: " + jobType);
+      return observableThrowError("Unsupported job type: " + jobType);
     }
     if (!jobId || jobId <= 0) {
       return observableThrowError("Bad argument");
