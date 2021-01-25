@@ -141,7 +141,7 @@ func (suite *ControllerTestSuite) TestRefreshDriverNotFound() {
 	suite.Error(suite.ctl.Refresh(ctx, uuid.New().String(), uuid.New().String()))
 }
 
-func (suite *ControllerTestSuite) TestRefershNegativeUsage() {
+func (suite *ControllerTestSuite) TestRefreshNegativeUsage() {
 	suite.PrepareForUpdate(suite.quota, types.ResourceList{types.ResourceStorage: -1})
 
 	ctx := orm.NewContext(context.TODO(), &ormtesting.FakeOrmer{})

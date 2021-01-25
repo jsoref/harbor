@@ -301,7 +301,7 @@ func (suite *RefreshMiddlewareTestSuite) TestNotSuccess() {
 	suite.Equal(http.StatusBadRequest, rr.Code)
 }
 
-func (suite *RefreshMiddlewareTestSuite) TestRefershOK() {
+func (suite *RefreshMiddlewareTestSuite) TestRefreshOK() {
 	next := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
 	})
@@ -324,7 +324,7 @@ func (suite *RefreshMiddlewareTestSuite) TestRefershOK() {
 	suite.Equal(http.StatusOK, rr.Code)
 }
 
-func (suite *RefreshMiddlewareTestSuite) TestRefershFailed() {
+func (suite *RefreshMiddlewareTestSuite) TestRefreshFailed() {
 	next := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
 	})
