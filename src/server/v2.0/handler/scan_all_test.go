@@ -455,7 +455,7 @@ func (suite *ScanAllTestSuite) TestUpdateScanAllSchedule() {
 	}
 
 	{
-		// update scan all schedule with periodic and schedule changed, but creat new schedule failed
+		// update scan all schedule with periodic and schedule changed, but create new schedule failed
 		mock.OnAnything(suite.scheduler, "ListSchedules").Return([]*scheduler.Schedule{suite.schedule}, nil).Once()
 		mock.OnAnything(suite.scheduler, "UnScheduleByID").Return(nil).Once()
 		mock.OnAnything(suite.scheduler, "Schedule").Return(int64(0), fmt.Errorf("create schedule failed")).Once()

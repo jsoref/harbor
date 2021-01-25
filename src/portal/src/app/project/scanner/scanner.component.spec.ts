@@ -77,7 +77,7 @@ describe('ScannerComponent', () => {
     spyOn(component, 'getPermission').and.returnValue(undefined);
     fixture.detectChanges();
   });
-  it('should creat', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
   it('should get scanner and render', () => {

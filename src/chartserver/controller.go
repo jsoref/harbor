@@ -54,7 +54,7 @@ func NewController(backendServer *url.URL, middlewares ...func(http.Handler) htt
 		Password: os.Getenv(passwordKey),
 	}
 
-	// Creat cache
+	// Create cache
 	cacheCfg, err := getCacheConfig()
 	if err != nil {
 		// just log the error
