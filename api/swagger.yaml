@@ -78,7 +78,7 @@ paths:
           $ref: '#/definitions/InternalChartAPIError'
     post:
       summary: Upload a chart file to the specified project.
-      description: 'Upload a chart file to the specified project. With this API, the corresponding provance file can be uploaded together with chart file at once.'
+      description: 'Upload a chart file to the specified project. With this API, the corresponding provenance file can be uploaded together with chart file at once.'
       tags:
         - Chart Repository
       consumes:
@@ -98,7 +98,7 @@ paths:
           in: formData
           type: file
           required: false
-          description: The provance file
+          description: The provenance file
       responses:
         '201':
           description: The specified chart is successfully uploaded.
@@ -234,8 +234,8 @@ paths:
           $ref: '#/definitions/InternalChartAPIError'
   /chartrepo/{repo}/prov:
     post:
-      summary: Upload a provance file to the specified project.
-      description: Upload a provance file to the specified project. The provance file should be targeted for an existing chart file.
+      summary: Upload a provenance file to the specified project.
+      description: Upload a provenance file to the specified project. The provenance file should be targeted for an existing chart file.
       tags:
         - Chart Repository
       consumes:
@@ -250,10 +250,10 @@ paths:
           in: formData
           type: file
           required: true
-          description: The provance file
+          description: The provenance file
       responses:
         '201':
-          description: The provance file is successfully uploaded.
+          description: The provenance file is successfully uploaded.
         '401':
           $ref: '#/definitions/UnauthorizedChartAPIError'
         '403':
@@ -280,7 +280,7 @@ paths:
           in: formData
           type: file
           required: false
-          description: The provance file
+          description: The provenance file
       responses:
         '201':
           description: The specified chart is successfully uploaded.
@@ -529,4 +529,4 @@ definitions:
         description: A flag to indicate if the chart is signed
       prov_file:
         type: string
-        description: The URL of the provance file
+        description: The URL of the provenance file
