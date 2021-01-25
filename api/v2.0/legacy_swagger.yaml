@@ -2380,7 +2380,7 @@ paths:
     post:
       summary: Create a scanner registration
       description: |
-        Creats a new scanner registration with the given data.
+        Creates a new scanner registration with the given data.
       tags:
         - Scanners
       parameters:
