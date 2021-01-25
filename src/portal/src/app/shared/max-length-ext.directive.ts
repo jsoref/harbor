@@ -14,7 +14,7 @@
 import { Directive, OnChanges, Input, SimpleChanges } from '@angular/core';
 import { ValidatorFn, AbstractControl, Validator, NG_VALIDATORS, Validators } from '@angular/forms';
 
-export const assiiChars = /[\u4e00-\u9fa5]/;
+export const asciiChars = /[\u4e00-\u9fa5]/;
 
 export function maxLengthExtValidator(length: number): ValidatorFn {
     return (control: AbstractControl): { [key: string]: any } => {
@@ -23,7 +23,7 @@ export function maxLengthExtValidator(length: number): ValidatorFn {
             return null;
         }
 
-        const regExp = new RegExp(assiiChars, 'i');
+        const regExp = new RegExp(asciiChars, 'i');
         let count = 0;
         let len = value.length;
 
