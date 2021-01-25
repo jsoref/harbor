@@ -75,8 +75,8 @@ type DAO interface {
 	// DeleteBlob delete blob
 	DeleteBlob(ctx context.Context, id int64) (err error)
 
-	// GetBlobsNotRefedByProjectBlob get the blobs that are not referenced by the table project_blob and also not in the reserve window(in hours)
-	GetBlobsNotRefedByProjectBlob(ctx context.Context, timeWindowHours int64) ([]*models.Blob, error)
+	// GetBlobsNotReferencedByProjectBlob get the blobs that are not referenced by the table project_blob and also not in the reserve window(in hours)
+	GetBlobsNotReferencedByProjectBlob(ctx context.Context, timeWindowHours int64) ([]*models.Blob, error)
 }
 
 // New returns an instance of the default DAO
@@ -386,18 +386,18 @@ func (d *dao) DeleteBlob(ctx context.Context, id int64) error {
 	return nil
 }
 
-func (d *dao) GetBlobsNotRefedByProjectBlob(ctx context.Context, timeWindowHours int64) ([]*models.Blob, error) {
-	var noneRefed []*models.Blob
+func (d *dao) GetBlobsNotReferencedByProjectBlob(ctx context.Context, timeWindowHours int64) ([]*models.Blob, error) {
+	var noneReferenced []*models.Blob
 	ormer, err := orm.FromContext(ctx)
 	if err != nil {
-		return noneRefed, err
+		return noneReferenced, err
 	}
 
 	sql := fmt.Sprintf(`SELECT b.id, b.digest, b.content_type, b.status, b.version, b.size FROM blob AS b LEFT JOIN project_blob pb ON b.id = pb.blob_id WHERE pb.id IS NULL AND b.update_time <= now() - interval '%d hours';`, timeWindowHours)
-	_, err = ormer.Raw(sql).QueryRows(&noneRefed)
+	_, err = ormer.Raw(sql).QueryRows(&noneReferenced)
 	if err != nil {
-		return noneRefed, err
+		return noneReferenced, err
 	}
 
-	return noneRefed, nil
+	return noneReferenced, nil
 }

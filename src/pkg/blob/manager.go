@@ -138,7 +138,7 @@ func (m *manager) Delete(ctx context.Context, id int64) error {
 }
 
 func (m *manager) UselessBlobs(ctx context.Context, timeWindowHours int64) ([]*models.Blob, error) {
-	return m.dao.GetBlobsNotRefedByProjectBlob(ctx, timeWindowHours)
+	return m.dao.GetBlobsNotReferencedByProjectBlob(ctx, timeWindowHours)
 }
 
 // NewManager returns blob manager

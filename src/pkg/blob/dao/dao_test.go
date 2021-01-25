@@ -396,10 +396,10 @@ func (suite *DaoTestSuite) TestDelete() {
 	suite.Require().Nil(err)
 }
 
-func (suite *DaoTestSuite) TestGetBlobsNotRefedByProjectBlob() {
+func (suite *DaoTestSuite) TestGetBlobsNotReferencedByProjectBlob() {
 	ctx := suite.Context()
 
-	blobs, err := suite.dao.GetBlobsNotRefedByProjectBlob(ctx, 0)
+	blobs, err := suite.dao.GetBlobsNotReferencedByProjectBlob(ctx, 0)
 	suite.Require().Nil(err)
 	beforeAdd := len(blobs)
 
@@ -415,11 +415,11 @@ func (suite *DaoTestSuite) TestGetBlobsNotRefedByProjectBlob() {
 	_, err = suite.dao.CreateProjectBlob(ctx, projectID, blob.ID)
 	suite.Nil(err)
 
-	blobs, err = suite.dao.GetBlobsNotRefedByProjectBlob(ctx, 0)
+	blobs, err = suite.dao.GetBlobsNotReferencedByProjectBlob(ctx, 0)
 	suite.Require().Nil(err)
 	suite.Require().Equal(2+beforeAdd, len(blobs))
 
-	blobs, err = suite.dao.GetBlobsNotRefedByProjectBlob(ctx, 2)
+	blobs, err = suite.dao.GetBlobsNotReferencedByProjectBlob(ctx, 2)
 	suite.Require().Nil(err)
 	suite.Require().Equal(0, len(blobs))
 }
