@@ -132,7 +132,7 @@ func (suite *MiddlewareTestSuite) TestContentTrustDisabled() {
 }
 
 func (suite *MiddlewareTestSuite) TestNoneArtifact() {
-	req := httptest.NewRequest("GET", "/v1/library/photon/manifests/nonexist", nil)
+	req := httptest.NewRequest("GET", "/v1/library/photon/manifests/nonexistent", nil)
 	rr := httptest.NewRecorder()
 
 	Middleware()(suite.next).ServeHTTP(rr, req)

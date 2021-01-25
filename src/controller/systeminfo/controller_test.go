@@ -38,7 +38,7 @@ func (s *sysInfoCtlTestSuite) SetupTest() {
 
 func (s *sysInfoCtlTestSuite) TestGetCert() {
 	assert := s.Assert()
-	testRootCertPath = "./notexist.crt"
+	testRootCertPath = "./nonexistent.crt"
 	rc, err := s.ctl.GetCA(context.Background())
 	assert.Nil(rc)
 	assert.NotNil(err)

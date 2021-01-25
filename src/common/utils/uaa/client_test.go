@@ -95,7 +95,7 @@ func TestNewClientWithCACert(t *testing.T) {
 		ClientSecret:  "secret",
 		Endpoint:      mockUAAServer.URL,
 		SkipTLSVerify: false,
-		CARootPath:    "/notexist",
+		CARootPath:    "/nonexistent",
 	}
 	_, err := NewDefaultClient(cfg)
 	assert.Nil(err)

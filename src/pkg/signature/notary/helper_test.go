@@ -66,7 +66,7 @@ func TestGetTargets(t *testing.T) {
 	assert.Equal(t, 1, len(targets), "")
 	assert.Equal(t, "latest-signed", targets[0].Tag, "")
 
-	targets, err = GetTargets(notaryServer.URL, "admin", path.Join(endpoint, "library/notexist"))
+	targets, err = GetTargets(notaryServer.URL, "admin", path.Join(endpoint, "library/nonexistent"))
 	assert.Nil(t, err, fmt.Sprintf("Unexpected error: %v", err))
 	assert.Equal(t, 0, len(targets), "Targets list should be empty for non exist repo.")
 }
