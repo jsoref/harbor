@@ -42,7 +42,7 @@ func getRegion(url string) (region string, err error) {
 	}
 	rs := regRegion.FindStringSubmatch(url)
 	if rs == nil {
-		return "", errors.New("Invalid Rgistry|CR service url")
+		return "", errors.New("Invalid Registry|CR service url")
 	}
 	// fmt.Println(rs)
 	return rs[2], nil
