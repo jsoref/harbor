@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Package utils provides reusable and sharable utilities for other packages and components.
+// Package utils provides reusable and shareable utilities for other packages and components.
 package utils
 
 import (
