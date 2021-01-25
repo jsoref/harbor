@@ -151,10 +151,10 @@ func (frc *fakeRetentionClient) DeleteRepository(repo *selector.Repository) erro
 
 type fakeLogger struct{}
 
-// For debuging
+// For debugging
 func (l *fakeLogger) Debug(v ...interface{}) {}
 
-// For debuging with format
+// For debugging with format
 func (l *fakeLogger) Debugf(format string, v ...interface{}) {}
 
 // For logging info
