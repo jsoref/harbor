@@ -53,7 +53,7 @@ class Configurations(base.Base):
             return {
             'project_creation_restriction': data.project_creation_restriction.value,
             'token_expiration': data.token_expiration.value,
-            }.get(item_name,'Get Configutation Error: Item name {} is not exist'.format(item_name))
+            }.get(item_name,'Get Configuration Error: Item name {} is not exist'.format(item_name))
 
         return data
 

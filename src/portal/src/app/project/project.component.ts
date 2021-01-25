@@ -70,7 +70,7 @@ export class ProjectComponent implements OnInit, OnDestroy {
       window.sessionStorage.removeItem('fromDetails');
     }
     if (this.isSystemAdmin) {
-      this.getConfigration();
+      this.getConfiguration();
     }
     if (!this.searchSub) {
       this.searchSub = this.filterComponent.filterTerms.pipe(
@@ -113,7 +113,7 @@ export class ProjectComponent implements OnInit, OnDestroy {
     }
   }
 
-  getConfigration() {
+  getConfiguration() {
     this.configService.getConfiguration()
         .subscribe((configurations: Configuration) => {
           this.quotaObj = {
