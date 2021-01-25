@@ -190,7 +190,7 @@ export class ConfigurationAuthComponent implements OnChanges, OnInit {
                 || prop.startsWith('uaa_')
                 || prop.startsWith('oidc_')
                 || prop === 'auth_mode'
-                || prop === 'project_creattion_restriction'
+                || prop === 'project_creation_restriction'
                 || prop === 'self_registration'
                 || prop.startsWith('http_')
             ) {
