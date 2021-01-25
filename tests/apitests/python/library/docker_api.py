@@ -20,7 +20,7 @@ def docker_info_display():
 
 def docker_login_cmd(harbor_host, username, password, cfg_file = "./tests/apitests/python/update_docker_cfg.sh",  enable_manifest = True):
     if  username == "" or password == "":
-        print("[Warnig]: No docker credential was provided.")
+        print("[Warning]: No docker credential was provided.")
         return
     command = ["sudo", "docker", "login", harbor_host, "-u", username, "-p", password]
     print( "Docker Login Command: ", command)
@@ -89,7 +89,7 @@ class DockerAPI(object):
         ret = ""
         err_message = ""
         if  username == "" or password == "":
-            print("[Warnig]: No docker credential was provided.")
+            print("[Warning]: No docker credential was provided.")
             return
         if expected_error_message == "":
             expected_error_message = None
