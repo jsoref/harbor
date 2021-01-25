@@ -99,7 +99,7 @@ func (bc *basicController) New(stats *job.Stats) (job.Tracker, error) {
 	return bt, nil
 }
 
-// Track and attache with the job
+// Track and attach with the job
 func (bc *basicController) Track(jobID string) (job.Tracker, error) {
 	bt := job.NewBasicTrackerWithID(bc.context, jobID, bc.namespace, bc.pool, bc.callback, bc.retryList)
 	if err := bt.Load(); err != nil {
