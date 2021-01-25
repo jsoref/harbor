@@ -14,7 +14,7 @@
 
 /**
  * Declare class for store the sign in data,
- * two prperties:
+ * two properties:
  *   principal: The username used to sign in
  *   password: The password used to sign in
  *
