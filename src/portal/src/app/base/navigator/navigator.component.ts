@@ -146,7 +146,7 @@ export class NavigatorComponent implements OnInit {
 
     // Log out system
     logOut(): void {
-        // Naviagte to the sign in route
+        // Navigate to the sign in route
         // Appending 'signout' means destroy session cache
         let signout = true;
         let redirect_url = this.location.pathname;
@@ -176,7 +176,7 @@ export class NavigatorComponent implements OnInit {
             // Navigate to default page
             this.router.navigate([CommonRoutes.HARBOR_DEFAULT]);
         } else {
-            // Naviagte to signin page
+            // Navigate to signin page
             this.router.navigate([CommonRoutes.HARBOR_ROOT]);
         }
 

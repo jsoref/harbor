@@ -224,7 +224,7 @@ export class AccountSettingsModalComponent implements OnInit, AfterViewChecked {
 
   // Log out system
   logOut(): void {
-    // Naviagte to the sign in route
+    // Navigate to the sign in route
     // Appending 'signout' means destroy session cache
     let navigatorExtra: NavigationExtras = {
       queryParams: { signout: true }
