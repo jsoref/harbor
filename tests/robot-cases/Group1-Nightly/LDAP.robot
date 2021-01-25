@@ -53,7 +53,7 @@ Test Case - System Admin On-board New Member
     Page Should Contain  mike02
     Close Browser
 
-Test Case - LDAP User On-borad New Member
+Test Case - LDAP User On-board New Member
     Init Chrome Driver
     ${d}=    Get Current Date    result_format=%m%s
     Sign In Harbor  ${HARBOR_URL}  mike03  zhu88jie
