@@ -258,7 +258,7 @@ func TestAdapter_PrepareForPush_NilResource(t *testing.T) {
 	assert.NotNil(t, err)
 }
 
-func TestAdapter_PrepareForPush_NilMeata(t *testing.T) {
+func TestAdapter_PrepareForPush_NilMeta(t *testing.T) {
 	a, s := getMockAdapter(t, true, true)
 	defer s.Close()
 	resources := []*model.Resource{
