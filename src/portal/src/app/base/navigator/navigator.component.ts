@@ -164,7 +164,7 @@ export class NavigatorComponent implements OnInit {
         if (supportedLangs.find(supportedLang => supportedLang === lang.trim())) {
             selectedLang = lang;
         } else {
-            console.error('Language ' + lang.trim() + ' is not suppoted yet');
+            console.error('Language ' + lang.trim() + ' is not supported yet');
         }
 
         this.translate.use(selectedLang).subscribe(() => window.location.reload());
