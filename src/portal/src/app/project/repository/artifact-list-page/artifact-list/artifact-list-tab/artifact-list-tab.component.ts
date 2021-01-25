@@ -166,7 +166,7 @@ export class ArtifactListTabComponent implements OnInit, OnDestroy {
   // could Pagination filter
   filters: string[];
 
-  scanFiinishArtifactLength: number = 0;
+  scanFinishArtifactLength: number = 0;
   onScanArtifactsLength: number = 0;
   constructor(
     private errorHandlerService: ErrorHandler,
@@ -877,7 +877,7 @@ export class ArtifactListTabComponent implements OnInit, OnDestroy {
     if (!this.selectedRow.length) {
       return;
     }
-    this.scanFiinishArtifactLength = 0;
+    this.scanFinishArtifactLength = 0;
     this.onScanArtifactsLength = this.selectedRow.length;
     this.onSendingScanCommand = true;
     this.selectedRow.forEach((data: any) => {
@@ -895,9 +895,9 @@ export class ArtifactListTabComponent implements OnInit, OnDestroy {
     return !!(artifact && artifact.addition_links && artifact.addition_links[ADDITIONS.VULNERABILITIES]);
   }
   submitFinish(e: boolean) {
-    this.scanFiinishArtifactLength += 1;
+    this.scanFinishArtifactLength += 1;
     // all selected scan action has start
-    if (this.scanFiinishArtifactLength === this.onScanArtifactsLength) {
+    if (this.scanFinishArtifactLength === this.onScanArtifactsLength) {
       this.onSendingScanCommand = e;
     }
   }
