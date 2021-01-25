@@ -61,7 +61,7 @@ type ClientConfig struct {
 	ClientSecret  string
 	Endpoint      string
 	SkipTLSVerify bool
-	// Absolut path for CA root used to communicate with UAA, only effective when skipTLSVerify set to false.
+	// Absolute path for CA root used to communicate with UAA, only effective when skipTLSVerify set to false.
 	CARootPath string
 }
 
