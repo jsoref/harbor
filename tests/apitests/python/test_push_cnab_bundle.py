@@ -92,7 +92,7 @@ class TestCNAB(unittest.TestCase):
         print(TestCNAB.artifacts_ref_child_list)
 
         #4.2 Cnab bundle can be pulled by ctr successfully;
-        # This step might not successful since ctr does't support cnab fully, it might be uncomment sometime in future.
+        # This step might not successful since ctr doesn't support cnab fully, it might be uncomment sometime in future.
         # Please keep them in comment!
         #library.containerd.ctr_images_pull(TestCNAB.user_name, TestCNAB.user_push_cnab_password, target)
         #library.containerd.ctr_images_list(oci_ref = target)
