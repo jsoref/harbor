@@ -108,7 +108,7 @@ func filterAccess(ctx context.Context, access []*token.ResourceActions,
 	return nil
 }
 
-// MakeToken makes a valid jwt token based on parms.
+// MakeToken makes a valid jwt token based on params.
 func MakeToken(username, service string, access []*token.ResourceActions) (*models.Token, error) {
 	options, err := tokenpkg.NewOptions(signingMethod, v2.Issuer, privateKey)
 	if err != nil {

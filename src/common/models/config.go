@@ -90,7 +90,7 @@ type OIDCSetting struct {
 	RedirectURL        string            `json:"redirect_url"`
 	Scope              []string          `json:"scope"`
 	UserClaim          string            `json:"user_claim"`
-	ExtraRedirectParms map[string]string `json:"extra_redirect_parms"`
+	ExtraRedirectParms map[string]string `json:"extra_redirect_params"`
 }
 
 // QuotaSetting wraps the settings for Quota
