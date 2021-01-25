@@ -2542,7 +2542,7 @@ paths:
     get:
       summary: Get the metadata of the specified scanner registration
       description: |
-        Get the metadata of the specified scanner registration, including the capabilities and customzied properties.
+        Get the metadata of the specified scanner registration, including the capabilities and customized properties.
       tags:
         - Products
         - Scanners
