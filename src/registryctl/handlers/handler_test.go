@@ -52,7 +52,7 @@ func TestNewAuthHandler(t *testing.T) {
 		{nil, nil, nil, http.StatusInternalServerError, "http://localhost/good"},
 		{&fakeAuthenticator{err: nil}, nil, nil, http.StatusOK, "http://localhost/hello"},
 		{&fakeAuthenticator{err: errors.New("error")}, nil, nil, http.StatusUnauthorized, "http://localhost/hello"},
-		{&fakeAuthenticator{err: nil}, &fakeHandler{http.StatusNotFound}, nil, http.StatusNotFound, "http://localhost/notexsit"}, {&fakeAuthenticator{err: nil}, &fakeHandler{http.StatusOK}, map[string]bool{"/api/insecure": true}, http.StatusOK, "http://localhost/api/insecure"},
+		{&fakeAuthenticator{err: nil}, &fakeHandler{http.StatusNotFound}, nil, http.StatusNotFound, "http://localhost/notexist"}, {&fakeAuthenticator{err: nil}, &fakeHandler{http.StatusOK}, map[string]bool{"/api/insecure": true}, http.StatusOK, "http://localhost/api/insecure"},
 	}
 
 	for _, c := range cases {
