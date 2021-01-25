@@ -30,7 +30,7 @@ type EventData struct {
 	Custom      map[string]string  `json:"custom_attributes,omitempty"`
 }
 
-// Resource describe infos of resource triggered notification
+// Resource describe info of resource triggered notification
 type Resource struct {
 	Digest       string                 `json:"digest,omitempty"`
 	Tag          string                 `json:"tag,omitempty"`

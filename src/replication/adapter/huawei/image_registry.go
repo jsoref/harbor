@@ -239,7 +239,7 @@ type hwManifest struct {
 	// configuration.
 	Layers []hwDescriptor `json:"layers"`
 
-	// summary keeps the summary infos
+	// summary keeps the summary info
 	Summary hwManifestSummary `json:"-"`
 }
 

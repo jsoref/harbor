@@ -28,16 +28,16 @@ func TestGetChartDetails(t *testing.T) {
 
 func TestGetChartList(t *testing.T) {
 	chartOpr := ChartOperator{}
-	infos, err := chartOpr.GetChartList(htesting.ChartListContent)
+	info, err := chartOpr.GetChartList(htesting.ChartListContent)
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	if len(infos) != 2 {
-		t.Fatalf("Length of chart list should be 2, but we got %d now", len(infos))
+	if len(info) != 2 {
+		t.Fatalf("Length of chart list should be 2, but we got %d now", len(info))
 	}
 
-	firstInSortedList := infos[0]
+	firstInSortedList := info[0]
 	if firstInSortedList.Name != "harbor" {
 		t.Fatalf("Expect the fist item of the sorted list to be 'harbor' but got '%s'", firstInSortedList.Name)
 	}
