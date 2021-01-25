@@ -59,7 +59,7 @@ type Response struct {
 	Body []byte
 }
 
-// Handler returns a handler function which handle requst according to
+// Handler returns a handler function which handle request according to
 // the response provided
 func Handler(resp *Response) func(http.ResponseWriter, *http.Request) {
 	return func(w http.ResponseWriter, r *http.Request) {

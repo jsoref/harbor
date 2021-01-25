@@ -29,7 +29,7 @@ import (
 	"github.com/goharbor/harbor/src/core/config"
 )
 
-// LdapAPI handles requesst to /api/ldap/ping /api/ldap/user/search /api/ldap/user/import
+// LdapAPI handles request to /api/ldap/ping /api/ldap/user/search /api/ldap/user/import
 type LdapAPI struct {
 	BaseController
 	ldapConfig *ldapUtils.Session
