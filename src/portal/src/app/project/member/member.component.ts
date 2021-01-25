@@ -282,7 +282,7 @@ export class MemberComponent implements OnInit, OnDestroy {
         }));
     };
 
-    // Deleting member then wating for results
+    // Deleting member then waiting for results
     members.forEach(member => memberDeletingObservables.push(deleteMember(this.projectId, member)));
 
     forkJoin(...memberDeletingObservables).subscribe(() => {
