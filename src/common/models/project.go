@@ -206,7 +206,7 @@ func isTrue(i interface{}) bool {
 type ProjectQueryParam struct {
 	Name       string // the name of project
 	Owner      string // the username of project owner
-	Public     *bool  // the project is public or not, can be ture, false and nil
+	Public     *bool  // the project is public or not, can be true, false and nil
 	RegistryID int64
 	Member     *MemberQuery // the member of project
 	Pagination *Pagination  // pagination information
