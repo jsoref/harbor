@@ -223,7 +223,7 @@ func TestLoginByUserName(t *testing.T) {
 		t.Errorf("Error occurred in LoginByDb: %v", err)
 	}
 	if loginUser == nil {
-		t.Errorf("No found for user logined by username and password: %v", userQuery)
+		t.Errorf("No found for user loggedin by username and password: %v", userQuery)
 	}
 
 	if loginUser.Username != username {
@@ -246,7 +246,7 @@ func TestLoginByEmail(t *testing.T) {
 		t.Errorf("Error occurred in LoginByDb: %v", err)
 	}
 	if loginUser == nil {
-		t.Errorf("No found for user logined by email and password : %v", userQuery)
+		t.Errorf("No found for user loggedin by email and password : %v", userQuery)
 	}
 	if loginUser.Username != username {
 		t.Errorf("User's username does not match after login, expected: %s, actual: %s", username, loginUser.Username)
@@ -311,13 +311,13 @@ func TestResetUserPassword(t *testing.T) {
 		t.Errorf("Error occurred in ResetUserPassword: %v", err)
 	}
 
-	loginedUser, err := LoginByDb(models.AuthModel{Principal: currentUser.Username, Password: "HarborTester12345"})
+	loggedinUser, err := LoginByDb(models.AuthModel{Principal: currentUser.Username, Password: "HarborTester12345"})
 	if err != nil {
 		t.Errorf("Error occurred in LoginByDb: %v", err)
 	}
 
-	if loginedUser.Username != username {
-		t.Errorf("The username returned by Login does not match, expected: %s, actual: %s", username, loginedUser.Username)
+	if loggedinUser.Username != username {
+		t.Errorf("The username returned by Login does not match, expected: %s, actual: %s", username, loggedinUser.Username)
 	}
 }
 
@@ -338,13 +338,13 @@ func TestChangeUserPassword(t *testing.T) {
 		t.Errorf("Error occurred in ChangeUserPassword: %v", err)
 	}
 
-	loginedUser, err := LoginByDb(models.AuthModel{Principal: currentUser.Username, Password: "NewHarborTester12345"})
+	loggedinUser, err := LoginByDb(models.AuthModel{Principal: currentUser.Username, Password: "NewHarborTester12345"})
 	if err != nil {
 		t.Errorf("Error occurred in LoginByDb: %v", err)
 	}
 
-	if loginedUser.Username != username {
-		t.Errorf("The username returned by Login does not match, expected: %s, actual: %s", username, loginedUser.Username)
+	if loggedinUser.Username != username {
+		t.Errorf("The username returned by Login does not match, expected: %s, actual: %s", username, loggedinUser.Username)
 	}
 }
 func TestAddProject(t *testing.T) {
@@ -481,19 +481,19 @@ func TestChangeUserProfile(t *testing.T) {
 	if err != nil {
 		t.Errorf("Error occurred in ChangeUserProfile: %v", err)
 	}
-	loginedUser, err := GetUser(models.User{UserID: currentUser.UserID})
+	loggedinUser, err := GetUser(models.User{UserID: currentUser.UserID})
 	if err != nil {
 		t.Errorf("Error occurred in GetUser: %v", err)
 	}
-	if loginedUser != nil {
-		if loginedUser.Email != username+"@163.com" {
-			t.Errorf("user email does not update, expected: %s, actual: %s", username+"@163.com", loginedUser.Email)
+	if loggedinUser != nil {
+		if loggedinUser.Email != username+"@163.com" {
+			t.Errorf("user email does not update, expected: %s, actual: %s", username+"@163.com", loggedinUser.Email)
 		}
-		if loginedUser.Realname != "test" {
-			t.Errorf("user realname does not update, expected: %s, actual: %s", "test", loginedUser.Realname)
+		if loggedinUser.Realname != "test" {
+			t.Errorf("user realname does not update, expected: %s, actual: %s", "test", loggedinUser.Realname)
 		}
-		if loginedUser.Comment != "Unit Test" {
-			t.Errorf("user email does not update, expected: %s, actual: %s", "Unit Test", loginedUser.Comment)
+		if loggedinUser.Comment != "Unit Test" {
+			t.Errorf("user email does not update, expected: %s, actual: %s", "Unit Test", loggedinUser.Comment)
 		}
 	}
 }
