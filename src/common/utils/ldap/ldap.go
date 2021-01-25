@@ -203,7 +203,7 @@ func (session *Session) SearchUser(username string) ([]models.LdapUser, error) {
 		groupDNList := []string{}
 		groupAttr := strings.ToLower(session.ldapGroupConfig.LdapGroupMembershipAttribute)
 		for _, attr := range ldapEntry.Attributes {
-			// OpenLdap sometimes contain leading space in useranme
+			// OpenLdap sometimes contain leading space in username
 			val := strings.TrimSpace(attr.Values[0])
 			log.Debugf("Current ldap entry attr name: %s\n", attr.Name)
 			switch strings.ToLower(attr.Name) {
