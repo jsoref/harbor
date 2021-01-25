@@ -8,7 +8,7 @@ source $DIR/common.sh
 set +o noglob
 
 usage=$'Please set hostname and other necessary attributes in harbor.yml first. DO NOT use localhost or 127.0.0.1 for hostname, because Harbor needs to be accessed by external clients.
-Please set --with-notary if needs enable Notary in Harbor, and set ui_url_protocol/ssl_cert/ssl_cert_key in harbor.yml bacause notary must run under https. 
+Please set --with-notary if needs enable Notary in Harbor, and set ui_url_protocol/ssl_cert/ssl_cert_key in harbor.yml because notary must run under https. 
 Please set --with-trivy if needs enable Trivy in Harbor
 Please set --with-chartmuseum if needs enable Chartmuseum in Harbor'
 item=0
