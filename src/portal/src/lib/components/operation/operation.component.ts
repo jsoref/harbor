@@ -22,8 +22,8 @@ export class OperationComponent implements OnInit, OnDestroy {
   @HostListener('window:beforeunload', ['$event'])
   beforeUnloadHandler(event) {
     // storage to localStorage
-    let timp = new Date().getTime();
-    localStorage.setItem('operation', JSON.stringify({timp: timp,  data: this.resultLists}));
+    let time = new Date().getTime();
+    localStorage.setItem('operation', JSON.stringify({time: time,  data: this.resultLists}));
     localStorage.setItem('newMessageCount', this._newMessageCount.toString());
   }
 
@@ -95,7 +95,7 @@ export class OperationComponent implements OnInit, OnDestroy {
     if (requestCookie) {
       let operInfors: any = JSON.parse(requestCookie);
       if (operInfors) {
-        if ((new Date().getTime() - operInfors.timp) > 1000 * 60 * 60 * 24) {
+        if ((new Date().getTime() - operInfors.time) > 1000 * 60 * 60 * 24) {
           localStorage.removeItem('operation');
         } else {
           if (operInfors.data) {
@@ -142,15 +142,15 @@ export class OperationComponent implements OnInit, OnDestroy {
 
 
   TabEvent(): void {
-    let timp: any;
+    let time: any;
     this.resultLists.forEach(data => {
-       timp = new Date().getTime() - +data.timeStamp;
-       data.timeDiff = this.calculateTime(timp);
+       time = new Date().getTime() - +data.timeStamp;
+       data.timeDiff = this.calculateTime(time);
     });
   }
 
-  calculateTime(timp: number) {
-    let dist = Math.floor(timp / 1000 / 60);  // change to minute;
+  calculateTime(time: number) {
+    let dist = Math.floor(time / 1000 / 60);  // change to minute;
     if (dist > 0 && dist < 60) {
       return Math.floor(dist) + ' minute(s) ago';
     } else if (dist >= 60 && Math.floor(dist / 60) < 24) {
@@ -163,8 +163,8 @@ export class OperationComponent implements OnInit, OnDestroy {
 
   }
 
-  /*calculateTime(timp: number) {
-    let dist = Math.floor(timp / 1000 / 60);  // change to minute;
+  /*calculateTime(time: number) {
+    let dist = Math.floor(time / 1000 / 60);  // change to minute;
     if (dist > 0 && dist < 60) {
        return this.translateTime('OPERATION.MINUTE_AGO', Math.floor(dist));
     }else if (dist > 60 && Math.floor(dist / 60) < 24) {
