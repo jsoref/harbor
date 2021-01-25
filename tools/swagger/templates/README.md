@@ -189,7 +189,7 @@ type SwaggerPetstore {
 }
 ```
 
-Thos fields are objects, which implements interfaces declared in the [pet](./example/client/pet) and
+Those fields are objects, which implements interfaces declared in the [pet](./example/client/pet) and
 [store](./example/client/store) packages:
 
 For example:
