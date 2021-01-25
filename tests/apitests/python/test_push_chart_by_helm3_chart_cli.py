@@ -48,7 +48,7 @@ class TestProjects(unittest.TestCase):
             3. Push an chart(CA) to Harbor by helm3 registry/chart CLI successfully;
             4. List artifacts successfully;
             5. Get chart(CA) by reference successfully;
-            6. Get addtion successfully;
+            6. Get addition successfully;
             7. Delete chart by reference successfully.
         Tear down:
             1. Delete repository chart(CA) by user(UA);
@@ -80,7 +80,7 @@ class TestProjects(unittest.TestCase):
         #library.containerd.ctr_images_pull(user_name, self.user_push_chart_password, oci_ref)
         #library.containerd.ctr_images_list(oci_ref = oci_ref)
 
-        #6. Get addtion successfully;
+        #6. Get addition successfully;
         addition_r = self.artifact.get_addition(TestProjects.project_push_chart_name, self.repo_name, self.verion, "readme.md", **TestProjects.USER_CLIENT)
         self.assertIn("Helm Chart for Harbor", addition_r[0])
         addition_d = self.artifact.get_addition(TestProjects.project_push_chart_name, self.repo_name, self.verion, "dependencies", **TestProjects.USER_CLIENT)
