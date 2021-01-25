@@ -17,7 +17,7 @@ func TestManger(t *testing.T) {
 	s2 := manager.Generate(rn1)
 	assert.False(t, s1 == s2)
 
-	assert.False(t, manager.Verify(s1, "project1/donotexist"))
+	assert.False(t, manager.Verify(s1, "project1/doesnotexist"))
 	assert.True(t, manager.Verify(s1, rn1))
 	// A secret can be used only once.
 	assert.False(t, manager.Verify(s1, rn1))
