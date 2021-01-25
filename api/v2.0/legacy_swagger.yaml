@@ -2435,7 +2435,7 @@ paths:
     get:
       summary: Get a scanner registration details
       description: |
-        Retruns the details of the specified scanner registration.
+        Returns the details of the specified scanner registration.
       tags:
         - Products
         - Scanners
