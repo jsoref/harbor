@@ -53,7 +53,7 @@ def prepare_env_notary(nginx_config_dir):
         signer_key_secret_path.exists() and
         signer_ca_cert_secret_path.exists()
         ):
-        # If the certs are exist in old localtion, move them to new location
+        # If the certs are exist in old location, move them to new location
         if old_signer_ca_cert_secret_path.exists() and old_signer_cert_secret_path.exists() and old_signer_key_secret_path.exists():
             print("Copying certs for notary signer")
             shutil.copy2(old_signer_ca_cert_secret_path, signer_ca_cert_secret_path)
