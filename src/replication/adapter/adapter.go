@@ -119,7 +119,7 @@ func ListRegisteredAdapterTypes() []model.RegistryType {
 	return types
 }
 
-// ListAdapterInfos list the adapter infos
+// ListAdapterInfos list the adapter info
 func ListAdapterInfos() map[model.RegistryType]*model.AdapterPattern {
 	return adapterInfoMap
 }

@@ -50,7 +50,7 @@ func (r *ReplicationAdapterAPI) List() {
 	r.WriteJSONData(types)
 }
 
-// ListAdapterInfos the replication adapter infos
+// ListAdapterInfos the replication adapter info
 func (r *ReplicationAdapterAPI) ListAdapterInfos() {
 	if !r.SecurityCtx.Can(r.Context(), rbac.ActionList, r.resource) {
 		r.SendForbiddenError(errors.New(r.SecurityCtx.GetUsername()))

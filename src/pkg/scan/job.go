@@ -150,7 +150,7 @@ func (j *Job) Run(ctx job.Context, params job.Parameters) error {
 	req, _ := ExtractScanReq(params)
 	mimes, _ := extractMimeTypes(params)
 
-	// Print related infos to log
+	// Print related info to log
 	printJSONParameter(JobParamRegistration, params[JobParamRegistration].(string), myLogger)
 	printJSONParameter(JobParameterRequest, removeAuthInfo(req), myLogger)
 	myLogger.Infof("Report mime types: %v\n", mimes)

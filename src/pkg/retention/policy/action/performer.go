@@ -35,7 +35,7 @@ type Performer interface {
 	//    candidates []*art.Candidate : the targets to perform
 	//
 	//  Returns:
-	//    []*art.Result : result infos
+	//    []*art.Result : result info
 	//    error     : common error if any errors occurred
 	Perform(candidates []*selector.Candidate) ([]*selector.Result, error)
 }

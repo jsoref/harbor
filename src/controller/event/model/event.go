@@ -2,7 +2,7 @@ package model
 
 import "github.com/goharbor/harbor/src/pkg/retention/policy/rule"
 
-// Replication describes replication infos
+// Replication describes replication info
 type Replication struct {
 	HarborHostname     string               `json:"harbor_hostname,omitempty"`
 	JobStatus          string               `json:"job_status,omitempty"`
@@ -36,7 +36,7 @@ type ReplicationResource struct {
 	Namespace    string `json:"namespace,omitempty"`
 }
 
-// Retention describes tag retention infos
+// Retention describes tag retention info
 type Retention struct {
 	Total             int              `json:"total"`
 	Retained          int              `json:"retained"`

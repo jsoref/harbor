@@ -27,7 +27,7 @@ import (
 // DefaultClient for the retention
 var DefaultClient = NewClient()
 
-// Client is designed to access core service to get required infos
+// Client is designed to access core service to get required info
 type Client interface {
 	// Get the tag candidates under the repository
 	//
