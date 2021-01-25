@@ -3760,7 +3760,7 @@ definitions:
     properties:
       resource:
         type: string
-        description: The permission resoruce
+        description: The permission resource
       action:
         type: string
         description: The permission action

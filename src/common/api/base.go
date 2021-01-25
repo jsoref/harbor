@@ -115,9 +115,9 @@ func (b *BaseAPI) DecodeJSONReqAndValidate(v interface{}) (bool, error) {
 }
 
 // Redirect does redirection to resource URI with http header status code.
-func (b *BaseAPI) Redirect(statusCode int, resouceID string) {
+func (b *BaseAPI) Redirect(statusCode int, resourceID string) {
 	requestURI := b.Ctx.Request.RequestURI
-	resourceURI := requestURI + "/" + resouceID
+	resourceURI := requestURI + "/" + resourceID
 
 	b.Ctx.Redirect(statusCode, resourceURI)
 }
