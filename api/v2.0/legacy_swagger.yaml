@@ -296,7 +296,7 @@ paths:
         '403':
           description: User in session does not have permission to the project.
         '404':
-          description: Project or projet member does not exist.
+          description: Project or project member does not exist.
         '500':
           description: Unexpected internal errors.
     put:
