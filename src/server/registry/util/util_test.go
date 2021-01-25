@@ -6,13 +6,13 @@ import (
 )
 
 func TestCreateLinkEntry(t *testing.T) {
-	u1, err := SetLinkHeader("/v2/hello-wrold/tags/list", 10, "v10")
+	u1, err := SetLinkHeader("/v2/hello-world/tags/list", 10, "v10")
 	assert.Nil(t, err)
-	assert.Equal(t, u1, "</v2/hello-wrold/tags/list?last=v10&n=10>; rel=\"next\"")
+	assert.Equal(t, u1, "</v2/hello-world/tags/list?last=v10&n=10>; rel=\"next\"")
 
-	u2, err := SetLinkHeader("/v2/hello-wrold/tags/list", 5, "v5")
+	u2, err := SetLinkHeader("/v2/hello-world/tags/list", 5, "v5")
 	assert.Nil(t, err)
-	assert.Equal(t, u2, "</v2/hello-wrold/tags/list?last=v5&n=5>; rel=\"next\"")
+	assert.Equal(t, u2, "</v2/hello-world/tags/list?last=v5&n=5>; rel=\"next\"")
 
 }
 
