@@ -210,11 +210,11 @@ func SafeCastFloat64(value interface{}) float64 {
 }
 
 // ParseOfftime ...
-func ParseOfftime(offtime int64) (hour, minite, second int) {
+func ParseOfftime(offtime int64) (hour, minute, second int) {
 	offtime = offtime % (3600 * 24)
 	hour = int(offtime / 3600)
 	offtime = offtime % 3600
-	minite = int(offtime / 60)
+	minute = int(offtime / 60)
 	second = int(offtime % 60)
 	return
 }

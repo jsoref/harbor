@@ -358,7 +358,7 @@ func TestParseOfftime(t *testing.T) {
 	cases := []struct {
 		offtime int64
 		hour    int
-		minite  int
+		minute  int
 		second  int
 	}{
 		{0, 0, 0, 0},
@@ -372,7 +372,7 @@ func TestParseOfftime(t *testing.T) {
 	for _, c := range cases {
 		h, m, s := ParseOfftime(c.offtime)
 		assert.Equal(t, c.hour, h)
-		assert.Equal(t, c.minite, m)
+		assert.Equal(t, c.minute, m)
 		assert.Equal(t, c.second, s)
 	}
 }

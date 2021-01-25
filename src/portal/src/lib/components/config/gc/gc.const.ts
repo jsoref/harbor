@@ -3,7 +3,7 @@ import { OriginCron } from "../../../services";
 
 export const SCHEDULE_TYPE_NONE = "None";
 
-export const ONE_MINITUE = 60000;
+export const ONE_MINUTE = 60000;
 export const THREE_SECONDS = 3000;
 
 export interface GCSchedule {

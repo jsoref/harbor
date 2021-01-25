@@ -81,9 +81,9 @@ Test Case - Scan Schedule Job
     Switch To Vulnerability Page
     ${flag}=  Set Variable  ${false}
     FOR    ${i}    IN RANGE    999999
-        ${minite}=  Get Current Date  result_format=%M
-        ${minite_int} =  Convert To Integer  ${minite}
-        ${left} =  Evaluate 	${minite_int}%10
+        ${minute}=  Get Current Date  result_format=%M
+        ${minute_int} =  Convert To Integer  ${minute}
+        ${left} =  Evaluate 	${minute_int}%10
         Log To Console    ${i}/${left}
         Sleep  55
         Run Keyword If  ${left} <= 3 and ${left} != 0   Run Keywords  Set Scan Schedule  custom  value=0 */10 * * * *  AND  Set Suite Variable  ${flag}  ${true}
@@ -120,9 +120,9 @@ Test Case - Replication Schedule Job
     Switch To Replication Manage
     ${flag}=  Set Variable  ${false}
     FOR    ${i}    IN RANGE    999999
-        ${minite}=  Get Current Date  result_format=%M
-        ${minite_int} =  Convert To Integer  ${minite}
-        ${left} =  Evaluate 	${minite_int}%10
+        ${minute}=  Get Current Date  result_format=%M
+        ${minute_int} =  Convert To Integer  ${minute}
+        ${left} =  Evaluate 	${minute_int}%10
         Log To Console    ${i}/${left}
         Run Keyword If  ${left} <= 3 and ${left} != 0   Run Keywords  Create A Rule With Existing Endpoint    rule${d}    pull    nightly/{mariadb,centos}    image    e${d}    ${project_name}  mode=Scheduled  cron=0 */10 * * * *  AND  Set Suite Variable  ${flag}  ${true}
         Sleep  40

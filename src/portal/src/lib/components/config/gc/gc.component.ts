@@ -12,7 +12,7 @@ import { GcViewModelFactory } from "./gc.viewmodel.factory";
 import { GcRepoService } from "./gc.service";
 import {
   SCHEDULE_TYPE_NONE,
-  ONE_MINITUE,
+  ONE_MINUTE,
   THREE_SECONDS, GCSchedule
 } from "./gc.const";
 import { ErrorHandler } from "../../../utils/error-handler";
@@ -89,7 +89,7 @@ export class GcComponent implements OnInit {
     this.disableGC = true;
     setTimeout(() => {
       this.enableGc();
-    }, ONE_MINITUE);
+    }, ONE_MINUTE);
 
     this.gcRepoService.manualGc(this.shouldDeleteUntagged, false).subscribe(
       response => {
