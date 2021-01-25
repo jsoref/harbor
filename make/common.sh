@@ -50,7 +50,7 @@ set -e
 function check_golang {
 	if ! go version &> /dev/null
 	then
-		warn "No golang package in your enviroment. You should use golang docker image build binary."
+		warn "No golang package in your environment. You should use golang docker image build binary."
 		return
 	fi
 
