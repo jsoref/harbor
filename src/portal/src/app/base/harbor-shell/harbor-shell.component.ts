@@ -55,7 +55,7 @@ export class HarborShellComponent implements OnInit, OnDestroy {
     @ViewChild(AboutDialogComponent)
     aboutDialog: AboutDialogComponent;
 
-    // To indicator whwther or not the search results page is displayed
+    // To indicator whether or not the search results page is displayed
     // We need to use this property to do some overriding work
     isSearchResultsOpened: boolean = false;
 
