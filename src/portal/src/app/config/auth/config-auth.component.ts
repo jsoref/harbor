@@ -139,7 +139,7 @@ export class ConfigurationAuthComponent implements OnChanges, OnInit {
             settings['ldap_scope'] = +settings['ldap_scope'];
 
             this.configService.testLDAPServer(settings)
-                .subscribe(respone => {
+                .subscribe(response => {
                     this.testingOnGoing = false;
                     this.msgHandler.showSuccess('CONFIG.TEST_LDAP_SUCCESS');
                 }, error => {
@@ -160,7 +160,7 @@ export class ConfigurationAuthComponent implements OnChanges, OnInit {
             }
             this.testingOnGoing = true;
             this.configService.testOIDCServer(settings)
-                .subscribe(respone => {
+                .subscribe(response => {
                     this.testingOnGoing = false;
                     this.msgHandler.showSuccess('CONFIG.TEST_OIDC_SUCCESS');
                 }, error => {
