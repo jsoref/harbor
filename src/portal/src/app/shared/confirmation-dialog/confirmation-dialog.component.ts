@@ -37,7 +37,7 @@ export class ConfirmationDialogComponent implements OnDestroy {
     constructor(
         private confirmationService: ConfirmationDialogService,
         private translate: TranslateService) {
-        this.announceSubscription = confirmationService.confirmationAnnouced$.subscribe(msg => {
+        this.announceSubscription = confirmationService.confirmationAnnounced$.subscribe(msg => {
             this.dialogTitle = msg.title;
             this.dialogContent = msg.message;
             this.message = msg;

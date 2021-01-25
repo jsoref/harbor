@@ -14,7 +14,7 @@ describe('ConfirmationDialogComponent', () => {
     let component: ConfirmationDialogComponent;
     let fixture: ComponentFixture<ConfirmationDialogComponent>;
     const mockConfirmationDialogService = {
-        confirmationAnnouced$: of({
+        confirmationAnnounced$: of({
             title: "title",
             message: "title",
             param: "AAA"
