@@ -191,7 +191,7 @@ paths:
         '200':
           description: Metadata is deleted successfully.
         '400':
-          description: Invalid requst.
+          description: Invalid request.
         '403':
           description: User need to log in first.
         '404':
