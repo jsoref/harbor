@@ -135,9 +135,9 @@ func (g *gcCtrTestSuite) TestGetSchedule() {
 		},
 	}, nil)
 
-	sche, err := g.ctl.GetSchedule(nil)
+	schedule, err := g.ctl.GetSchedule(nil)
 	g.Nil(err)
-	g.Equal("gc", sche.VendorType)
+	g.Equal("gc", schedule.VendorType)
 }
 
 func (g *gcCtrTestSuite) TestCreateSchedule() {
