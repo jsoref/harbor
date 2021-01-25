@@ -80,7 +80,7 @@ describe('SummaryComponent', () => {
     " email server | `smtp.mydomain.com` |\n| `adminserver.emailPort` | email port | `25` |\n| " +
     "`adminserver.emailUser` | email username | `sample_admin@mydomain.com` |\n| `adminserver.emailSsl` " +
     "| email uses SSL? | `false` |\n| `adminserver.emailFrom` | send email from address | `admin \u003csample_admin@" +
-    "mydomain.com\u003e` |\n| `adminserver.emailIdentity` | | \"\" |\n| `adminserver.key` | adminsever key | " +
+    "mydomain.com\u003e` |\n| `adminserver.emailIdentity` | | \"\" |\n| `adminserver.key` | adminserver key | " +
     "`not-a-secure-key` |\n| `adminserver.emailPwd` | password for email | `not-a-secure-password` |\n| `adminserver." +
     "adminPassword` | password for admin user | `Harbor12345` |\n| `adminserver.authenticationMode` | authentication" +
     " mode for Harbor ( `db_auth` for local database, `ldap_auth` for LDAP, etc...) [Docs](https://github.com/vmware/" +
