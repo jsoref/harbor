@@ -72,7 +72,7 @@ ALTER TABLE replication_policy ADD COLUMN creator varchar(256);
 ALTER TABLE replication_policy ADD COLUMN src_registry_id int;
 /*A name filter "project_name/"+double star will be merged into the filters.
 if harbor is integrated with the external project service, we cannot get the project name by ID,
-which means the repilcation policy will match all resources.*/
+which means the replication policy will match all resources.*/
 UPDATE replication_policy SET filters='[]' WHERE filters='';
 UPDATE replication_policy r SET filters=( r.filters::jsonb || (SELECT CONCAT('{"type":"name","value":"', p.name,'/**"}') FROM project p WHERE p.project_id=r.project_id)::jsonb);
 ALTER TABLE replication_policy RENAME COLUMN target_id TO dest_registry_id;
