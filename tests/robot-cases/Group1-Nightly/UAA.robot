@@ -65,4 +65,4 @@ Test Case - UAA User Push An Image
     Close Browser
 
 Test Case - UAA User Can Not login
-    Docker Login Fail  ${ip}  testerDeesExist  123456
+    Docker Login Fail  ${ip}  testerDoesExist  123456
