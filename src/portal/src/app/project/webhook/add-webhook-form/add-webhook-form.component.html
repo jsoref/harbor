@@ -49,13 +49,13 @@
       <!-- endpoint URL -->
       <div class="clr-form-control">
         <label for="edit_endpoint_url" class="clr-control-label required">{{'WEBHOOK.ENDPOINT_URL' | translate}}</label>
-        <div class="clr-control-container" [class.clr-error]="enpointURL.errors && enpointURL.errors.required && (enpointURL.dirty || enpointURL.touched)">
+        <div class="clr-control-container" [class.clr-error]="endpointURL.errors && endpointURL.errors.required && (endpointURL.dirty || endpointURL.touched)">
           <div class="clr-input-wrapper">
             <input autocomplete="off"  class="clr-input" type="text" id="edit_endpoint_url" [disabled]="checking" [(ngModel)]="webhook.targets[0].address"
-                   size="30" name="edit_endpoint_url" #enpointURL="ngModel" required [placeholder]="webhook.targets[0].type ==='http'?'http(s)://192.168.1.1':''">
+                   size="30" name="edit_endpoint_url" #endpointURL="ngModel" required [placeholder]="webhook.targets[0].type ==='http'?'http(s)://192.168.1.1':''">
             <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
           </div>
-          <clr-control-error *ngIf="enpointURL.errors && enpointURL.errors.required && (enpointURL.dirty || enpointURL.touched)" class="tooltip-content">
+          <clr-control-error *ngIf="endpointURL.errors && endpointURL.errors.required && (endpointURL.dirty || endpointURL.touched)" class="tooltip-content">
             {{ 'WEBHOOK.URL_IS_REQUIRED' | translate }}
           </clr-control-error>
         </div>
