@@ -29,9 +29,9 @@ import { MemberPermissionGuard } from "./route/member-permission-guard-activate.
 import { OidcGuard } from "./route/oidc-guard-active.service";
 import { PortValidatorDirective } from "./port.directive";
 import { MaxLengthExtValidatorDirective } from "./max-length-ext.directive";
-import { StatisticHandler } from "./statictics/statistic-handler.service";
-import { StatisticsComponent } from "./statictics/statistics.component";
-import { StatisticsPanelComponent } from "./statictics/statistics-panel.component";
+import { StatisticHandler } from "./statistics/statistic-handler.service";
+import { StatisticsComponent } from "./statistics/statistics.component";
+import { StatisticsPanelComponent } from "./statistics/statistics-panel.component";
 import { ListProjectROComponent } from "./list-project-ro/list-project-ro.component";
 import { ListRepositoryROComponent } from "./list-repository-ro/list-repository-ro.component";
 import { NewUserFormComponent } from "./new-user-form/new-user-form.component";

@@ -22,7 +22,7 @@ import { Comparator, ProjectService, State } from "../../../lib/services";
 import {TranslateService} from "@ngx-translate/core";
 import { RoleInfo, ConfirmationTargets, ConfirmationState, ConfirmationButtons } from "../../shared/shared.const";
 import { SessionService } from "../../shared/session.service";
-import { StatisticHandler } from "../../shared/statictics/statistic-handler.service";
+import { StatisticHandler } from "../../shared/statistics/statistic-handler.service";
 import { ConfirmationDialogService } from "../../shared/confirmation-dialog/confirmation-dialog.service";
 import { MessageHandlerService } from "../../shared/message-handler/message-handler.service";
 import { ConfirmationMessage } from "../../shared/confirmation-dialog/confirmation-message";

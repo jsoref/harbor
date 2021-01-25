@@ -9,7 +9,7 @@ import { AppConfigService } from "../../services/app-config.service";
 import { RouterTestingModule } from '@angular/router/testing';
 import { SearchTriggerService } from "../../base/global-search/search-trigger.service";
 import { MessageHandlerService } from "../../shared/message-handler/message-handler.service";
-import { StatisticHandler } from "../../shared/statictics/statistic-handler.service";
+import { StatisticHandler } from "../../shared/statistics/statistic-handler.service";
 import { ConfirmationDialogService } from "../../shared/confirmation-dialog/confirmation-dialog.service";
 import { of } from 'rxjs';
 import { BrowserAnimationsModule, NoopAnimationsModule } from "@angular/platform-browser/animations";
