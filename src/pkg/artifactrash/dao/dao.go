@@ -13,7 +13,7 @@ import (
 // DAO is the data access object interface for artifact trash
 type DAO interface {
 	// Create the artifact trash
-	Create(ctx context.Context, artifactrsh *model.ArtifactTrash) (id int64, err error)
+	Create(ctx context.Context, artifacttrash *model.ArtifactTrash) (id int64, err error)
 	// Delete the artifact trash specified by ID
 	Delete(ctx context.Context, id int64) (err error)
 	// Filter lists the artifact that needs to be cleaned, which creation_time must be less than or equal to the cut-off.
@@ -30,16 +30,16 @@ func New() DAO {
 type dao struct{}
 
 // Create ...
-func (d *dao) Create(ctx context.Context, artifactrsh *model.ArtifactTrash) (id int64, err error) {
+func (d *dao) Create(ctx context.Context, artifacttrash *model.ArtifactTrash) (id int64, err error) {
 	ormer, err := orm.FromContext(ctx)
 	if err != nil {
 		return 0, err
 	}
-	artifactrsh.CreationTime = time.Now()
-	id, err = ormer.Insert(artifactrsh)
+	artifacttrash.CreationTime = time.Now()
+	id, err = ormer.Insert(artifacttrash)
 	if err != nil {
 		if e := orm.AsConflictError(err, "artifact trash %s already exists under the repository %s",
-			artifactrsh.Digest, artifactrsh.RepositoryName); e != nil {
+			artifacttrash.Digest, artifacttrash.RepositoryName); e != nil {
 			err = e
 		}
 	}

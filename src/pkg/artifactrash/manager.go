@@ -29,7 +29,7 @@ var (
 // Manager is the only interface of artifact module to provide the management functions for artifacts
 type Manager interface {
 	// Create ...
-	Create(ctx context.Context, artifactrsh *model.ArtifactTrash) (id int64, err error)
+	Create(ctx context.Context, artifacttrash *model.ArtifactTrash) (id int64, err error)
 	// Delete ...
 	Delete(ctx context.Context, id int64) (err error)
 	// Filter lists the artifact that needs to be cleaned, which creation_time is not in the time window.
@@ -53,8 +53,8 @@ type manager struct {
 	dao dao.DAO
 }
 
-func (m *manager) Create(ctx context.Context, artifactrsh *model.ArtifactTrash) (id int64, err error) {
-	return m.dao.Create(ctx, artifactrsh)
+func (m *manager) Create(ctx context.Context, artifacttrash *model.ArtifactTrash) (id int64, err error) {
+	return m.dao.Create(ctx, artifacttrash)
 }
 func (m *manager) Delete(ctx context.Context, id int64) error {
 	return m.dao.Delete(ctx, id)
