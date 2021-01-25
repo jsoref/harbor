@@ -84,7 +84,7 @@ func GetLogger(loggerOptions ...Option) (Interface, error) {
 
 // GetSweeper gets an unified sweeper controller for sweeping purpose.
 //
-// context context.Context  : system contex used to control the sweeping loops
+// context context.Context  : system context used to control the sweeping loops
 // sweeperOptions ...Option : sweeper options
 //
 // If failed, a nil sweeper and a non-nil error will be returned.
