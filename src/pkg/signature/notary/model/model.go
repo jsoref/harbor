@@ -17,7 +17,7 @@ package model
 import "github.com/theupdateframework/notary/tuf/data"
 
 // Target represents the json object of a target of a docker image in notary.
-// The struct will be used when repository is know so it won'g contain the name of a repository.
+// The struct will be used when repository is know so it won't contain the name of a repository.
 type Target struct {
 	Tag    string      `json:"tag"`
 	Hashes data.Hashes `json:"hashes"`
