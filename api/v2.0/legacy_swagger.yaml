@@ -1328,7 +1328,7 @@ paths:
         '200':
           description: Ping ldap service successfully.
         '400':
-          description: Inviald ldap configuration parameters.
+          description: Invalid ldap configuration parameters.
         '401':
           description: User need to login first.
         '403':
@@ -1607,7 +1607,7 @@ paths:
         '200':
           description: Ping email server successfully.
         '400':
-          description: Inviald email server settings.
+          description: Invalid email server settings.
         '401':
           description: User need to login first.
         '403':
