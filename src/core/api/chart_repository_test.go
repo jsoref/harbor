@@ -33,7 +33,7 @@ func TestIsMultipartFormData(t *testing.T) {
 	}
 }
 
-// Test namespace cheking
+// Test namespace checking
 func TestRequireNamespace(t *testing.T) {
 	chartAPI := &ChartRepositoryAPI{}
 	chartAPI.Ctx = bcontext.NewContext()
