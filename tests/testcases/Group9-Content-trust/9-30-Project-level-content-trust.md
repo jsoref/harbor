@@ -23,7 +23,7 @@ project a should be replaced by meaingful and longer name.
 3. On Docker client, run  
 ```sh
 export DOCKER_CONTENT_TRUST=1
-export DOCKER_CONTNET_TRUST_SERVER=https://<harbor_ip>:4443
+export DOCKER_CONTENT_TRUST_SERVER=https://<harbor_ip>:4443
 ```
 and login Harbor.  
 4. Push an image to project a.  
