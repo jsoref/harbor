@@ -76,7 +76,7 @@ export class ListReplicationRuleComponent  {
         private operationService: OperationService) {
     }
 
-    trancatedDescription(desc: string): string {
+    truncatedDescription(desc: string): string {
         if (desc.length > 35) {
             return desc.substr(0, 35);
         } else {

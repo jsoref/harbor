@@ -81,7 +81,7 @@
         </clr-dg-cell>
         <clr-dg-cell>{{p.trigger ? p.trigger.type : ''}}</clr-dg-cell>
         <clr-dg-cell>
-            {{p.description ? trancatedDescription(p.description) : '-'}}
+            {{p.description ? truncatedDescription(p.description) : '-'}}
             <clr-tooltip>
                 <clr-icon *ngIf="p.description && p.description.length > 35" clrTooltipTrigger shape="ellipsis-horizontal" size="18"></clr-icon>
                 <clr-tooltip-content clrPosition="bottom-right" clrSize="md" *clrIfOpen>
