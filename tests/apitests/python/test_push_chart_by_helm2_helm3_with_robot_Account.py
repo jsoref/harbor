@@ -42,7 +42,7 @@ class TestProjects(unittest.TestCase):
         Test step and expected result:
             1. Create a new user(UA);
             2. Create private project(PA) with user(UA);
-            3. Create a new robot account(RA) with full priviliges in project(PA) with user(UA);
+            3. Create a new robot account(RA) with full privileges in project(PA) with user(UA);
             4. Push chart to project(PA) by Helm2 CLI with robot account(RA);
             5. Get chart repositry from project(PA) successfully;
         Tear down:
@@ -57,7 +57,7 @@ class TestProjects(unittest.TestCase):
         TestProjects.project_id, TestProjects.project_name = self.project.create_project(metadata = {"public": "false"}, **TestProjects.USER_CLIENT)
 
 
-        #3. Create a new robot account(RA) with full priviliges in project(PA) with user(UA);
+        #3. Create a new robot account(RA) with full privileges in project(PA) with user(UA);
         robot_id, robot_account = self.robot.create_project_robot(TestProjects.project_name,
                                                                          30 ,**TestProjects.USER_CLIENT)
         #4. Push chart to project(PA) by Helm2 CLI with robot account(RA);"
