@@ -179,7 +179,7 @@ func (cc *CommonController) SendResetEmail() {
 		cc.CustomAbort(http.StatusNotFound, "email_does_not_exist")
 	}
 
-	if !isUserResetable(u) {
+	if !isUserResettable(u) {
 		log.Errorf("Resetting password for user with ID: %d is not allowed", u.UserID)
 		cc.CustomAbort(http.StatusForbidden, http.StatusText(http.StatusForbidden))
 	}
@@ -259,7 +259,7 @@ func (cc *CommonController) ResetPassword() {
 		cc.CustomAbort(http.StatusBadRequest, "User does not exist")
 	}
 
-	if !isUserResetable(user) {
+	if !isUserResettable(user) {
 		log.Errorf("Resetting password for user with ID: %d is not allowed", user.UserID)
 		cc.CustomAbort(http.StatusForbidden, http.StatusText(http.StatusForbidden))
 	}
@@ -277,7 +277,7 @@ func (cc *CommonController) ResetPassword() {
 	}
 }
 
-func isUserResetable(u *models.User) bool {
+func isUserResettable(u *models.User) bool {
 	if u == nil {
 		return false
 	}
