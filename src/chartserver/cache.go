@@ -126,7 +126,7 @@ func (chc *ChartCache) PutChart(chart *ChartVersionDetails) {
 	}
 }
 
-// GetChart trys to retrieve it from the cache
+// GetChart tries to retrieve it from the cache
 // If hit, return the cached item;
 // otherwise, nil object is returned
 func (chc *ChartCache) GetChart(chartDigest string) *ChartVersionDetails {
