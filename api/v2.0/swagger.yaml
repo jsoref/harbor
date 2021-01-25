@@ -3175,7 +3175,7 @@ definitions:
   VulnerabilitySummary:
     type: object
     description: |
-      VulnerabilitySummary contains the total number of the foun d vulnerabilities number and numbers of each severity level.
+      VulnerabilitySummary contains the total number of the found vulnerabilities number and numbers of each severity level.
     properties:
       total:
         type: integer

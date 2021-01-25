@@ -456,11 +456,11 @@ export class ArtifactListTabComponent implements OnInit, OnDestroy {
     });
     if (artifact && artifact[0].labels && artifact[0].labels.length) {
       artifact[0].labels.forEach((labelInfo: Label) => {
-        let findedLabel = this.imageStickLabels.find(data => labelInfo.id === data['label'].id);
-        if (findedLabel) {
-          this.imageStickLabels.splice(this.imageStickLabels.indexOf(findedLabel), 1);
-          this.imageStickLabels.unshift(findedLabel);
-          findedLabel.iconsShow = true;
+        let foundLabel = this.imageStickLabels.find(data => labelInfo.id === data['label'].id);
+        if (foundLabel) {
+          this.imageStickLabels.splice(this.imageStickLabels.indexOf(foundLabel), 1);
+          this.imageStickLabels.unshift(foundLabel);
+          foundLabel.iconsShow = true;
         }
       });
     }
