@@ -149,6 +149,6 @@ Initial release, key features include
 - Role based access control (RBAC)
 - LDAP / AD integration
 - Graphical user interface (GUI)
-- Auditting and logging
+- Auditing and logging
 - RESTful API
 - Internationalization
