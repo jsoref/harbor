@@ -127,7 +127,7 @@ func TestConfig(t *testing.T) {
 	}
 
 	if _, err := OnlyAdminCreateProject(); err != nil {
-		t.Fatalf("failed to get onldy admin create project: %v", err)
+		t.Fatalf("failed to get only admin create project: %v", err)
 	}
 
 	if _, err := Email(); err != nil {
