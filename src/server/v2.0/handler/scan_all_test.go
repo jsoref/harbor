@@ -277,7 +277,7 @@ func (suite *ScanAllTestSuite) TestCreateScanAllSchedule() {
 	}
 
 	{
-		// create scan all schedule with ScheduleManual but a previous scan all job aleady exits
+		// create scan all schedule with ScheduleManual but a previous scan all job already exits
 		mock.OnAnything(suite.execMgr, "List").Return([]*task.Execution{suite.execution}, nil).Once()
 
 		body := models.Schedule{Schedule: &models.ScheduleObj{Type: ScheduleManual}}
@@ -319,7 +319,7 @@ func (suite *ScanAllTestSuite) TestCreateScanAllSchedule() {
 	}
 
 	{
-		// create scan all schedule with periodic but schedule areadly exists
+		// create scan all schedule with periodic but schedule already exists
 		mock.OnAnything(suite.scheduler, "ListSchedules").Return([]*scheduler.Schedule{suite.schedule}, nil).Once()
 
 		body := models.Schedule{Schedule: &models.ScheduleObj{Type: ScheduleDaily, Cron: "0 0 0 * * *"}}
